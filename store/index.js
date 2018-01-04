@@ -1,7 +1,7 @@
 const store = {
-  state: {
+  state: () => ({
     sidebar: false
-  },
+  }),
   mutations: {
     toggleSidebar(state) {
       state.sidebar = !state.sidebar;

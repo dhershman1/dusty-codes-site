@@ -1,5 +1,6 @@
 module.exports = {
   parserOptions: {
+    'parser': 'babel-eslint',
     'ecmaVersion': 6,
     'sourceType': 'module'
   },
@@ -8,13 +9,31 @@ module.exports = {
     'es6': true,
     'browser': true
   },
-  extends: 'eslint:recommended',
+  extends: 'plugin:vue/strongly-recommended',
   // required to lint *.vue files
   plugins: [
-    'html'
+    'vue'
   ],
   // add your custom rules here
   rules: {
+
+    /* Plugin Rules */
+    'vue/max-attributes-per-line': [1, {
+      'singleline': 3,
+      'multiline': {
+        'max': 1,
+        'allowFirstLine': false
+      }
+    }],
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "any",
+        "normal": "any",
+        "component": "any"
+      },
+      "svg": "any",
+      "math": "any"
+    }],
 
     /* Possible Errors */
     'getter-return': ['error'],
@@ -105,7 +124,7 @@ module.exports = {
     }],
 
     /* Stylistic Issues */
-    'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
+    'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
     'array-bracket-spacing': ['error'],
     'block-spacing': ['error'],
     'brace-style': ['error', '1tbs'],

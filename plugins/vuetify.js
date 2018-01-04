@@ -2,6 +2,7 @@ import {
   VApp,
   VBtn,
   VCard,
+  VDivider,
   VFooter,
   VGrid,
   VIcon,
@@ -25,6 +26,7 @@ Vue.use(Vuetify, {
   components: {
     VApp,
     VCard,
+    VDivider,
     VNavigationDrawer,
     VFooter,
     VList,
