@@ -5,20 +5,20 @@
     </v-flex>
     <v-flex xs9>
       <code-block
-        :version="moduleVersion"
+        :version="moduleInfo.version"
         :description="description"
-        :title="'Dusty Fns'"
+        :title="moduleInfo.name"
         :selected-method="selectedMethod" />
     </v-flex>
   </v-layout>
 </template>
 
 <script>
+import { name, version } from 'dusty-fns/package.json';
 import codeBlock from '../components/code-block.vue';
 import docs from '../static/docs/dusty-fns.js';
 import dusty from 'dusty-fns';
 import methods from '../components/methods.vue';
-import { version } from 'dusty-fns/package.json';
 
 export default {
   components: {
@@ -39,8 +39,11 @@ export default {
     }
   },
   computed: {
-    moduleVersion() {
-      return version;
+    moduleInfo() {
+      return {
+        name,
+        version
+      };
     },
     docsData() {
       return docs;
