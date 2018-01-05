@@ -3,7 +3,7 @@
     <v-toolbar color="indigo" dark>
       <v-toolbar-title>Methods</v-toolbar-title>
     </v-toolbar>
-    <v-list>
+    <v-list two-line>
       <v-list-tile
         :key="i"
         v-for="(item, i) in methodList"

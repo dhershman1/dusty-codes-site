@@ -5,8 +5,7 @@
       fixed
       light
       app>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
+      <v-toolbar-title class="mr-1" v-text="title" />
       <v-toolbar-items>
         <v-btn
           flat
@@ -15,7 +14,7 @@
         >
           Home
         </v-btn>
-        <v-btn
+        <!-- <v-btn
           flat
           :to="'/simply-valid'"
         >
@@ -26,7 +25,7 @@
           :to="'/simple-card'"
         >
           Simple Card
-        </v-btn>
+        </v-btn> -->
         <v-btn
           flat
           :to="'/phone-fns'"
