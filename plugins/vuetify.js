@@ -2,12 +2,14 @@ import {
   VApp,
   VBtn,
   VCard,
+  VDataTable,
   VDivider,
   VFooter,
   VGrid,
   VIcon,
   VList,
   VNavigationDrawer,
+  VTabs,
   VToolbar,
   Vuetify
 } from 'vuetify';
@@ -26,6 +28,7 @@ Vue.use(Vuetify, {
   components: {
     VApp,
     VCard,
+    VDataTable,
     VDivider,
     VNavigationDrawer,
     VFooter,
@@ -33,6 +36,7 @@ Vue.use(Vuetify, {
     VBtn,
     VIcon,
     VGrid,
+    VTabs,
     VToolbar
   }
 });

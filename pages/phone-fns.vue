@@ -45,7 +45,6 @@ export default {
     switchMethod(item) {
       this.methodSelected = true;
       this.selectedMethod = item;
-      console.log(phoneFns);
     }
   },
   computed: {

@@ -6,7 +6,7 @@
     <v-list>
       <v-list-tile
         :key="i"
-        v-for="(item, i) in methods"
+        v-for="(item, i) in methodList"
         @click="$emit('switchMethod', item)"
       >
         <v-list-tile-content>
@@ -22,9 +22,17 @@
 <script>
 export default {
   props: {
-    methods: {
+    docs: {
       type: Array,
       default: () => []
+    }
+  },
+  computed: {
+    methodList() {
+      return this.docs.map(({ title, desc }) => ({
+        name: title,
+        desc
+      }));
     }
   }
 };

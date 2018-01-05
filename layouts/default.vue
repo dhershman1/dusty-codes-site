@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <link rel="stylesheet" href="/atom-one-dark.css">
     <v-toolbar
       fixed
       light
