@@ -11,13 +11,13 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "dusty-fns": "^0.2.2",
+    "dusty-fns": "^0.2.3",
     "nuxt": "^1.0.0-rc11",
-    "phone-fns": "^0.3.1",
+    "phone-fns": "^0.3.2",
     "simple-card": "^1.3.0",
-    "simply_valid": "^3.1.2",
+    "simply_valid": "^3.2.0",
     "underscore": "^1.8.3",
-    "vuetify": "^1.0.0-beta.1"
+    "vuetify": "^1.0.0-beta.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
