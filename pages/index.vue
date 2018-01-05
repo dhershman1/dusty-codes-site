@@ -19,13 +19,13 @@
         </v-toolbar>
         <v-card-title class="headline">Modules being added soon</v-card-title>
         <v-list>
-          <v-list-tile @click="'https://www.npmjs.com/package/simply_valid'">
+          <v-list-tile href="https://www.npmjs.com/package/simply_valid">
             <v-list-tile-content >
               <v-list-tile-title>Simply Valid</v-list-tile-title>
               <v-list-tile-sub-title>A simple data driven validation utility library</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
-          <v-list-tile @click="'https://www.npmjs.com/package/simple-card'">
+          <v-list-tile href="https://www.npmjs.com/package/simple-card">
             <v-list-tile-content>
               <v-list-tile-title>Simple Card</v-list-tile-title>
               <v-list-tile-sub-title>A simple plug and play credit card validation library</v-list-tile-sub-title>
