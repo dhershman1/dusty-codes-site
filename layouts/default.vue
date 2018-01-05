@@ -6,37 +6,39 @@
       app>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn
-        flat
-        exact
-        :to="'/'"
-      >
-        Home
-      </v-btn>
-      <v-btn
-        flat
-        :to="'/simply-valid'"
-      >
-        Simply Valid
-      </v-btn>
-      <v-btn
-        flat
-        :to="'/simple-card'"
-      >
-        Simple Card
-      </v-btn>
-      <v-btn
-        flat
-        :to="'/phone-fns'"
-      >
-        Phone Fns
-      </v-btn>
-      <v-btn
-        flat
-        :to="'/dusty-fns'"
-      >
-        Dusty Fns
-      </v-btn>
+      <v-toolbar-items>
+        <v-btn
+          flat
+          exact
+          :to="'/'"
+        >
+          Home
+        </v-btn>
+        <v-btn
+          flat
+          :to="'/simply-valid'"
+        >
+          Simply Valid
+        </v-btn>
+        <v-btn
+          flat
+          :to="'/simple-card'"
+        >
+          Simple Card
+        </v-btn>
+        <v-btn
+          flat
+          :to="'/phone-fns'"
+        >
+          Phone Fns
+        </v-btn>
+        <v-btn
+          flat
+          :to="'/dusty-fns'"
+        >
+          Dusty Fns
+        </v-btn>
+      </v-toolbar-items>
     </v-toolbar>
     <v-content>
       <v-container grid-list-md fluid>

@@ -1,45 +1,20 @@
 <template>
   <v-layout row wrap>
     <v-flex xs3>
-      <v-card>
-        <v-toolbar color="indigo" dark>
-          <v-toolbar-title>Methods</v-toolbar-title>
-        </v-toolbar>
-        <v-list>
-          <v-list-tile
-            :key="i"
-            v-for="(item, i) in methods"
-            @click="switchMethod(item)"
-          >
-            <v-list-tile-content>
-              <v-list-tile-title
-              v-text="item.name" />
-              <v-list-tile-sub-title v-text="item.desc" />
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-      </v-card>
+      <methods :methods="methodList" @switchMethod="switchMethod" />
     </v-flex>
     <v-flex xs9>
-      <v-card>
-        <v-toolbar color="indigo" dark>
-          <v-toolbar-title>Phone Fns</v-toolbar-title>
-        </v-toolbar>
-        <v-card-text>
-          <p>Phone-fns is a tiny library of utility functions based that make working with phone numbers easier</p>
-          <div v-if="methodSelected">
-            <h2>{{ selectedMethod.name }}</h2>
-            <p>{{ selectedMethod.desc }}</p>
-            <v-divider></v-divider>
-          </div>
-          <span v-else>Select a Method to get started</span>
-        </v-card-text>
-      </v-card>
+      <code-block
+        :description="description"
+        :title="'Phone Fns'"
+        :selected-method="selectedMethod" />
     </v-flex>
   </v-layout>
 </template>
 
 <script>
+import codeBlock from '../components/code-block.vue';
+import methods from '../components/methods.vue';
 import phoneFns from 'phone-fns';
 
 const desc = {
@@ -55,10 +30,15 @@ const desc = {
 };
 
 export default {
+  components: {
+    methods,
+    'code-block': codeBlock
+  },
   data() {
     return {
       methodSelected: false,
-      selectedMethod: {}
+      selectedMethod: {},
+      description: 'Phone-fns is a tiny library of utility functions based that make working with phone numbers easier'
     };
   },
   methods: {
@@ -69,7 +49,7 @@ export default {
     }
   },
   computed: {
-    methods() { // eslint-disable-line complexity
+    methodList() { // eslint-disable-line complexity
       const methodArr = [];
 
       for (const prop in phoneFns) {
