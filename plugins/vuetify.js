@@ -10,9 +10,15 @@ import {
   VList,
   VNavigationDrawer,
   VTabs,
+  VTextField,
   VToolbar,
-  Vuetify
+  Vuetify,
+  transitions
 } from 'vuetify';
+import {
+  scroll,
+  touch
+} from 'vuetify-directives';
 import Vue from 'vue';
 
 Vue.use(Vuetify, {
@@ -24,6 +30,9 @@ Vue.use(Vuetify, {
     warning: '#ffb300',
     error: '#B71C1C',
     success: '#2E7D32'
+  },
+  directives: {
+    scroll
   },
   components: {
     VApp,
@@ -37,6 +46,8 @@ Vue.use(Vuetify, {
     VIcon,
     VGrid,
     VTabs,
-    VToolbar
+    VToolbar,
+    VTextField,
+    transitions
   }
 });

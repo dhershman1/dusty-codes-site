@@ -48,6 +48,10 @@ module.exports = {
           'vuetify': {
             'transform': 'vuetify/es5/components/${member}', // eslint-disable-line
             'preventFullImport': true
+          },
+          'vuetify-directives': {
+            'transform': 'vuetify/es5/directives/${member}', // eslint-disable-line
+            'preventFullImport': true
           }
         }]
       ]

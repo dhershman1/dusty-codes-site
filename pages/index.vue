@@ -1,6 +1,6 @@
 <template>
   <v-layout row>
-    <v-flex xs12 sm8 md6>
+    <v-flex sm12 md4>
       <v-card>
         <v-toolbar color="indigo" dark>
           <v-toolbar-title>Welcome!</v-toolbar-title>
@@ -12,7 +12,7 @@
         </v-card-text>
       </v-card>
     </v-flex>
-    <v-flex xs12 sm8 md6>
+    <v-flex sm12 md4>
       <v-card>
         <v-toolbar color="indigo" dark>
           <v-toolbar-title>Coming Soon</v-toolbar-title>
@@ -32,6 +32,22 @@
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
+      </v-card>
+    </v-flex>
+    <v-flex sm12 md4>
+      <v-card>
+        <v-toolbar color="indigo" dark>
+          <v-toolbar-title>Recent Changes</v-toolbar-title>
+        </v-toolbar>
+        <v-card-title class="headline">Recent Updated to Dusty Demo</v-card-title>
+        <v-card-text>
+          <ul class="px-3">
+            <li>Added Search capabilities</li>
+            <li>UI Enhancements</li>
+            <li>Added "Back to top" Button</li>
+            <li>Added this box to the home page</li>
+          </ul>
+        </v-card-text>
       </v-card>
     </v-flex>
   </v-layout>

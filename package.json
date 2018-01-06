@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "dusty-fns": "^0.2.3",
+    "fuzzysearch": "^1.0.3",
     "highlight.js": "^9.12.0",
     "nuxt": "^1.0.0-rc11",
     "phone-fns": "^0.3.2",

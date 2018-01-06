@@ -43,6 +43,20 @@
     <v-content>
       <v-container grid-list-md fluid>
         <nuxt />
+        <v-fab-transition>
+          <v-btn
+            fab
+            dark
+            fixed
+            right
+            bottom
+            color="indigo"
+            v-scroll="onScroll"
+            v-show="fab"
+            @click="toTop">
+            <v-icon>keyboard_arrow_up</v-icon>
+          </v-btn>
+        </v-fab-transition>
       </v-container>
     </v-content>
     <v-footer app>
@@ -58,8 +72,26 @@
 export default {
   data() {
     return {
+      fab: false,
       title: 'Dusty Demos'
     };
+  },
+  methods: {
+    onScroll() { // eslint-disable-line complexity
+      if (typeof window === 'undefined') {
+        return false;
+      }
+
+      const top = window.pageYOffset || document.documentElement.offsetTop || 0;
+
+      this.fab = top > 300;
+
+      return false;
+    },
+    toTop() {
+      this.$router.push({hash: ''});
+      window.scrollTo(0, 0);
+    }
   }
 };
 </script>

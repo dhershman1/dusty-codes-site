@@ -35,7 +35,7 @@ export default {
   methods: {
     switchMethod(item) {
       this.methodSelected = true;
-      this.selectedMethod = dusty.find(({ title }) => title === item.name, docs);
+      this.selectedMethod = dusty.find(({ title }) => title === item.title, docs);
     }
   },
   computed: {
