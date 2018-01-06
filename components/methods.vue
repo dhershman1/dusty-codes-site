@@ -74,7 +74,7 @@ export default {
 
 <style scoped>
 .active {
-  background-color: indigo;
+  background-color: #3F51B5;
   color: #FFF;
 }
 
