@@ -5,7 +5,7 @@
       fixed
       light
       app>
-      <v-toolbar-title class="mr-1" v-text="title" />
+      <v-toolbar-title class="mr-1 hidden-sm-and-down" v-text="title" />
       <v-toolbar-items>
         <v-btn
           flat

@@ -1,10 +1,22 @@
 <template>
   <v-layout row wrap>
-    <v-flex xs3>
-      <methods :docs="docsData" @switchMethod="switchMethod" />
+    <v-btn
+      fab
+      icon
+      dark
+      small
+      left
+      color="indigo"
+      class="hidden-md-and-up"
+      @click="drawer = !drawer; miniVariant = !miniVariant">
+      <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
+    </v-btn>
+    <v-flex sm1 md3>
+      <methods :drawer="drawer" :docs="docsData" @switchMethod="switchMethod" />
     </v-flex>
-    <v-flex xs9>
+    <v-flex sm12 md9>
       <code-block
+        width="100%"
         :version="moduleInfo.version"
         :description="description"
         :title="moduleInfo.name"
@@ -28,6 +40,8 @@ export default {
   },
   data() {
     return {
+      drawer: false,
+      miniVariant: true,
       methodSelected: false,
       selectedMethod: {},
       description: 'Phone-fns is a tiny library of utility functions based that make working with phone numbers easier'
@@ -35,6 +49,8 @@ export default {
   },
   methods: {
     switchMethod(item) {
+      this.drawer = false;
+      this.miniVariant = true;
       this.methodSelected = true;
       this.selectedMethod = find(({ title }) => title === item.title, docs);
     }

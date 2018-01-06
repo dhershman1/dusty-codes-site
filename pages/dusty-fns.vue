@@ -1,9 +1,20 @@
 <template>
   <v-layout row wrap>
-    <v-flex xs3>
-      <methods :docs="docsData" @switchMethod="switchMethod" />
+    <v-btn
+      fab
+      icon
+      dark
+      small
+      left
+      color="indigo"
+      class="hidden-md-and-up"
+      @click="drawer = !drawer">
+      <v-icon v-html="!drawer ? 'chevron_right' : 'chevron_left'"></v-icon>
+    </v-btn>
+    <v-flex sm1 md3>
+      <methods :drawer="drawer" :docs="docsData" @switchMethod="switchMethod" />
     </v-flex>
-    <v-flex xs9>
+    <v-flex sm12 md9>
       <code-block
         :version="moduleInfo.version"
         :description="description"
@@ -27,13 +38,17 @@ export default {
   },
   data() {
     return {
+      drawer: false,
+      miniVariant: true,
       methodSelected: false,
       selectedMethod: {},
-      description: 'Dusty-fns is a tiny library of functional operators'
+      description: 'Dusty-fns is a tiny library of functional operators and utility helper functionality'
     };
   },
   methods: {
     switchMethod(item) {
+      this.drawer = false;
+      this.miniVariant = true;
       this.methodSelected = true;
       this.selectedMethod = dusty.find(({ title }) => title === item.title, docs);
     }

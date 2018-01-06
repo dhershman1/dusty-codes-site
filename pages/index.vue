@@ -42,6 +42,7 @@
         <v-card-title class="headline">Recent Updated to Dusty Demo</v-card-title>
         <v-card-text>
           <ul class="px-3">
+            <li>Some tweaks to mobile design still more to come</li>
             <li>Added Search capabilities</li>
             <li>UI Enhancements</li>
             <li>Added "Back to top" Button</li>
