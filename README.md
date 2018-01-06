@@ -12,6 +12,7 @@ This  is the main site for demoing my node modules and libraries.
 - Demoing I want to allow users to test and play with functionality.
 - More in sync information (badges, better automation, etc...)
 - More Supported Modules
+- Better Mobile Support
 
 ## Currently Supported
 
