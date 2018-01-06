@@ -36,7 +36,7 @@ export default {
   methods: {
     switchMethod(item) {
       this.methodSelected = true;
-      this.selectedMethod = find(({ title }) => title === item.name, docs);
+      this.selectedMethod = find(({ title }) => title === item.title, docs);
     }
   },
   computed: {
