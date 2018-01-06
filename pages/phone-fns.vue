@@ -16,7 +16,7 @@
 <script>
 import { name, version } from 'phone-fns/package.json';
 import codeBlock from '../components/code-block.vue';
-import docs from '../static/docs/phone-fns.js';
+import docs from 'phone-fns/docs.js';
 import find from 'dusty-fns/find';
 import methods from '../components/methods.vue';
 import phoneFns from 'phone-fns';

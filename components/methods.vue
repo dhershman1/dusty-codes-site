@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import fuzzysearch from 'fuzzysearch';
+import fuzzysearch from 'dusty-fns/fuzzySearch';
 
 export default {
   props: {
@@ -57,7 +57,7 @@ export default {
       if (!val) {
         this.filteredDocs = this.methodList;
       } else {
-        this.filteredDocs = this.methodList.filter(({ title }) => fuzzysearch(val, title));
+        this.filteredDocs = this.methodList.filter(({ title }) => fuzzysearch(title, val));
       }
     }
   },

@@ -16,7 +16,7 @@
 <script>
 import { name, version } from 'dusty-fns/package.json';
 import codeBlock from '../components/code-block.vue';
-import docs from '../static/docs/dusty-fns.js';
+import docs from 'dusty-fns/docs.js';
 import dusty from 'dusty-fns';
 import methods from '../components/methods.vue';
 
