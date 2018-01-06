@@ -1,6 +1,6 @@
 <template>
-  <v-layout row>
-    <v-flex sm12 md4>
+  <v-layout column>
+    <v-flex sm12>
       <v-card>
         <v-toolbar color="indigo" dark>
           <v-toolbar-title>Welcome!</v-toolbar-title>
@@ -12,7 +12,7 @@
         </v-card-text>
       </v-card>
     </v-flex>
-    <v-flex sm12 md4>
+    <v-flex sm12 >
       <v-card>
         <v-toolbar color="indigo" dark>
           <v-toolbar-title>Coming Soon</v-toolbar-title>
@@ -34,7 +34,7 @@
         </v-list>
       </v-card>
     </v-flex>
-    <v-flex sm12 md4>
+    <v-flex sm12 >
       <v-card>
         <v-toolbar color="indigo" dark>
           <v-toolbar-title>Recent Changes</v-toolbar-title>
