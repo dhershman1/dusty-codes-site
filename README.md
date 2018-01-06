@@ -1,22 +1,24 @@
-# modules-demo
+# Dusty Demos
 
-> Demo site for my front end libraries
+This  is the main site for demoing my node modules and libraries.
 
-## Build Setup
+## Features
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+- Documentation layout to get in depth info on functionality
+- Examples and Usage
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## TODO
 
-# build for production and launch server
-$ npm run build
-$ npm start
+- Demoing I want to allow users to test and play with functionality.
+- More in sync information (badges, better automation, etc...)
+- More Supported Modules
 
-# generate static project
-$ npm run generate
-```
+## Currently Supported
 
-For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
+- [Dusty Fns](https://github.com/dhershman1/dustyjs)
+- [Phone Fns](https://github.com/dhershman1/phone-fns)
+
+## Coming Soon
+
+- [Simply Valid](https://github.com/dhershman1/simply_valid)
+- [Simple Card](https://github.com/dhershman1/simple-card)
