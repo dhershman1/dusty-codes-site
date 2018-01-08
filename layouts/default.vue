@@ -19,13 +19,13 @@
           :to="'/simply-valid'"
         >
           Simply Valid
-        </v-btn>
+        </v-btn> -->
         <v-btn
           flat
           :to="'/simple-card'"
         >
           Simple Card
-        </v-btn> -->
+        </v-btn>
         <v-btn
           flat
           :to="'/phone-fns'"

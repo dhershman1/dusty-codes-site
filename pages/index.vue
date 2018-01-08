@@ -11,8 +11,6 @@
 
         </v-card-text>
       </v-card>
-    </v-flex>
-    <v-flex sm12 >
       <v-card>
         <v-toolbar color="indigo" dark>
           <v-toolbar-title>Coming Soon</v-toolbar-title>
@@ -25,16 +23,8 @@
               <v-list-tile-sub-title>A simple data driven validation utility library</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
-          <v-list-tile href="https://www.npmjs.com/package/simple-card">
-            <v-list-tile-content>
-              <v-list-tile-title>Simple Card</v-list-tile-title>
-              <v-list-tile-sub-title>A simple plug and play credit card validation library</v-list-tile-sub-title>
-            </v-list-tile-content>
-          </v-list-tile>
         </v-list>
       </v-card>
-    </v-flex>
-    <v-flex sm12 >
       <v-card>
         <v-toolbar color="indigo" dark>
           <v-toolbar-title>Recent Changes</v-toolbar-title>
@@ -42,6 +32,7 @@
         <v-card-title class="headline">Recent Updated to Dusty Demo</v-card-title>
         <v-card-text>
           <ul class="px-3">
+            <li>Added simple-card docs</li>
             <li>Some tweaks to mobile design still more to come</li>
             <li>Added Search capabilities</li>
             <li>UI Enhancements</li>
