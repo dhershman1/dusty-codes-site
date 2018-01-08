@@ -12,14 +12,13 @@ This  is the main site for demoing my node modules and libraries.
 - Demoing I want to allow users to test and play with functionality.
 - More in sync information (badges, better automation, etc...)
 - More Supported Modules
-- Better Mobile Support
 
 ## Currently Supported
 
 - [Dusty Fns](https://github.com/dhershman1/dustyjs)
 - [Phone Fns](https://github.com/dhershman1/phone-fns)
+- [Simple Card](https://github.com/dhershman1/simple-card)
 
 ## Coming Soon
 
 - [Simply Valid](https://github.com/dhershman1/simply_valid)
-- [Simple Card](https://github.com/dhershman1/simple-card)

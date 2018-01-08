@@ -8,8 +8,8 @@
       <div v-if="methodSelected">
         <h2>{{ selectedMethod.title }}</h2>
         <p>{{ selectedMethod.desc }}</p>
-        <v-divider></v-divider>
         <h2>Usage</h2>
+        <v-divider class="mb-1"></v-divider>
         <v-btn ripple @click="currTab = 'standard'">
           Standard
         </v-btn>
@@ -22,21 +22,21 @@
         <pre v-highlightjs="tabInfo.code">
           <code :class="{'html': currTab === 'browser', 'javascript': currTab !== 'browser'}"></code>
         </pre>
-        <v-divider></v-divider>
         <h2>Syntax</h2>
+        <v-divider></v-divider>
         <pre v-highlightjs="`${selectedMethod.syntax};`">
           <code class="javascript"></code>
         </pre>
-        <v-divider></v-divider>
         <h2>Arguments</h2>
+        <v-divider class="mb-1"></v-divider>
         <arg-table :params="selectedMethod.params" />
-        <v-divider></v-divider>
         <h2>Examples</h2>
+        <v-divider></v-divider>
         <pre v-for="(ex, i) in selectedMethod.examples" :key="i" v-highlightjs="ex">
           <code class="javascript"></code>
         </pre>
-        <v-divider></v-divider>
         <h2>Returns</h2>
+        <v-divider class="mb-1"></v-divider>
         <arg-table :params="selectedMethod.returns" :short="true" />
       </div>
       <span v-else>Select a Method to get started</span>
