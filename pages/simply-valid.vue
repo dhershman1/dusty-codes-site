@@ -42,7 +42,7 @@ export default {
       miniVariant: true,
       methodSelected: false,
       selectedMethod: {},
-      description: 'Dusty-fns is a tiny library of functional operators and utility helper functionality'
+      description: 'Simply Valid is a data driven validation library with built in functionality for easy checks to make sure data is valid before going anywhere.'
     };
   },
   methods: {

@@ -42,7 +42,7 @@ export default {
       miniVariant: true,
       methodSelected: false,
       selectedMethod: {},
-      description: 'Dusty-fns is a tiny library of functional operators and utility helper functionality'
+      description: 'Simple card is a credit card validation system that uses a luhn algorithm to strictly ensure the data passed in are valid card numbers, while also giving you extra bits of information to help make life a bit easier.'
     };
   },
   methods: {
