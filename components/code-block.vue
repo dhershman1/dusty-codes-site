@@ -30,6 +30,9 @@
         <h2>Arguments</h2>
         <v-divider class="mb-1"></v-divider>
         <arg-table :params="selectedMethod.params" />
+        <h2 v-if="selectedMethod.properties">Options</h2>
+        <v-divider v-if="selectedMethod.properties" class="mb-1"></v-divider>
+        <arg-table v-if="selectedMethod.properties" :params="selectedMethod.properties" />
         <h2>Examples</h2>
         <v-divider></v-divider>
         <pre v-for="(ex, i) in selectedMethod.examples" :key="i" v-highlightjs="ex">

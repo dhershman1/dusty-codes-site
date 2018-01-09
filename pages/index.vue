@@ -13,25 +13,12 @@
       </v-card>
       <v-card>
         <v-toolbar color="indigo" dark>
-          <v-toolbar-title>Coming Soon</v-toolbar-title>
-        </v-toolbar>
-        <v-card-title class="headline">Modules being added soon</v-card-title>
-        <v-list>
-          <v-list-tile href="https://www.npmjs.com/package/simply_valid">
-            <v-list-tile-content >
-              <v-list-tile-title>Simply Valid</v-list-tile-title>
-              <v-list-tile-sub-title>A simple data driven validation utility library</v-list-tile-sub-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-      </v-card>
-      <v-card>
-        <v-toolbar color="indigo" dark>
           <v-toolbar-title>Recent Changes</v-toolbar-title>
         </v-toolbar>
         <v-card-title class="headline">Recent Updated to Dusty Demo</v-card-title>
         <v-card-text>
           <ul class="px-3">
+            <li>Added Simply Valid</li>
             <li>Added simple-card docs</li>
             <li>Some tweaks to mobile design still more to come</li>
             <li>Added Search capabilities</li>
