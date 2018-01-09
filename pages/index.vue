@@ -18,6 +18,7 @@
         <v-card-title class="headline">Recent Updated to Dusty Demo</v-card-title>
         <v-card-text>
           <ul class="px-3">
+            <li>Fix for broken browser button in simply valid</li>
             <li>Added Simply Valid</li>
             <li>Added simple-card docs</li>
             <li>Some tweaks to mobile design still more to come</li>

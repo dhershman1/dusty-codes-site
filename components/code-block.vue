@@ -16,7 +16,7 @@
         <v-btn ripple @click="currTab = 'commonjs'">
           CommonJS
         </v-btn>
-        <v-btn ripple @click="currTab = 'browser'">
+        <v-btn v-if="selectedMethod.usage.browser" ripple @click="currTab = 'browser'">
           Browser
         </v-btn>
         <pre v-highlightjs="tabInfo.code">
