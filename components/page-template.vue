@@ -12,23 +12,25 @@
       <v-icon v-html="!drawer ? 'chevron_right' : 'chevron_left'"></v-icon>
     </v-btn>
     <v-flex sm1 md3>
-      <methods :drawer="drawer" :docs="docsData" @switchMethod="switchMethod" />
+      <methods
+        :back="back"
+        :drawer="drawer"
+        :docs="docs"
+        @switchMethod="switchMethod" />
     </v-flex>
     <v-flex sm12 md9>
-      <code-block
-        :version="moduleInfo.version"
-        :description="description"
-        :title="moduleInfo.name"
-        :selected-method="selectedMethod" />
+      <transition name="slide-fade" mode="out-in">
+        <slot v-if="!hideBase" name="base"></slot>
+        <code-block v-else :selected-method="selectedMethod" />
+      </transition>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
-import { name, version } from 'simply_valid/package.json';
 import codeBlock from '../components/code-block.vue';
-import docs from 'simply_valid/docs.js';
-import dusty from 'dusty-fns';
+import find from 'dusty-fns/find';
+import isEmpty from 'dusty-fns/isEmpty';
 import methods from '../components/methods.vue';
 
 export default {
@@ -36,32 +38,40 @@ export default {
     methods,
     'code-block': codeBlock
   },
+  props: {
+    back: {
+      type: Boolean,
+      default: false
+    },
+    docs: {
+      type: Array,
+      default: () => []
+    }
+  },
   data() {
     return {
       drawer: false,
       miniVariant: true,
       methodSelected: false,
-      selectedMethod: {},
-      description: 'Simply Valid is a data driven validation library with built in functionality for easy checks to make sure data is valid before going anywhere.'
+      selectedMethod: {}
     };
+  },
+  computed: {
+    hideBase() {
+      return !isEmpty(this.selectedMethod);
+    }
   },
   methods: {
     switchMethod(item) {
       this.drawer = false;
       this.miniVariant = true;
       this.methodSelected = true;
-      this.selectedMethod = dusty.find(({ title }) => title === item.title, docs);
+      this.selectedMethod = find(({ title }) => title === item.title, this.docs);
     }
   },
-  computed: {
-    moduleInfo() {
-      return {
-        name,
-        version
-      };
-    },
-    docsData() {
-      return docs;
+  watch: {
+    back() {
+      this.selectedMethod = {};
     }
   }
 };

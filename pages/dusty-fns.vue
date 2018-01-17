@@ -1,68 +1,63 @@
 <template>
-  <v-layout row wrap>
-    <v-btn
-      fab
-      icon
-      dark
-      small
-      left
-      color="indigo"
-      class="hidden-md-and-up"
-      @click="drawer = !drawer">
-      <v-icon v-html="!drawer ? 'chevron_right' : 'chevron_left'"></v-icon>
-    </v-btn>
-    <v-flex sm1 md3>
-      <methods :drawer="drawer" :docs="docsData" @switchMethod="switchMethod" />
-    </v-flex>
-    <v-flex sm12 md9>
-      <code-block
-        :version="moduleInfo.version"
-        :description="description"
-        :title="moduleInfo.name"
-        :selected-method="selectedMethod" />
-    </v-flex>
+  <v-layout column>
+    <v-card>
+      <module-header
+        :title="name"
+        :version="version"
+        @goBack="back = !back"></module-header>
+      <v-card-text>
+        <p>
+          Dusty-fns is a tiny library of functional operators and utility helper functionality
+        </p>
+        <page :docs="docs" :back="back">
+          <v-layout row slot="base">
+            <v-flex sm12 md12>
+              <h1>Split Methods</h1>
+              <p>
+                Each method is importable by itself or desturctured from the main object. The benefit to being split up
+                and importable individually is this helps out with tree shaking and only using the functionality you
+                need at that time.
+              </p>
+              <h3>Example</h3>
+              <pre v-highlightjs>
+                <code class="javascript">
+                  import isObject from 'dusty-fns/isObject';
+
+                  isObject({});
+
+                  // OR
+
+                  const isObject = require('dusty-fns/isObject');
+
+                  isObject({});
+                </code>
+              </pre>
+            </v-flex>
+          </v-layout>
+        </page>
+      </v-card-text>
+    </v-card>
   </v-layout>
 </template>
 
 <script>
 import { name, version } from 'dusty-fns/package.json';
-import codeBlock from '../components/code-block.vue';
 import docs from 'dusty-fns/docs.js';
-import dusty from 'dusty-fns';
-import methods from '../components/methods.vue';
+import header from '../components/header';
+import pageTemplate from '../components/page-template';
 
 export default {
   components: {
-    methods,
-    'code-block': codeBlock
+    'module-header': header,
+    'page': pageTemplate
   },
   data() {
     return {
-      drawer: false,
-      miniVariant: true,
-      methodSelected: false,
-      selectedMethod: {},
-      description: 'Dusty-fns is a tiny library of functional operators and utility helper functionality'
+      name,
+      version,
+      docs,
+      back: false
     };
-  },
-  methods: {
-    switchMethod(item) {
-      this.drawer = false;
-      this.miniVariant = true;
-      this.methodSelected = true;
-      this.selectedMethod = dusty.find(({ title }) => title === item.title, docs);
-    }
-  },
-  computed: {
-    moduleInfo() {
-      return {
-        name,
-        version
-      };
-    },
-    docsData() {
-      return docs;
-    }
   }
 };
 </script>

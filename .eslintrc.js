@@ -35,6 +35,8 @@ module.exports = {
       "math": "any"
     }],
 
+    'vue/attribute-hyphenation': 'off',
+
     /* Possible Errors */
     'getter-return': ['error'],
     'no-extra-parens': ['error'],
