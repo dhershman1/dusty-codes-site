@@ -5,42 +5,57 @@
       fixed
       light
       app>
-      <v-toolbar-title class="mr-1 hidden-sm-and-down" v-text="title" />
-      <v-toolbar-items>
+      <v-toolbar-side-icon @click="navDrawer = !navDrawer" class="hidden-md-and-up"></v-toolbar-side-icon>
+      <v-toolbar-title class="mr-1" v-text="title" />
+      <v-toolbar-items class="hidden-sm-and-down">
         <v-btn
           flat
           exact
-          :to="'/'"
-        >
+          :to="'/'">
           Home
         </v-btn>
         <v-btn
           flat
           exact
-          :to="'/simply_valid'"
-        >
+          :to="'/simply_valid'">
           Simply Valid
         </v-btn>
         <v-btn
           flat
-          :to="'/simple-card'"
-        >
+          :to="'/simple-card'">
           Simple Card
         </v-btn>
         <v-btn
           flat
-          :to="'/phone-fns'"
-        >
+          :to="'/phone-fns'">
           Phone Fns
         </v-btn>
         <v-btn
           flat
-          :to="'/dusty-fns'"
-        >
+          :to="'/dusty-fns'">
           Dusty Fns
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
+    <v-navigation-drawer
+      temporary
+      absolute
+      v-model="navDrawer"
+      class="hidden-md-and-up">
+      <v-list>
+        <v-list-tile
+          exact
+          v-for="item in navItems"
+          :key="item. title"
+          :to="item.to"
+          @click="navDrawer = false">
+          <v-list-tile-content>
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            <v-list-tile-sub-title>{{ item.description }}</v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
     <v-content>
       <v-container grid-list-md fluid>
         <nuxt />
@@ -74,7 +89,35 @@ export default {
   data() {
     return {
       fab: false,
-      title: 'Dusty Demos'
+      title: 'Dusty Codes',
+      navDrawer: false,
+      navItems: [
+        {
+          title: 'Home',
+          to: '/',
+          description: 'Go back to the home page'
+        },
+        {
+          title: 'Simply Valid',
+          to: '/simply_valid',
+          description: 'A simple data driven validation library'
+        },
+        {
+          title: 'Simple Card',
+          to: '/simple-card',
+          description: 'A simple luhn credit card validation module'
+        },
+        {
+          title: 'Phone Fns',
+          to: '/phone-fns',
+          description: 'A small set of phone helper functions'
+        },
+        {
+          title: 'Dusty Fns',
+          to: '/dusty-fns',
+          description: 'A small library of functional helpers'
+        }
+      ]
     };
   },
   methods: {
@@ -98,6 +141,13 @@ export default {
 </script>
 
 <style>
+
+.title-btn {
+  font-size: 20px;
+  height: 100%;
+  margin: 0;
+}
+
 .slide-fade-enter-active {
   transition: all .3s ease;
 }
