@@ -76,7 +76,7 @@
       </v-container>
     </v-content>
     <v-footer app>
-      <span>Dustin Hershman &copy; 2017 Built using
+      <span>Dustin Hershman &copy; 2018 Built using
         <a href="https://nuxtjs.org/" target="_blank">Nuxt</a> and
         <a href="https://vuetifyjs.com" target="_blank">Vuetify</a>
       </span>

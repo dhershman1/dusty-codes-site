@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>{{ selectedMethod.title }}</h2>
+    <h4 v-if="selectedMethod.since">Since {{ selectedMethod.since }}</h4>
     <p>{{ selectedMethod.desc }}</p>
     <h2>Usage</h2>
     <v-divider class="mb-1"></v-divider>
