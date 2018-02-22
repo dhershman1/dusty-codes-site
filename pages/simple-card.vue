@@ -13,31 +13,140 @@
         <page :docs="docs" :back="back">
           <v-layout row slot="base">
             <v-flex sm12 md6>
-              <h1>Single Data Pieces</h1>
-              <p>
-                You can send in individual data strings to validate that piece of data automatically
-              </p>
-              <h3>Example</h3>
-              <pre v-highlightjs>
-                <code class="javascript">
-                  import simpleCard from 'simple-card';
+              <h1>Changelog</h1>
+              <v-card>
+                <v-toolbar>
+                  <v-toolbar-title>{{ version }}</v-toolbar-title>
+                  <v-spacer></v-spacer>
+                </v-toolbar>
+                <v-list>
 
-                  const validNumber = simpleCard('4122027811098688');
-                  // Output: {isValid: true, info: 'visa'}
-                  const validCVN = simpleCard('333');
-                  // Output: {isValid: true, info: 'norm'}
-                  const validCVN = simpleCard('4444');
-                  // Output: {isValid: true, info: 'amex'}
-                  const validDate = simpleCard('08/20');
-                  // Output: {isValid: true, info: false}
-                </code>
-              </pre>
+                  <v-list-group no-action>
+                    <v-list-tile slot="activator">
+                      <v-list-tile-content>
+                        <v-list-tile-title>Breaking</v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          Removed the ability to send single strings into the main function
+                        </v-list-tile-title>
+                        <v-list-tile-sub-title>
+                          You should call the individual functions instead
+                        </v-list-tile-sub-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          Removed the ability to send partial objects to the main function
+                        </v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          Changed the expected card object property name from `expire` to `date`
+                        </v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                  </v-list-group>
+
+                  <v-list-group no-action>
+                    <v-list-tile slot="activator">
+                      <v-list-tile-content>
+                        <v-list-tile-title>New</v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          Broke each piece of validation into its own callable function
+                        </v-list-tile-title>
+                        <v-list-tile-sub-title>
+                          You can still use the `validate` function to run it on an object
+                        </v-list-tile-sub-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          Added a match functionality to compare cardtype with cvn
+                        </v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          Converted to a webpack build process
+                        </v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          Introduced automated scripts for building and docs generation
+                        </v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          Type errors will now trigger if an invalid type is given to a function
+                        </v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          Introduced the ability to call specific functions if desired
+                        </v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                  </v-list-group>
+
+                  <v-list-group no-action>
+                    <v-list-tile slot="activator">
+                      <v-list-tile-content>
+                        <v-list-tile-title>Improved</v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          The overall source code base removing lots of overhead
+                        </v-list-tile-title>
+                        <v-list-tile-sub-title>
+                          Allowing for smaller builds
+                        </v-list-tile-sub-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          Better and cleaner organization of the code base
+                        </v-list-tile-title>
+                        <v-list-tile-sub-title>
+                          Which allowed for breaking out the functionality
+                        </v-list-tile-sub-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile>
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          Improved the overall size of the library
+                        </v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                  </v-list-group>
+
+                </v-list>
+              </v-card>
+
             </v-flex>
             <v-flex sm12 md6>
               <h1>Return</h1>
-              <p>
-                Depending on how it's being used, the return from Simple Card can vary
-              </p>
               <h3>Full Validation Return</h3>
               <pre v-highlightjs>
                 <code class="javascript">
@@ -45,31 +154,8 @@
                     isValid: true,
                     cardType: 'visa',
                     cvnType: 'norm',
-                    expired: false
-                  }
-                </code>
-              </pre>
-              <h3>Parital Object Validation Return</h3>
-              <pre v-highlightjs>
-                <code class="javascript">
-                  // If you send in a partial card obj it will always return back invalid
-                  // But it will try it's best to figure out the info
-                  // Below is a return from just a card number and an expiration no CVN/CVV
-                  {
-                    isValid: false,
-                    cardType: 'visa',
-                    cvnType: 'Invalid CVN Code',
-                    expired: false
-                  }
-                </code>
-              </pre>
-              <h3>Single Data Validation</h3>
-              <pre v-highlightjs>
-                <code class="javascript">
-                  // The info prop varies on what you're validating
-                  {
-                    isValid: true,
-                    info: 'visa'
+                    isExpired: false,
+                    match: 'cvn matches card type'
                   }
                 </code>
               </pre>
