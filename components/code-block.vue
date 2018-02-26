@@ -1,7 +1,9 @@
 <template>
   <div>
     <h2>{{ selectedMethod.title }}</h2>
-    <h4 v-if="selectedMethod.since">Since {{ selectedMethod.since }}</h4>
+    <h4 v-if="selectedMethod.since">
+      Since {{ selectedMethod.since }} | <span class="category">{{ selectedMethod.category }}</span>
+    </h4>
     <p>{{ selectedMethod.desc }}</p>
     <h2>Usage</h2>
     <v-divider class="mb-1"></v-divider>
@@ -65,3 +67,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.category {
+  background-color: #a4b1fc;
+  color: #000;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+}
+</style>
+

@@ -25,8 +25,10 @@
           :class="{ 'active': item.title === activeItem }"
         >
           <v-list-tile-content>
-            <v-list-tile-title
-            v-text="item.title" />
+            <v-list-tile-title>
+              {{ item.title }}
+              <span class="category ml-1" v-if="item.category">{{ item.category }}</span>
+            </v-list-tile-title>
             <v-list-tile-title v-text="item.desc"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
@@ -52,8 +54,10 @@
           :class="{ 'active': item.title === activeItem }"
         >
           <v-list-tile-content>
-            <v-list-tile-title
-            v-text="item.title" />
+            <v-list-tile-title>
+              {{ item.title }}
+              <span class="category ml-1" v-if="item.category">{{ item.category }}</span>
+            </v-list-tile-title>
             <v-list-tile-sub-title v-text="item.desc" />
           </v-list-tile-content>
         </v-list-tile>
@@ -110,8 +114,9 @@ export default {
   },
   computed: {
     methodList() {
-      return this.docs.map(({ title, desc }) => ({
+      return this.docs.map(({ title, desc, category }) => ({
         title,
+        category,
         desc
       }));
     }
@@ -120,6 +125,15 @@ export default {
 </script>
 
 <style scoped>
+.category {
+  background-color: #a4b1fc;
+  color: #000;
+  font-weight: bold;
+  padding: 0.3rem;
+  text-align: right;
+  border-radius: 0.5rem;
+}
+
 .active {
   background-color: #3F51B5;
   color: #FFF;
