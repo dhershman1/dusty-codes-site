@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "dusty-fns": "0.6.0",
+    "dusty-fns": "file:dusty-fns-1.0.0.tgz",
     "highlight.js": "9.12.0",
     "nuxt": "1.3.0",
     "phone-fns": "0.3.3",
