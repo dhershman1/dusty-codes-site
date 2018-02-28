@@ -2,7 +2,8 @@
   <div>
     <h2>{{ selectedMethod.title }}</h2>
     <h4 v-if="selectedMethod.since">
-      Since {{ selectedMethod.since }} | <span class="category">{{ selectedMethod.category }}</span>
+      Since {{ selectedMethod.since }}
+      <span class="category" v-if="selectedMethod.category">| {{ selectedMethod.category }}</span>
     </h4>
     <p>{{ selectedMethod.desc }}</p>
     <h2>Usage</h2>
