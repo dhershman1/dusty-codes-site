@@ -55,34 +55,52 @@
                 <code class="javascript">
                   import format from 'phone-fns/format';
 
-                  // Normal
-                  format('4443332222', '(AAA) LLL-NNNN');
-                  // Output: (444) 333-2222
+                  // Without a country code
+                  format('', '(AAA) LLL-NNNN', '4443332222'); // => '(444) 333-2222'
 
-                  // Long Distance
-                  format('1124443332222', 'CCC + (AAA)-LLL.NNNN', true); // Notice we have to make sure to tell the module we it is long distance
-                  // Output: 112 + (444)-333.2222
+                  // With a country code
+                  format('112', 'CCC + (AAA)-LLL.NNNN', '4443332222'); // => '112 + (444)-333.2222'
 
                   // Extensions
-                  format('44433322228989', '(AAA).LLL.NNNN x EEEE');
-                  // Output: (444).333.2222 x 8989
+                  format('', '(AAA).LLL.NNNN x EEEE', '44433322228989'); // => '(444).333.2222 x 8989'
                 </code>
               </pre>
             </v-flex>
             <v-flex sm12 md6>
-              <h1>Country Codes</h1>
+              <h1>Usage</h1>
               <p>
-                Phone Fns comes built in with a large list of country codes thanks to the
-                <a href="https://github.com/mledoze/countries" target="__blank">Countries Repo</a>
-                You can bring in and search through the codes. Do note that all the strings are in lower case format
+                In v2.0.0 of Phone-Fns the main import is used to create separate
+                instances in order to make usage easier as well as the library smaller.
               </p>
               <h3>Example</h3>
               <pre v-highlightjs>
                 <code class="javascript">
-                  import callingCodes from 'phone-fns/callingCodes';
+                  import phoneFns from 'phone-fns';
 
-                  console.log(callingCodes['us']);
-                  // Output: [ '1' ]
+                  const phoneLib = phoneFns();
+
+                  phoneLib.breakdown('4443332222');
+                  // => { countryCode: '', areaCode: '444', localCode: '333', lineNumber: '2222', extension: '' }
+
+                  phoneLib.format('(AAA) LLL-NNNN', '4443332222');
+                  // => '(444) 333-2222'
+                </code>
+              </pre>
+              <p>
+                If you want to set a country code you can create an instance of the library around
+                the country code like so.
+              </p>
+              <pre v-highlightjs>
+                <code class="javascript">
+                  import phoneFns from 'phone-fns';
+
+                  const phoneLib = phoneFns('1');
+
+                  phoneLib.breakdown('4443332222');
+                  // => { countryCode: '1', areaCode: '444', localCode: '333', lineNumber: '2222', extension: '' }
+
+                  phoneLib.format('C + (AAA) LLL-NNNN', '4443332222');
+                  // => '1 + (444) 333-2222'
                 </code>
               </pre>
             </v-flex>
