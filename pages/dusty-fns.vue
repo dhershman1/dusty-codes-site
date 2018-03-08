@@ -21,15 +21,15 @@
               <h3>Example</h3>
               <pre v-highlightjs>
                 <code class="javascript">
-                  import isObject from 'dusty-fns/isObject';
+                  import isEmpty from 'dusty-fns/isEmpty';
 
-                  isObject({});
+                  isEmpty({});
 
                   // OR
 
-                  const isObject = require('dusty-fns/isObject');
+                  const isEmpty = require('dusty-fns/isEmpty');
 
-                  isObject({});
+                  isEmpty({});
                 </code>
               </pre>
             </v-flex>
