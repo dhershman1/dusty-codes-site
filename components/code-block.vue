@@ -14,11 +14,18 @@
     <v-btn ripple @click="currTab = 'commonjs'">
       CommonJS
     </v-btn>
+    <v-btn v-if="selectedMethod.usage.cdn" ripple @click="currTab = 'cdn'">
+      CDN
+    </v-btn>
     <v-btn v-if="selectedMethod.usage.browser" ripple @click="currTab = 'browser'">
       Browser
     </v-btn>
     <pre v-highlightjs="tabInfo.code">
-      <code :class="{'html': currTab === 'browser', 'javascript': currTab !== 'browser'}"></code>
+      <code
+      :class="{
+        'html': currTab === 'browser' || currTab === 'cdn',
+        'javascript': currTab !== 'browser' && currTab !== 'cdn'
+        }"></code>
     </pre>
     <h2>Syntax</h2>
     <v-divider></v-divider>

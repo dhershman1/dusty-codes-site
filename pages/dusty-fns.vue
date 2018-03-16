@@ -11,25 +11,69 @@
         </p>
         <page :docs="docs" :back="back">
           <v-layout row slot="base">
-            <v-flex sm12 md12>
+            <v-flex sm12 md6>
+              <h1>Usage</h1>
+              <p>
+                Standard Usage of the main dusty min file while being able to bring in the functionality individually
+                you can also bring in the entire library itself and access the functions from the
+                <code>dusty</code> Object. Example: <code>dusty.isEmpty()</code>
+              </p>
+              <h3>Standard JS</h3>
+              <pre v-highlightjs>
+                <code class="javascript">
+import dusty from 'dusty-fns';
+
+dusty.isEmpty({});
+                </code>
+              </pre>
+              <h3>CommonJS</h3>
+              <pre v-highlightjs>
+                <code class="javascript">
+const dusty = require('dusty-fns');
+
+dusty.isEmpty({});
+                </code>
+              </pre>
+              <h3>CDN</h3>
+              <pre v-highlightjs>
+                <code class="html">
+&lt;script src="https://cdn.jsdelivr.net/npm/dusty-fns@{{ version }}/dusty.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  dusty.isEmpty({});
+&lt;/script&gt;
+                </code>
+              </pre>
+            </v-flex>
+            <v-flex sm12 md6>
               <h1>Split Methods</h1>
               <p>
                 Each method is importable by itself or desturctured from the main object. The benefit to being split up
                 and importable individually is this helps out with tree shaking and only using the functionality you
                 need at that time.
               </p>
-              <h3>Example</h3>
+              <h3>Standard JS</h3>
               <pre v-highlightjs>
                 <code class="javascript">
-                  import isEmpty from 'dusty-fns/isEmpty';
+import isEmpty from 'dusty-fns/isEmpty';
 
-                  isEmpty({});
+isEmpty({});
+                </code>
+              </pre>
+              <h3>CommonJS</h3>
+              <pre v-highlightjs>
+                <code class="javascript">
+const isEmpty = require('dusty-fns/isEmpty');
 
-                  // OR
-
-                  const isEmpty = require('dusty-fns/isEmpty');
-
-                  isEmpty({});
+isEmpty({});
+                </code>
+              </pre>
+              <h3>CDN</h3>
+              <pre v-highlightjs>
+                <code class="html">
+&lt;script src="https://cdn.jsdelivr.net/npm/dusty-fns@{{ version }}/isEmpty/index.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  isEmpty({});
+&lt;/script&gt;
                 </code>
               </pre>
             </v-flex>
