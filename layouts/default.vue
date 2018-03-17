@@ -17,6 +17,12 @@
         <v-btn
           flat
           exact
+          :to="'/portfolio'">
+          Portfolio
+        </v-btn>
+        <v-btn
+          flat
+          exact
           :to="'/simply_valid'">
           Simply Valid
         </v-btn>
@@ -96,6 +102,11 @@ export default {
           title: 'Home',
           to: '/',
           description: 'Go back to the home page'
+        },
+        {
+          title: 'Portfolio',
+          to: '/portfolio',
+          description: 'Go to the Portfolio page'
         },
         {
           title: 'Simply Valid',
