@@ -6,7 +6,7 @@
           :title="'Skills'"
           :summary="'A list of skills and my level of knowledge in them'"></page-header>
       </v-flex>
-      <h2>SKills is currently a work in progress</h2>
+      <h2>Skills is currently a work in progress</h2>
       <!-- <v-flex
         xs12
         v-for="s in skills"
