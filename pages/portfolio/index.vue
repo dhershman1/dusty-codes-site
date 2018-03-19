@@ -1,7 +1,7 @@
 <template>
   <v-layout column>
     <v-jumbotron
-      src="/material.jpg"
+      src="/imgs/material.jpg"
       :gradient="gradient"
       dark>
       <v-container fill-height>
@@ -43,19 +43,19 @@ export default {
         title: 'Experience',
         description: 'View some of my current work experiences',
         destination: '/portfolio/experience',
-        imgSrc: '/exp.jpg'
+        imgSrc: '/imgs/exp.jpg'
       },
       {
         title: 'Projects',
         description: 'Check out some of the projects and applications I\'ve built',
         destination: '/portfolio/projects',
-        imgSrc: '/code.jpg'
+        imgSrc: '/imgs/code.jpg'
       },
       {
         title: 'Skills',
         description: 'View and go over a lot of my skills and abilities as a developer',
         destination: '/portfolio/skills',
-        imgSrc: '/skills.jpg'
+        imgSrc: '/imgs/skills.jpg'
       }
     ]
   })

@@ -31,7 +31,7 @@ export default {
         {
           company: 'DealerTire LLC.',
           title: 'Software Developer',
-          imageName: 'dt.png',
+          imageName: 'imgs/dt.png',
           location: 'Cleveland, OH',
           duration: 'May 2014 - Present',
           tasks: [
@@ -45,7 +45,7 @@ export default {
         {
           company: 'Case Western Reserve University',
           title: 'Instructor',
-          imageName: 'case-western.png',
+          imageName: 'imgs/case-western.png',
           location: 'Cleveland, OH',
           duration: 'July 2017 - Present',
           tasks: [

@@ -30,7 +30,7 @@ export default {
       projects: [
         {
           name: 'Dusty Codes',
-          imageName: 'code.jpg',
+          imageName: 'imgs/code.jpg',
           stack: 'Web Portfolio & Documentation App',
           summary: 'This current web page',
           description: 'This is an app that both shares my portfolio info as well as Documentation for my modules',
@@ -55,7 +55,7 @@ export default {
         },
         {
           name: 'OTS 3.0',
-          imageName: 'vw.png',
+          imageName: 'imgs/vw.png',
           stack: 'Online Tire Store for multiple OEMs',
           summary: 'This current web page',
           description: 'A online store for dealership OEMs under multiple skins (The preview is VW)',
@@ -97,7 +97,7 @@ export default {
         },
         {
           name: 'Dusty-Fns',
-          imageName: 'v.png',
+          imageName: 'imgs/v.png',
           stack: 'JavaScript Pure Functional Library',
           summary: 'A library of single type pure functions',
           description: 'Utility library containing pure functions that focus on working with single type values',
@@ -111,7 +111,7 @@ export default {
         },
         {
           name: 'Phone-Fns',
-          imageName: 'v.png',
+          imageName: 'imgs/v.png',
           stack: 'JavaScript Library',
           summary: 'A functional JavaScript Library',
           description: 'A library of functional helpers for handling and manipulating phone numbers',
