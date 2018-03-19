@@ -37,7 +37,7 @@ export default {
           img: 'js.jpg',
           link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
           summary: 'I take pride in JavaScript being one of my strongest fields, I strive for clean and standardized JS practices.',
-          versions: ['ES2014', 'ES2015', 'ES2016', 'ES2017'],
+          versions: ['ES2015', 'ES2016', 'ES2017'],
           level: 'Expert',
           libraries: [
             {
