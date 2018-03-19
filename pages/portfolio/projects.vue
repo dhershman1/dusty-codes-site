@@ -104,7 +104,7 @@ export default {
           link: '/dusty-fns',
           technologies: [
             {
-              name: 'JavaScript ES6 & ES7',
+              name: 'JavaScript ES2015 & ES2016',
               link: 'http://www.ecma-international.org/ecma-262/6.0/'
             }
           ]
@@ -118,7 +118,7 @@ export default {
           link: '/phone-fns',
           technologies: [
             {
-              name: 'JavaScript ES6 & ES7',
+              name: 'JavaScript ES2015 & ES2016',
               link: 'http://www.ecma-international.org/ecma-262/6.0/'
             }
           ]
