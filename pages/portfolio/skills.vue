@@ -151,7 +151,7 @@ export default {
           img: 'node.png',
           summary: 'I became facinated with Node once I learned about it and I like to think my abilities have grown largely and at a very fast pace.',
           versions: ['0.10.x', '0.12.x', '4.x', '6.x', '8.x'],
-          level: 'Expert',
+          level: 'Professional',
           frameworks: [
             {
               name: 'Hapi',
@@ -160,7 +160,7 @@ export default {
               type: 'HTTP',
               summary: 'Hapi.js is a http framework for node servers, it offers an extremely stable and easy to use system for your backend server.',
               versions: ['11.x', '12.x', '13.x', '14.x', '15.x', '16.x', '17.x'],
-              level: 'Expert'
+              level: 'Professional'
             },
             {
               name: 'Express',
@@ -169,7 +169,7 @@ export default {
               img: 'express.png',
               summary: 'Express is an http framework for node servers. It\'s very lightweight and pretty speedy for everything it is.',
               versions: ['2.x', '3.x', '4.x'],
-              level: 'Professional'
+              level: 'Intermediate'
             },
             {
               name: 'Koa',
@@ -178,7 +178,7 @@ export default {
               type: 'HTTP',
               summary: 'Koa is an http framework for node servers. It\'s another lightweight and extremely performant framework for server code.',
               versions: ['1.x', '2.x'],
-              level: 'Professional'
+              level: 'Intermediate'
             },
             {
               name: 'Tape',
@@ -215,7 +215,7 @@ export default {
               img: 'webpack.png',
               summary: 'Webpack is a reliable and fairly large build tool for handling web application build processes.',
               versions: ['2.x', '3.x', '4.x'],
-              level: 'Professional'
+              level: 'Intermediate'
             },
             {
               name: 'Rollup',
@@ -223,7 +223,7 @@ export default {
               img: 'rollup.jpg',
               summary: 'Rollup is a newer modern build tool that can easily work with current standard and modern JavaScripts for efficient and optimized builds, it\'s usually my go to tool for libraries.',
               versions: ['0.4X.x', '0.5X.x'],
-              level: 'Professional'
+              level: 'Intermediate'
             }
           ]
         },
