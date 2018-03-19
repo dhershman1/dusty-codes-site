@@ -35,11 +35,11 @@ export default {
           location: 'Cleveland, OH',
           duration: 'May 2014 - Present',
           tasks: [
-            'Managed ColdFusion & JavaScript development projects',
-            'Managed migration and creation of new projects in Node.js',
-            'Worked in B2B, B2C, & SaaS style of workflow',
-            'Lead maintainer of the entire companies IT Standards and Guidelines',
-            'Worked on and released several large scale projects'
+            'Worked in both Coldfusion and JavaScript applications',
+            'Working heavily in projects using Node.js and newer technologies',
+            'Working in a B2C style of web application',
+            'Also have worked on B2B style applications in the past',
+            'Created the ground work for a lot of the IT standards and guidelines'
           ]
         },
         {
