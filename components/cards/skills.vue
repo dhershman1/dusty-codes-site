@@ -12,7 +12,6 @@
           <v-flex xs8>
             <img
               :src="'/imgs/' + img"
-              class="pr-2"
               :alt="img">
             <div>
               <h3>{{ name }}</h3>
@@ -37,106 +36,6 @@
         </v-layout>
       </v-container>
     </v-card-title>
-
-    <div v-if="libraries">
-      <v-divider></v-divider>
-      <v-card-text>
-        <div>
-          <h2 class="pb-2">{{ name }} Libraries</h2>
-          <v-card class="ml-5" v-for="f in libraries" :key="f.name">
-            <v-card-actions v-if="f.link">
-              <v-spacer></v-spacer>
-              <a :href="f.link" target="_blank" class="project-link">
-                <v-icon color="primary">launch</v-icon>
-              </a>
-            </v-card-actions>
-            <v-card-title primary-title>
-              <v-container fluid grid-list-lg>
-                <v-layout row>
-                  <v-flex xs8>
-                    <img
-                      :src="'/imgs/' + f.img"
-                      class="pr-2"
-                      :alt="f.img">
-                    <div>
-                      <h3>{{ f.name }}</h3>
-                      <div>
-                        {{ f.summary }}
-                        <strong><p class="mb-0" v-if="f.type">Type: {{ f.type }}</p>
-                        <p>Versions: {{ f.versions.join(', ') }}</p></strong>
-                      </div>
-                    </div>
-                  </v-flex>
-                  <v-flex xs4>
-                    <div class="pl-5">
-                      <v-progress-circular
-                        :size="120"
-                        :width="15"
-                        :rotate="360"
-                        :value="convertLvl(f.level)"
-                        :color="getColor(f.level)">
-                        {{ f.level }}
-                      </v-progress-circular>
-                    </div>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-card-title>
-            <v-divider></v-divider>
-          </v-card>
-        </div>
-      </v-card-text>
-    </div>
-
-    <div v-if="frameworks">
-      <v-divider></v-divider>
-      <v-card-text>
-        <div>
-          <h2 class="pb-2">{{ name }} Frameworks</h2>
-          <v-card class="ml-5" v-for="f in frameworks" :key="f.name">
-            <v-card-actions v-if="f.link">
-              <v-spacer></v-spacer>
-              <a :href="f.link" target="_blank" class="project-link">
-                <v-icon color="primary">launch</v-icon>
-              </a>
-            </v-card-actions>
-            <v-card-title primary-title>
-              <v-container fluid grid-list-lg>
-                <v-layout row>
-                  <v-flex xs8>
-                    <img
-                      :src="'/imgs/' + f.img"
-                      class="pr-2"
-                      :alt="f.img">
-                    <div>
-                      <h3>{{ f.name }}</h3>
-                      <div>
-                        {{ f.summary }}
-                        <strong><p class="mb-0" v-if="f.type">Type: {{ f.type }}</p>
-                        <p>Versions: {{ f.versions.join(', ') }}</p></strong>
-                      </div>
-                    </div>
-                  </v-flex>
-                  <v-flex xs4>
-                    <div class="pl-5">
-                      <v-progress-circular
-                        :size="120"
-                        :width="15"
-                        :rotate="360"
-                        :value="convertLvl(f.level)"
-                        :color="getColor(f.level)">
-                        {{ f.level }}
-                      </v-progress-circular>
-                    </div>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-card-title>
-            <v-divider></v-divider>
-          </v-card>
-        </div>
-      </v-card-text>
-    </div>
   </v-card>
 </template>
 
@@ -192,12 +91,6 @@ export default {
     },
     level() {
       return this.info.level;
-    },
-    libraries() {
-      return this.info.libraries;
-    },
-    frameworks() {
-      return this.info.frameworks;
     },
     link() {
       return this.info.link;
