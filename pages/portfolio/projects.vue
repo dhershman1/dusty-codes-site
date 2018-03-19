@@ -25,6 +25,9 @@ export default {
     'page-header': pageHeader,
     'project-card': projCard
   },
+  head: {
+    title: 'Projects'
+  },
   data() {
     return {
       projects: [

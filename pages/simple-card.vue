@@ -178,6 +178,9 @@ export default {
     'module-header': header,
     'page': pageTemplate
   },
+  head: {
+    title: 'Simple Card'
+  },
   data() {
     return {
       name,

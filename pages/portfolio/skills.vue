@@ -29,6 +29,9 @@ export default {
     'page-header': pageHeader,
     'skill-card': skillCard
   },
+  head: {
+    title: 'Skills'
+  },
   data() {
     return {
       skills: [

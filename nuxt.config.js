@@ -8,14 +8,14 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'modules-demo',
+    title: 'Dusty Codes',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport',
         content: 'width=device-width, initial-scale=1' },
       { hid: 'description',
         name: 'description',
-        content: 'Demo site for my front end libraries' }
+        content: 'My Portfolio and documentation site for all my projects' }
     ],
     link: [
       { rel: 'icon',

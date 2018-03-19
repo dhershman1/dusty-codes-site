@@ -122,6 +122,9 @@ export default {
     'module-header': header,
     'page': pageTemplate
   },
+  head: {
+    title: 'Phone Fns'
+  },
   data() {
     return {
       name,

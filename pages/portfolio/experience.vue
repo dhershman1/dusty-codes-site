@@ -25,6 +25,9 @@ export default {
     'page-header': pageHeader,
     'exp-card': expCard
   },
+  head: {
+    title: 'Experience'
+  },
   data() {
     return {
       jobs: [

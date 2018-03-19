@@ -56,7 +56,8 @@
             <v-flex sm12 md6>
               <h1>Return</h1>
               <p>
-                Depending on how it's being used, Simply Valid will return an object containing some kind of the following
+                Depending on how it's being used, Simply Valid will return an object containing some
+                kind of the following
               </p>
               <h3>Passing Returns</h3>
               <pre v-highlightjs>
@@ -111,6 +112,9 @@ export default {
   components: {
     'module-header': header,
     'page': pageTemplate
+  },
+  head: {
+    title: 'Simply Valid'
   },
   data() {
     return {

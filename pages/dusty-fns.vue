@@ -95,6 +95,9 @@ export default {
     'module-header': header,
     'page': pageTemplate
   },
+  head: {
+    title: 'Dusty Fns'
+  },
   data() {
     return {
       name,
