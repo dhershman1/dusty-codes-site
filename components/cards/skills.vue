@@ -1,25 +1,22 @@
 <template>
-  <v-card>
+  <v-card height="100%">
     <v-card-actions v-if="link">
       <v-spacer></v-spacer>
       <a :href="link" target="_blank" class="project-link">
         <v-icon color="primary">launch</v-icon>
       </a>
     </v-card-actions>
-    <v-card-title primary-title>
-      <v-flex xs12>
+    <v-card-title class="card__main" primary-title>
+      <v-flex xs8>
         <img
           :src="'/imgs/' + img"
           :alt="img">
         <div>
           <h3>{{ name }}</h3>
-          <div>
-            {{ summary }}
-            <p><strong>Versions: {{ versions }}</strong></p>
-          </div>
+          <p><strong>Versions: {{ versions }}</strong></p>
         </div>
       </v-flex>
-      <v-flex xs12 sm12 md4>
+      <v-flex xs4>
         <div>
           <v-progress-circular
             :size="150"
@@ -32,6 +29,11 @@
         </div>
       </v-flex>
     </v-card-title>
+    <v-card-text>
+      <div>
+        {{ summary }}
+      </div>
+    </v-card-text>
   </v-card>
 </template>
 
@@ -96,6 +98,9 @@ export default {
 </script>
 
 <style scoped>
+.card__main {
+  padding-top: 0;
+}
 img {
   max-width: 100px;
 }

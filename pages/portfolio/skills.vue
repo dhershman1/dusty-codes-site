@@ -6,9 +6,9 @@
           :title="'Skills'"
           :summary="'A list of skills and my level of knowledge in them'"></page-header>
       </v-flex>
-      <!-- <h2>Skills is currently a work in progress</h2> -->
       <v-flex
-        xs4
+        xs12
+        md4
         v-for="s in skills"
         :key="s.name">
         <skill-card :info="s"></skill-card>
