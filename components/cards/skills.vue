@@ -7,7 +7,7 @@
       </a>
     </v-card-actions>
     <v-card-title class="card__main" primary-title>
-      <v-flex xs8>
+      <v-flex xs7>
         <img
           :src="'/imgs/' + img"
           :alt="img">
@@ -16,12 +16,11 @@
           <p><strong>Versions: {{ versions }}</strong></p>
         </div>
       </v-flex>
-      <v-flex md12 lg4>
+      <v-flex md12 lg5>
         <div>
           <v-progress-circular
             :size="150"
             :width="15"
-            :rotate="360"
             :value="convertLvl(level)"
             :color="getColor(level)">
             {{ level }}
