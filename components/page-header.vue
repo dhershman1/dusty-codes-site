@@ -2,13 +2,18 @@
   <v-card color="indigo" dark>
     <v-card-title primary-title>
       <div>
-        <h3>{{ title }}</h3>
+        <h1>
+          <v-btn icon exact :to="'/portfolio'">
+            <v-icon v-html="'chevron_left'"></v-icon>
+          </v-btn>
+          {{ title }}
+        </h1>
       </div>
     </v-card-title>
 
     <v-card-text>
       <div>
-        {{ summary }}
+        <p>{{ summary }}</p>
       </div>
     </v-card-text>
   </v-card>
