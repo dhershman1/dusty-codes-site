@@ -7,34 +7,30 @@
       </a>
     </v-card-actions>
     <v-card-title primary-title>
-      <v-container fluid grid-list-lg>
-        <v-layout row>
-          <v-flex xs8>
-            <img
-              :src="'/imgs/' + img"
-              :alt="img">
-            <div>
-              <h3>{{ name }}</h3>
-              <div>
-                {{ summary }}
-                <p><strong>Versions: {{ versions }}</strong></p>
-              </div>
-            </div>
-          </v-flex>
-          <v-flex xs4>
-            <div>
-              <v-progress-circular
-                :size="150"
-                :width="15"
-                :rotate="360"
-                :value="convertLvl(level)"
-                :color="getColor(level)">
-                {{ level }}
-              </v-progress-circular>
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-container>
+      <v-flex xs12>
+        <img
+          :src="'/imgs/' + img"
+          :alt="img">
+        <div>
+          <h3>{{ name }}</h3>
+          <div>
+            {{ summary }}
+            <p><strong>Versions: {{ versions }}</strong></p>
+          </div>
+        </div>
+      </v-flex>
+      <v-flex xs12 sm12 md4>
+        <div>
+          <v-progress-circular
+            :size="150"
+            :width="15"
+            :rotate="360"
+            :value="convertLvl(level)"
+            :color="getColor(level)">
+            {{ level }}
+          </v-progress-circular>
+        </div>
+      </v-flex>
     </v-card-title>
   </v-card>
 </template>
