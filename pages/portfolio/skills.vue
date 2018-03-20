@@ -57,7 +57,7 @@ export default {
           img: 'elm.png',
           summary: 'Elm is a language that compiles down to JS but has a strictly typed system built in and I fell in love with it after a friend showed it to me and I played around with it for a while. Though still a newbie to it I hope to practice it as much as I have practiced JavaScript itself.',
           versions: ['Latest'],
-          level: 'Beginner'
+          level: 'Novice'
         },
         {
           name: 'HTML',
@@ -121,7 +121,7 @@ export default {
           img: 'rollup.jpg',
           summary: 'Rollup is a newer modern build tool that can easily work with current standard and modern JavaScripts for efficient and optimized builds, it\'s usually my go to tool for libraries.',
           versions: ['0.4X.x', '0.5X.x'],
-          level: 'Intermediate'
+          level: 'Professional'
         },
         {
           name: 'Sass',
