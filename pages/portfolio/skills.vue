@@ -48,7 +48,7 @@ export default {
           link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
           img: 'css.jpg',
           summary: 'CSS is the backbone to any sites style and theme which I have done a lot to become as skilled with it and I hope to continue expanding my abilities.',
-          versions: ['CSS1', 'CSS2', 'CSS3'],
+          versions: ['CSS2', 'CSS3'],
           level: 'Intermediate'
         },
         {

@@ -7,16 +7,15 @@
       </a>
     </v-card-actions>
     <v-card-title class="card__main" primary-title>
-      <v-flex xs7>
+      <v-flex xs5 md5 lg7>
         <img
           :src="'/imgs/' + img"
           :alt="img">
         <div>
           <h3>{{ name }}</h3>
-          <p><strong>Versions: {{ versions }}</strong></p>
         </div>
       </v-flex>
-      <v-flex md12 lg5>
+      <v-flex xs7 md7 lg5>
         <div>
           <v-progress-circular
             :size="150"
@@ -30,6 +29,7 @@
     </v-card-title>
     <v-card-text>
       <div>
+        <p><strong>Versions: {{ versions }}</strong></p>
         {{ summary }}
       </div>
     </v-card-text>
