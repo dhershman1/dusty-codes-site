@@ -16,7 +16,7 @@
           <p><strong>Versions: {{ versions }}</strong></p>
         </div>
       </v-flex>
-      <v-flex xs12 md4>
+      <v-flex md12 lg4>
         <div>
           <v-progress-circular
             :size="150"
