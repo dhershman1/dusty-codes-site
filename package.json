@@ -17,9 +17,9 @@
     "highlight.js": "9.12.0",
     "nuxt": "1.4.0",
     "phone-fns": "file:phone-fns-1.0.0.tgz",
-    "simple-card": "2.0.0",
+    "simple-card": "2.0.1",
     "simply_valid": "file:simply_valid-3.2.2.tgz",
-    "vuetify": "1.0.8"
+    "vuetify": "1.0.10"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
