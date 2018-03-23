@@ -5,9 +5,9 @@
       fixed
       light
       app>
-      <v-toolbar-side-icon @click="navDrawer = !navDrawer" class="hidden-md-and-up"></v-toolbar-side-icon>
+      <v-toolbar-side-icon @click="navDrawer = !navDrawer"></v-toolbar-side-icon>
       <v-toolbar-title class="mr-1" v-text="title" />
-      <v-toolbar-items class="hidden-sm-and-down">
+      <!-- <v-toolbar-items class="hidden-sm-and-down">
         <v-btn
           flat
           exact
@@ -41,23 +41,60 @@
           :to="'/dusty-fns'">
           Dusty Fns
         </v-btn>
-      </v-toolbar-items>
+      </v-toolbar-items> -->
     </v-toolbar>
     <v-navigation-drawer
       temporary
       absolute
-      v-model="navDrawer"
-      class="hidden-md-and-up">
+      v-model="navDrawer">
+      <v-toolbar flat light class="transparent">
+        <v-list class="pa-0">
+          <v-list-tile avatar>
+            <v-list-tile-content>
+              <v-list-tile-title>Main</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-toolbar>
+      <v-divider></v-divider>
       <v-list>
         <v-list-tile
           exact
-          v-for="item in navItems"
-          :key="item. title"
+          v-for="item in navItems.main"
+          :key="item.title"
           :to="item.to"
           @click="navDrawer = false">
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-            <v-list-tile-sub-title>{{ item.description }}</v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+      <v-divider></v-divider>
+      <v-toolbar flat light class="transparent">
+        <v-list class="pa-0">
+          <v-list-tile avatar>
+            <v-list-tile-content>
+              <v-list-tile-title>Documentation</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-toolbar>
+      <v-divider></v-divider>
+      <v-list>
+        <v-list-tile
+          exact
+          v-for="item in navItems.documentation"
+          :key="item.title"
+          :to="item.to"
+          @click="navDrawer = false">
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -97,38 +134,42 @@ export default {
       fab: false,
       title: 'Dusty Codes',
       navDrawer: false,
-      navItems: [
-        {
-          title: 'Home',
-          to: '/',
-          description: 'Go back to the home page'
-        },
-        {
-          title: 'Portfolio',
-          to: '/portfolio',
-          description: 'Go to the Portfolio page'
-        },
-        {
-          title: 'Simply Valid',
-          to: '/simply_valid',
-          description: 'A simple data driven validation library'
-        },
-        {
-          title: 'Simple Card',
-          to: '/simple-card',
-          description: 'A simple luhn credit card validation module'
-        },
-        {
-          title: 'Phone Fns',
-          to: '/phone-fns',
-          description: 'A small set of phone helper functions'
-        },
-        {
-          title: 'Dusty Fns',
-          to: '/dusty-fns',
-          description: 'A small library of functional helpers'
-        }
-      ]
+      navItems: {
+        main: [
+          {
+            title: 'Home',
+            to: '/',
+            icon: 'dashboard'
+          },
+          {
+            title: 'Portfolio',
+            to: '/portfolio',
+            icon: 'pages'
+          }
+        ],
+        documentation: [
+          {
+            title: 'Simply Valid',
+            to: '/simply_valid',
+            icon: 'question_answer'
+          },
+          {
+            title: 'Simple Card',
+            to: '/simple-card',
+            icon: 'credit_card'
+          },
+          {
+            title: 'Phone Fns',
+            to: '/phone-fns',
+            icon: 'contact_phone'
+          },
+          {
+            title: 'Dusty Fns',
+            to: '/dusty-fns',
+            icon: 'extension'
+          }
+        ]
+      }
     };
   },
   methods: {
