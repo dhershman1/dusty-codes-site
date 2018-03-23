@@ -35,6 +35,28 @@
                 </v-card-text>
               </v-card>
             </v-flex>
+            <v-flex xs12 md3>
+              <v-card class="card-nav" height="100%" :to="'/simple-card'">
+                <v-card-title><strong>Simple Card</strong></v-card-title>
+                <v-card-text>
+                  <p>
+                    Documentation for the simple card library/module
+                    for credit card validation using the luhn algorithm
+                  </p>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex xs12 md3>
+              <v-card class="card-nav" height="100%" :to="'/simply_valid'">
+                <v-card-title><strong>Simply Valid</strong></v-card-title>
+                <v-card-text>
+                  <p>
+                    Documentation for my simply valid library/module
+                    for plug and play data driven validation
+                  </p>
+                </v-card-text>
+              </v-card>
+            </v-flex>
           </v-layout>
         </v-container>
       </v-card>

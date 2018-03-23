@@ -5,49 +5,17 @@
       fixed
       light
       app>
-      <v-toolbar-side-icon @click="navDrawer = !navDrawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon @click="openNav"></v-toolbar-side-icon>
       <v-toolbar-title class="mr-1" v-text="title" />
-      <!-- <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn
-          flat
-          exact
-          :to="'/'">
-          Home
-        </v-btn>
-        <v-btn
-          flat
-          exact
-          :to="'/portfolio'">
-          Portfolio
-        </v-btn>
-        <v-btn
-          flat
-          exact
-          :to="'/simply_valid'">
-          Simply Valid
-        </v-btn>
-        <v-btn
-          flat
-          :to="'/simple-card'">
-          Simple Card
-        </v-btn>
-        <v-btn
-          flat
-          :to="'/phone-fns'">
-          Phone Fns
-        </v-btn>
-        <v-btn
-          flat
-          :to="'/dusty-fns'">
-          Dusty Fns
-        </v-btn>
-      </v-toolbar-items> -->
     </v-toolbar>
     <v-navigation-drawer
       temporary
       absolute
       v-model="navDrawer">
-      <v-toolbar flat light class="transparent">
+      <v-toolbar
+        flat
+        light
+        class="transparent">
         <v-list class="pa-0">
           <v-list-tile avatar>
             <v-list-tile-content>
@@ -73,7 +41,10 @@
         </v-list-tile>
       </v-list>
       <v-divider></v-divider>
-      <v-toolbar flat light class="transparent">
+      <v-toolbar
+        flat
+        light
+        class="transparent">
         <v-list class="pa-0">
           <v-list-tile avatar>
             <v-list-tile-content>
@@ -187,12 +158,20 @@ export default {
     toTop() {
       this.$router.push({hash: ''});
       window.scrollTo(0, 0);
+    },
+    openNav() {
+      this.navDrawer = !this.navDrawer;
+      this.toTop();
     }
   }
 };
 </script>
 
 <style>
+
+.nav-fixed {
+  position: 'fixed';
+}
 
 .title-btn {
   font-size: 20px;
