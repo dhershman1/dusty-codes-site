@@ -100,7 +100,7 @@ export default {
         },
         {
           name: 'Dusty-Fns',
-          imageName: 'imgs/v.png',
+          imageName: 'imgs/logo.png',
           stack: 'JavaScript Pure Functional Library',
           summary: 'A library of single type pure functions',
           description: 'Utility library containing pure functions that focus on working with single type values',
@@ -114,7 +114,7 @@ export default {
         },
         {
           name: 'Phone-Fns',
-          imageName: 'imgs/v.png',
+          imageName: 'imgs/logo.png',
           stack: 'JavaScript Library',
           summary: 'A functional JavaScript Library',
           description: 'A library of functional helpers for handling and manipulating phone numbers',
