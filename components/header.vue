@@ -2,7 +2,8 @@
   <v-toolbar color="indigo" dark>
     <v-toolbar-title>{{ title }} v{{ version }}</v-toolbar-title>
     <v-toolbar-items>
-      <v-btn flat @click="$emit('goBack')"> <v-icon v-html="'chevron_left'"></v-icon> Back</v-btn>
+      <v-btn flat @click="$emit('goInfo')"> <v-icon v-html="'info'"></v-icon> Info</v-btn>
+      <v-btn flat @click="$emit('goDocs')"> <v-icon v-html="'description'"></v-icon> Documentation</v-btn>
     </v-toolbar-items>
   </v-toolbar>
 </template>

@@ -1,30 +1,43 @@
 <template>
-  <v-layout row wrap>
-    <v-btn
-      fab
-      icon
-      dark
-      small
-      left
-      color="indigo"
-      class="hidden-md-and-up"
-      @click="drawer = !drawer">
-      <v-icon v-html="!drawer ? 'chevron_right' : 'chevron_left'"></v-icon>
-    </v-btn>
-    <v-flex sm1 md3>
-      <methods
-        :back="back"
-        :drawer="drawer"
-        :docs="docs"
-        @switchMethod="switchMethod" />
-    </v-flex>
-    <v-flex sm12 md9>
-      <transition name="slide-fade" mode="out-in">
-        <slot v-if="!hideBase" name="base"></slot>
-        <code-block v-else :selected-method="selectedMethod" />
-      </transition>
-    </v-flex>
-  </v-layout>
+  <v-container fluid>
+    <transition name="slide-fade" mode="out-in">
+      <v-layout
+        row
+        wrap
+        :key="'docs'"
+        v-if="display === 'docs'">
+        <v-btn
+          fab
+          icon
+          dark
+          small
+          left
+          color="indigo"
+          class="hidden-md-and-up"
+          @click="drawer = !drawer">
+          <v-icon v-html="!drawer ? 'chevron_right' : 'chevron_left'"></v-icon>
+        </v-btn>
+        <v-flex sm1 md3>
+          <methods
+            :drawer="drawer"
+            :docs="docs"
+            @switchMethod="switchMethod" />
+        </v-flex>
+        <v-flex sm12 md9>
+          <code-block :selected-method="selectedMethod" />
+        </v-flex>
+      </v-layout>
+      <v-layout
+        row
+        wrap
+        :key="'info'"
+        v-else>
+        <v-flex sm12>
+          <slot name="base"></slot>
+        </v-flex>
+      </v-layout>
+    </transition>
+  </v-container>
 </template>
 
 <script>
@@ -39,9 +52,9 @@ export default {
     'code-block': codeBlock
   },
   props: {
-    back: {
-      type: Boolean,
-      default: false
+    display: {
+      type: String,
+      default: 'info'
     },
     docs: {
       type: Array,
@@ -53,13 +66,8 @@ export default {
       drawer: false,
       miniVariant: true,
       methodSelected: false,
-      selectedMethod: {}
+      selectedMethod: this.docs[0]
     };
-  },
-  computed: {
-    hideBase() {
-      return !isEmpty(this.selectedMethod);
-    }
   },
   methods: {
     switchMethod(item) {
@@ -67,11 +75,6 @@ export default {
       this.miniVariant = true;
       this.methodSelected = true;
       this.selectedMethod = find(({ title }) => title === item.title, this.docs);
-    }
-  },
-  watch: {
-    back() {
-      this.selectedMethod = {};
     }
   }
 };

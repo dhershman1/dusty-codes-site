@@ -4,12 +4,13 @@
       <module-header
         :title="name"
         :version="version"
-        @goBack="back = !back"></module-header>
+        @goDocs="currDisplay = 'docs'"
+        @goInfo="currDisplay = 'info'"></module-header>
       <v-card-text>
         <p>
           Dusty-fns is a tiny library of functional operators and utility helper functionality
         </p>
-        <page :docs="docs" :back="back">
+        <page :docs="docs" :display="currDisplay">
           <v-layout row slot="base">
             <v-flex sm12 md6>
               <h1>Usage</h1>
@@ -103,7 +104,7 @@ export default {
       name,
       version,
       docs,
-      back: false
+      currDisplay: 'info'
     };
   }
 };

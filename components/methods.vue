@@ -78,17 +78,13 @@ export default {
     docs: {
       type: Array,
       default: () => []
-    },
-    back: {
-      type: Boolean,
-      default: false
     }
   },
   data() {
     return {
       clipped: false,
       search: '',
-      activeItem: '',
+      activeItem: this.docs[0].title,
       filteredDocs: this.docs
     };
   },
@@ -107,9 +103,6 @@ export default {
       } else {
         this.filteredDocs = this.methodList.filter(({ title }) => fuzzysearch(title, val));
       }
-    },
-    back() {
-      this.activeItem = '';
     }
   },
   computed: {

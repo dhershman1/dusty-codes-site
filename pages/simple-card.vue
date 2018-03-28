@@ -4,13 +4,14 @@
       <module-header
         :title="name"
         :version="version"
-        @goBack="back = !back"></module-header>
+        @goDocs="currDisplay = 'docs'"
+        @goInfo="currDisplay = 'info'"></module-header>
       <v-card-text>
         <p>
           Simple card is a credit card validation system that uses a luhn algorithm to strictly ensure the data passed
           in are valid card numbers, while also giving you extra bits of information to help make life a bit easier.
         </p>
-        <page :docs="docs" :back="back">
+        <page :docs="docs" :display="currDisplay">
           <v-layout row slot="base">
             <v-flex sm12 md12>
               <h1>Return</h1>
@@ -53,7 +54,7 @@ export default {
       name,
       version,
       docs,
-      back: false
+      currDisplay: 'info'
     };
   }
 };

@@ -4,13 +4,14 @@
       <module-header
         :title="name"
         :version="version"
-        @goBack="back = !back"></module-header>
+        @goDocs="currDisplay = 'docs'"
+        @goInfo="currDisplay = 'info'"></module-header>
       <v-card-text>
         <p>
           Simply Valid is a data driven validation library with built in
           functionality for easy checks to make sure data is valid before going anywhere.
         </p>
-        <page :docs="docs" :back="back">
+        <page :docs="docs" :display="currDisplay">
           <v-layout row slot="base">
             <v-flex sm12 md6>
               <h1>Schema</h1>
@@ -121,7 +122,7 @@ export default {
       name,
       version,
       docs,
-      back: false
+      currDisplay: 'info'
     };
   }
 };

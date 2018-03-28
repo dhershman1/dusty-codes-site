@@ -1,5 +1,5 @@
 {
-  "name": "modules-demo",
+  "name": "dusty-demos",
   "version": "1.0.3",
   "description": "Demo site for my front end libraries",
   "author": "dhershman <dhershman@dealertire.com>",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "axios": "0.18.0",
-    "dusty-fns": "file:dusty-fns-2.0.2.tgz",
+    "dusty-fns": "2.1.0",
     "highlight.js": "9.12.0",
     "nuxt": "1.4.0",
     "phone-fns": "file:phone-fns-1.0.0.tgz",
