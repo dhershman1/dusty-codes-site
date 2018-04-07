@@ -12,27 +12,35 @@ module.exports = {
     title: 'Dusty Codes',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport',
-        content: 'width=device-width, initial-scale=1' },
-      { hid: 'description',
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
         name: 'description',
-        content: 'My Portfolio and documentation site for all my projects' }
+        content: 'My Portfolio and documentation site for all my projects'
+      }
     ],
     link: [
-      { rel: 'icon',
+      {
+        rel: 'icon',
         type: 'image/x-icon',
-        href: '/imgs/favicon.ico' },
-      { rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
+        href: '/imgs/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      }
     ]
   },
-  plugins: [
-    '~/plugins/vuetify.js',
-    '~/plugins/directive.js'
-  ],
-  css: [
-    '~/assets/style/app.styl'
-  ],
+  plugins: ['~/plugins/vuetify.js', '~/plugins/directive.js'],
+  css: ['~/assets/style/app.styl'],
+
+  router: {
+    middleware: ['redirect']
+  },
 
   /*
   ** Customize the progress bar color
@@ -45,42 +53,50 @@ module.exports = {
   build: {
     babel: {
       plugins: [
-        ['transform-imports', {
-          'vuetify': {
-            'transform': 'vuetify/es5/components/${member}', // eslint-disable-line
-            'preventFullImport': true
-          },
-          'vuetify-directives': {
-            'transform': 'vuetify/es5/directives/${member}', // eslint-disable-line
-            'preventFullImport': true
+        [
+          'transform-imports',
+          {
+            'vuetify': {
+              transform: 'vuetify/es5/components/${member}', // eslint-disable-line
+              preventFullImport: true
+            },
+            'vuetify-directives': {
+              transform: 'vuetify/es5/directives/${member}', // eslint-disable-line
+              preventFullImport: true
+            }
           }
-        }]
+        ]
       ]
     },
-    vendor: [
-      '~/plugins/vuetify.js'
-    ],
+    vendor: ['~/plugins/vuetify.js'],
     extractCSS: true,
 
     /*
     ** Run ESLint on save
     */
-    extend(config, ctx) { // eslint-disable-line complexity
-      // if (ctx.dev && ctx.isClient) {
-      //   config.module.rules.push({
-      //     enforce: 'pre',
-      //     test: /\.(js|vue)$/,
-      //     loader: 'eslint-loader',
-      //     exclude: /(node_modules)/,
-      //     options: {
-      //       configFile: resolve('.eslintrc.js')
-      //     }
-      //   });
-      // }
+    extend(config, ctx) {
+      // eslint-disable-line complexity
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: {
+            configFile: resolve('.eslintrc.js')
+          }
+        });
+      }
       if (ctx.isServer) {
         config.externals = [
           nodeExternals({
-            whitelist: [/^vuetify/, 'phone-fns', 'dusty-fns', 'simply_valid', 'simple-card']
+            whitelist: [
+              /^vuetify/,
+              'phone-fns',
+              'dusty-fns',
+              'simply_valid',
+              'simple-card'
+            ]
           })
         ];
       }

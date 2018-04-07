@@ -12,7 +12,7 @@
           dark
           small
           left
-          color="indigo"
+          color="primary"
           class="hidden-md-and-up"
           @click="drawer = !drawer">
           <v-icon v-html="!drawer ? 'chevron_right' : 'chevron_left'"></v-icon>

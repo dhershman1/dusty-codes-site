@@ -7,7 +7,7 @@
       v-model="drawer"
       floating
       temporary>
-      <v-toolbar color="indigo" dark>
+      <v-toolbar color="primary" dark>
         <v-toolbar-title>Methods</v-toolbar-title>
         <v-text-field
           class="px-2"
@@ -36,7 +36,7 @@
     </v-navigation-drawer>
 
     <v-card class="hidden-sm-and-down">
-      <v-toolbar color="indigo" dark>
+      <v-toolbar color="primary" dark>
         <v-toolbar-title>Methods</v-toolbar-title>
         <v-text-field
           class="px-2"
@@ -128,7 +128,7 @@ export default {
 }
 
 .active {
-  background-color: #3F51B5;
+  background-color: #2b5994;
   color: #FFF;
 }
 

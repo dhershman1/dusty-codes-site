@@ -26,7 +26,8 @@ import Vue from 'vue';
 
 Vue.use(Vuetify, {
   theme: {
-    primary: '#9c27b0',
+    primary: '#2b5994',
+    darkpurp: '#9c27b0',
     accent: '#ce93d8',
     secondary: '#424242',
     info: '#0D47A1',

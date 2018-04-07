@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar color="indigo" dark>
+  <v-toolbar color="primary" dark>
     <v-toolbar-title class="mr-2">{{ title }} v{{ version }}</v-toolbar-title>
     <v-toolbar-items>
       <v-btn flat :class="{active: current === 'info'}" @click="switchTo('info')">
