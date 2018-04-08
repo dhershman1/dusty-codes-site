@@ -35,8 +35,8 @@
               </div>
             </v-card-title>
             <v-card-actions>
-              <v-btn exact :to="card.github">View Github</v-btn>
-              <v-btn exact :to="card.changelog">View Changelog</v-btn>
+              <v-btn target="_blank" :href="card.github">View Github</v-btn>
+              <v-btn target="_blank" :href="card.changelog">View Changelog</v-btn>
               <v-btn color="primary" dark :to="card.destination">Read Docs</v-btn>
             </v-card-actions>
           </v-card>
