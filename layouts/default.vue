@@ -235,12 +235,12 @@ export default {
 <style>
 
 #app {
-  background: linear-gradient(91deg, #e4fde1, #114b5f, #2b5994);
+  background: linear-gradient(143deg, #364156, #114b5f, #2b5994);
   background-size: 600% 600%;
 
-  -webkit-animation: bganimate 30s ease infinite;
-  -moz-animation: bganimate 30s ease infinite;
-  animation: bganimate 30s ease infinite;
+  -webkit-animation: bganimate 31s ease infinite;
+  -moz-animation: bganimate 31s ease infinite;
+  animation: bganimate 31s ease infinite;
 }
 
 .nav-fixed {
@@ -266,18 +266,18 @@ export default {
 }
 
  @-webkit-keyframes bganimate {
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
+    0%{background-position:20% 0%}
+    50%{background-position:81% 100%}
+    100%{background-position:20% 0%}
 }
 @-moz-keyframes bganimate {
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
+    0%{background-position:20% 0%}
+    50%{background-position:81% 100%}
+    100%{background-position:20% 0%}
 }
 @keyframes bganimate {
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
+    0%{background-position:20% 0%}
+    50%{background-position:81% 100%}
+    100%{background-position:20% 0%}
 }
 </style>
