@@ -10,10 +10,11 @@
         </v-layout>
       </v-container>
     </v-jumbotron>
-    <v-layout>
+    <v-layout wrap row>
       <v-flex
-        xs6
-        sm4
+        xs12
+        sm6
+        md4
         v-for="(card, i) in cards"
         :key="i">
         <info-card

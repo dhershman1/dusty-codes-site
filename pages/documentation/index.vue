@@ -1,45 +1,44 @@
 <template>
   <v-layout column>
-    <v-flex sm12>
-      <v-jumbotron dark>
-        <v-container fill-height>
-          <v-layout align-center>
-            <v-flex text-xs-center>
-              <h3 class="display-3">Documentation</h3>
-              <h3>Click a button on a card to view that information of the module</h3>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-jumbotron>
-      <v-layout row wrap>
-        <v-flex
-          xs12
-          s6
-          md4
-          v-for="(card, i) in cards"
-          :key="i">
-          <v-card height="100%">
-            <v-toolbar color="primary" dark dense>
-              <v-toolbar-title>
-                {{ card.title }}
-              </v-toolbar-title>
-            </v-toolbar>
-            <v-card-title>
-              <div>
-                <badges :module="card.title.toLowerCase()" />
-                <br />
-                <h4 class="mt-2">{{ card.description }}</h4>
-              </div>
-            </v-card-title>
-            <v-card-actions>
-              <v-btn target="_blank" :href="card.github">View Github</v-btn>
-              <v-btn target="_blank" :href="card.changelog">View Changelog</v-btn>
-              <v-btn color="primary" dark :to="card.destination">Read Docs</v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-flex>
+    <v-jumbotron dark>
+      <v-container fill-height>
+        <v-layout align-center>
+          <v-flex text-xs-center>
+            <h3 class="hidden-sm-and-down display-3">Documentation</h3>
+            <h3 class="hidden-md-and-up display-2">Documentation</h3>
+            <h3>Click a button on a card to view that information of the module</h3>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-jumbotron>
+    <v-layout wrap row>
+      <v-flex
+        xs12
+        s6
+        md4
+        v-for="(card, i) in cards"
+        :key="i">
+        <v-card height="100%">
+          <v-toolbar color="primary" dark dense>
+            <v-toolbar-title>
+              {{ card.title }}
+            </v-toolbar-title>
+          </v-toolbar>
+          <v-card-title>
+            <div>
+              <badges :module="card.title.toLowerCase()" />
+              <br />
+              <h4 class="mt-2">{{ card.description }}</h4>
+            </div>
+          </v-card-title>
+          <v-card-actions>
+            <v-btn target="_blank" :href="card.github">View Github</v-btn>
+            <v-btn target="_blank" :href="card.changelog">View Changelog</v-btn>
+            <v-btn color="primary" dark :to="card.destination">Read Docs</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+    </v-layout>
   </v-layout>
 </template>
 

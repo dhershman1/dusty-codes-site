@@ -1,13 +1,6 @@
 <template>
   <v-app>
     <link rel="stylesheet" href="/atom-one-dark.css">
-    <!-- <v-toolbar
-      fixed
-      light
-      app>
-      <v-toolbar-side-icon @click="openNav"></v-toolbar-side-icon>
-      <v-toolbar-title class="mr-1" v-text="title" />
-    </v-toolbar> -->
     <v-navigation-drawer
       temporary
       absolute
@@ -109,9 +102,9 @@
             left
             top
             color="primary"
-            @click="navDrawer = true"
+            @click="openNav"
             title="Open the Navigation Drawer">
-            <v-icon>explore</v-icon>
+            <v-icon>menu</v-icon>
           </v-btn>
         </v-fab-transition>
         <nuxt />

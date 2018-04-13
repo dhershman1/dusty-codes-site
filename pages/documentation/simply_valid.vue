@@ -1,7 +1,7 @@
 <template>
   <v-layout column>
     <v-flex xs12>
-      <v-jumbotron dark height="200px">
+      <v-jumbotron dark height="275px">
         <v-container fill-height>
           <v-layout align-center>
             <v-flex text-xs-center>
@@ -22,7 +22,11 @@
         </v-container>
       </v-jumbotron>
       <transition name="slide-fade" mode="out-in">
-        <v-layout row v-if="currDisplay === 'info'" :key="'info'">
+        <v-layout
+          row
+          wrap
+          v-if="currDisplay === 'info'"
+          :key="'info'">
           <v-flex xs12 sm6>
             <v-card height="100%">
               <v-card-title>
