@@ -1,9 +1,6 @@
 <template>
   <v-layout column>
-    <v-jumbotron
-      src="/imgs/material.jpg"
-      :gradient="gradient"
-      dark>
+    <v-jumbotron dark>
       <v-container fill-height>
         <v-layout align-center>
           <v-flex text-xs-center>

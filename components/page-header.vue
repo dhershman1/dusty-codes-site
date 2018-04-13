@@ -1,5 +1,17 @@
 <template>
-  <v-card color="primary" dark>
+  <v-jumbotron dark height="200px">
+    <v-container fill-height>
+      <v-layout align-center>
+        <v-flex text-xs-center>
+          <h3 class="display-3">{{ title }}</h3>
+          <h3>
+            {{ summary }}
+          </h3>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-jumbotron>
+  <!-- <v-card color="primary" dark>
     <v-card-title primary-title>
       <div>
         <h1>
@@ -16,7 +28,7 @@
         <p>{{ summary }}</p>
       </div>
     </v-card-text>
-  </v-card>
+  </v-card> -->
 </template>
 
 <script>

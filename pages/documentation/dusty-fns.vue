@@ -1,89 +1,110 @@
 <template>
   <v-layout column>
-    <v-card>
-      <module-header
-        :title="name"
-        :version="version"
-        @goDocs="currDisplay = 'docs'"
-        @goInfo="currDisplay = 'info'"></module-header>
-      <v-card-text>
-        <badges :module="'dusty-fns'"></badges>
-        <br/>
-        <p>
-          Dusty-fns is a tiny library of functional operators and utility helper functionality
-        </p>
-        <page :docs="docs" :display="currDisplay">
-          <v-layout row slot="base">
-            <v-flex sm12 md6>
-              <h1>Usage</h1>
-              <p>
-                Standard Usage of the main dusty min file while being able to bring in the functionality individually
-                you can also bring in the entire library itself and access the functions from the
-                <code>dusty</code> Object. Example: <code>dusty.isEmpty()</code>
-              </p>
-              <h3>Standard JS</h3>
-              <pre v-highlightjs>
-                <code class="javascript">
-import dusty from 'dusty-fns';
-
-dusty.isEmpty({});
-                </code>
-              </pre>
-              <h3>CommonJS</h3>
-              <pre v-highlightjs>
-                <code class="javascript">
-const dusty = require('dusty-fns');
-
-dusty.isEmpty({});
-                </code>
-              </pre>
-              <h3>CDN</h3>
-              <pre v-highlightjs>
-                <code class="html">
-&lt;script src="https://cdn.jsdelivr.net/npm/dusty-fns@{{ version }}/dusty.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-  dusty.isEmpty({});
-&lt;/script&gt;
-                </code>
-              </pre>
+    <v-flex xs12>
+      <v-jumbotron dark height="200px">
+        <v-container fill-height>
+          <v-layout align-center>
+            <v-flex text-xs-center>
+              <h3 class="display-3">Dusty-Fns v{{ version }}</h3>
+              <badges :module="'dusty-fns'"></badges>
+              <h3>A tiny library of functional operators and utility helper functionality</h3>
+              <v-btn flat @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
+                <v-icon v-html="'info'"></v-icon> <h3>View Info</h3>
+              </v-btn>
+              <v-btn flat @click="currDisplay = 'methods'" v-else>
+                <v-icon v-html="'description'"></v-icon> <h3>View Methods</h3>
+              </v-btn>
             </v-flex>
-            <v-flex sm12 md6>
-              <h1>Split Methods</h1>
-              <p>
-                Each method is importable by itself or desturctured from the main object. The benefit to being split up
-                and importable individually is this helps out with tree shaking and only using the functionality you
-                need at that time.
-              </p>
-              <h3>Standard JS</h3>
-              <pre v-highlightjs>
+          </v-layout>
+        </v-container>
+      </v-jumbotron>
+      <transition name="slide-fade" mode="out-in">
+        <v-layout row v-if="currDisplay === 'info'" :key="'info'">
+          <v-flex xs12 md6>
+            <v-card height="100%">
+              <v-card-title>
+                <h1>Split Methods</h1>
+              </v-card-title>
+              <v-card-text>
+                <p>
+                  Each method is importable by itself or desturctured from the main object.
+                  The benefit to being split up
+                  and importable individually is this helps out with tree shaking and only using the functionality you
+                  need at that time.
+                </p>
+                <h3>Standard JS</h3>
+                <pre v-highlightjs>
                 <code class="javascript">
 import isEmpty from 'dusty-fns/isEmpty';
 
 isEmpty({});
                 </code>
-              </pre>
-              <h3>CommonJS</h3>
-              <pre v-highlightjs>
+                </pre>
+                <h3>CommonJS</h3>
+                <pre v-highlightjs>
                 <code class="javascript">
 const isEmpty = require('dusty-fns/isEmpty');
 
 isEmpty({});
                 </code>
-              </pre>
-              <h3>CDN</h3>
-              <pre v-highlightjs>
+                </pre>
+                <h3>CDN</h3>
+                <pre v-highlightjs>
                 <code class="html">
 &lt;script src="https://cdn.jsdelivr.net/npm/dusty-fns@{{ version }}/isEmpty/index.js"&gt;&lt;/script&gt;
 &lt;script&gt;
   isEmpty({});
 &lt;/script&gt;
                 </code>
-              </pre>
-            </v-flex>
-          </v-layout>
-        </page>
-      </v-card-text>
-    </v-card>
+                </pre>
+              </v-card-text>
+            </v-card>
+          </v-flex>
+          <v-flex xs12 md6>
+            <v-card>
+              <v-card-title>
+                <h1>Usage</h1>
+              </v-card-title>
+              <v-card-text>
+                <p>
+                  Standard Usage of the main dusty min file while being able to bring in the functionality individually
+                  you can also bring in the entire library itself and access the functions from the
+                  <code>dusty</code> Object. Example: <code>dusty.isEmpty()</code>
+                </p>
+                <h3>Standard JS</h3>
+                <pre v-highlightjs>
+                <code class="javascript">
+import dusty from 'dusty-fns';
+
+dusty.isEmpty({});
+                </code>
+                </pre>
+                <h3>CommonJS</h3>
+                <pre v-highlightjs>
+                <code class="javascript">
+const dusty = require('dusty-fns');
+
+dusty.isEmpty({});
+                </code>
+                </pre>
+                <h3>CDN</h3>
+                <pre v-highlightjs>
+                <code class="html">
+&lt;script src="https://cdn.jsdelivr.net/npm/dusty-fns@{{ version }}/dusty.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  dusty.isEmpty({});
+&lt;/script&gt;
+                </code>
+                </pre>
+              </v-card-text>
+            </v-card>
+          </v-flex>
+        </v-layout>
+        <v-layout row v-else :key="'docs'">
+          <method-docs :docs="docs"></method-docs>
+        </v-layout>
+      </transition>
+    </v-flex>
   </v-layout>
 </template>
 
@@ -91,13 +112,11 @@ isEmpty({});
 import { name, version } from 'dusty-fns/package.json';
 import badges from '../../components/badge';
 import docs from 'dusty-fns/docs.js';
-import header from '../../components/header';
-import pageTemplate from '../../components/page-template';
+import methodDocs from '../../components/method-docs';
 
 export default {
   components: {
-    'module-header': header,
-    'page': pageTemplate,
+    'method-docs': methodDocs,
     badges
   },
   head: {

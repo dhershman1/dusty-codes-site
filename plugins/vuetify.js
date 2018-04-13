@@ -28,8 +28,8 @@ Vue.use(Vuetify, {
   theme: {
     primary: '#2b5994',
     darkpurp: '#9c27b0',
-    accent: '#ce93d8',
-    secondary: '#424242',
+    accent: '#e4fde1',
+    secondary: '#114b5f',
     info: '#0D47A1',
     warning: '#ffb300',
     error: '#B71C1C',

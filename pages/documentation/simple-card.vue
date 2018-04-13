@@ -1,24 +1,36 @@
 <template>
   <v-layout column>
-    <v-card>
-      <module-header
-        :title="name"
-        :version="version"
-        @goDocs="currDisplay = 'docs'"
-        @goInfo="currDisplay = 'info'"></module-header>
-      <v-card-text>
-        <badges :module="'simple-card'"></badges>
-        <br/>
-        <p>
-          Simple card is a credit card validation system that uses a luhn algorithm to strictly ensure the data passed
-          in are valid card numbers, while also giving you extra bits of information to help make life a bit easier.
-        </p>
-        <page :docs="docs" :display="currDisplay">
-          <v-layout row slot="base">
-            <v-flex sm12 md12>
-              <h1>Return</h1>
-              <h3>Full Validation Return</h3>
-              <pre v-highlightjs>
+    <v-flex xs12>
+      <v-jumbotron dark height="200px">
+        <v-container fill-height>
+          <v-layout align-center>
+            <v-flex text-xs-center>
+              <h3 class="display-3">Simple-Card v{{ version }}</h3>
+              <badges :module="'simple-card'"></badges>
+              <h3>
+                A credit card validation system that uses a luhn algorithm to strictly ensure the data
+                is accurate and valid
+              </h3>
+              <v-btn flat @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
+                <v-icon v-html="'info'"></v-icon> <h3>View Info</h3>
+              </v-btn>
+              <v-btn flat @click="currDisplay = 'methods'" v-else>
+                <v-icon v-html="'description'"></v-icon> <h3>View Methods</h3>
+              </v-btn>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-jumbotron>
+      <transition name="slide-fade" mode="out-in">
+        <v-layout row v-if="currDisplay === 'info'" :key="'info'">
+          <v-flex xs12>
+            <v-card height="100%">
+              <v-card-title>
+                <h1>Return</h1>
+              </v-card-title>
+              <v-card-text>
+                <h3>Full Validation Return</h3>
+                <pre v-highlightjs>
                 <code class="javascript">
                   {
                     isValid: true,
@@ -28,12 +40,16 @@
                     match: 'cvn matches card type'
                   }
                 </code>
-              </pre>
-            </v-flex>
-          </v-layout>
-        </page>
-      </v-card-text>
-    </v-card>
+                </pre>
+              </v-card-text>
+            </v-card>
+          </v-flex>
+        </v-layout>
+        <v-layout row v-else :key="'docs'">
+          <method-docs :docs="docs"></method-docs>
+        </v-layout>
+      </transition>
+    </v-flex>
   </v-layout>
 </template>
 
@@ -41,13 +57,11 @@
 import { name, version } from 'simple-card/package.json';
 import badges from '../../components/badge';
 import docs from 'simple-card/docs.js';
-import header from '../../components/header';
-import pageTemplate from '../../components/page-template';
+import methodDocs from '../../components/method-docs';
 
 export default {
   components: {
-    'module-header': header,
-    'page': pageTemplate,
+    'method-docs': methodDocs,
     badges
   },
   head: {

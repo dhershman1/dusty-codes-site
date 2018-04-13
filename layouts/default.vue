@@ -1,13 +1,13 @@
 <template>
   <v-app>
     <link rel="stylesheet" href="/atom-one-dark.css">
-    <v-toolbar
+    <!-- <v-toolbar
       fixed
       light
       app>
       <v-toolbar-side-icon @click="openNav"></v-toolbar-side-icon>
       <v-toolbar-title class="mr-1" v-text="title" />
-    </v-toolbar>
+    </v-toolbar> -->
     <v-navigation-drawer
       temporary
       absolute
@@ -101,6 +101,19 @@
     </v-navigation-drawer>
     <v-content>
       <v-container grid-list-md fluid>
+        <v-fab-transition>
+          <v-btn
+            fab
+            dark
+            fixed
+            left
+            top
+            color="primary"
+            @click="navDrawer = true"
+            title="Open the Navigation Drawer">
+            <v-icon>explore</v-icon>
+          </v-btn>
+        </v-fab-transition>
         <nuxt />
         <v-fab-transition>
           <v-btn
@@ -109,10 +122,11 @@
             fixed
             right
             bottom
-            color="indigo"
+            color="primary"
             v-scroll="onScroll"
             v-show="fab"
-            @click="toTop">
+            @click="toTop"
+            title="Back to top">
             <v-icon>keyboard_arrow_up</v-icon>
           </v-btn>
         </v-fab-transition>
@@ -220,6 +234,15 @@ export default {
 
 <style>
 
+#app {
+  background: linear-gradient(91deg, #e4fde1, #114b5f, #2b5994);
+  background-size: 600% 600%;
+
+  -webkit-animation: bganimate 30s ease infinite;
+  -moz-animation: bganimate 30s ease infinite;
+  animation: bganimate 30s ease infinite;
+}
+
 .nav-fixed {
   position: 'fixed';
 }
@@ -240,5 +263,21 @@ export default {
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
+}
+
+ @-webkit-keyframes bganimate {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes bganimate {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes bganimate {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
 }
 </style>
