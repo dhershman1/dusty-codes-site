@@ -6,13 +6,12 @@ This  is the main site for demoing my node modules and libraries.
 
 - Documentation layout to get in depth info on functionality
 - Examples and Usage
+- Portfolio
 
 ## Coming Soon
 
-- Portfolio
 - Organized Home to make it more my personal site
 - Sandbox integration to allow users to demo and play with modules on the site
-- Bring over badges
 - Better Automation (Bringing in the github repos of modules instead of relying on npm)
 
 ## Current Documented Modules
