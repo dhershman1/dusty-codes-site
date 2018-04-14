@@ -19,7 +19,7 @@
     "phone-fns": "file:phone-fns-1.0.0.tgz",
     "simple-card": "2.0.1",
     "simply_valid": "3.2.3",
-    "vuetify": "1.0.10"
+    "vuetify": "1.0.14"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

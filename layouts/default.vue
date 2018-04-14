@@ -94,7 +94,7 @@
     </v-navigation-drawer>
     <v-content>
       <v-container grid-list-md fluid>
-        <v-fab-transition>
+        <v-tooltip bottom>
           <v-btn
             fab
             dark
@@ -103,25 +103,28 @@
             top
             color="primary"
             @click="openNav"
-            title="Open the Navigation Drawer">
+            slot="activator">
             <v-icon>menu</v-icon>
           </v-btn>
-        </v-fab-transition>
+          <span>Open Nav Drawer</span>
+        </v-tooltip>
         <nuxt />
         <v-fab-transition>
-          <v-btn
-            fab
-            dark
-            fixed
-            right
-            bottom
-            color="primary"
-            v-scroll="onScroll"
-            v-show="fab"
-            @click="toTop"
-            title="Back to top">
-            <v-icon>keyboard_arrow_up</v-icon>
-          </v-btn>
+          <v-tooltip top>
+            <v-btn
+              fab
+              dark
+              fixed
+              right
+              bottom
+              color="primary"
+              v-scroll="onScroll"
+              v-show="fab"
+              @click="toTop">
+              <v-icon>keyboard_arrow_up</v-icon>
+            </v-btn>
+            <span>Back to top</span>
+          </v-tooltip>
         </v-fab-transition>
       </v-container>
     </v-content>

@@ -15,6 +15,7 @@ import {
   VTabs,
   VTextField,
   VToolbar,
+  VTooltip,
   Vuetify,
   transitions
 } from 'vuetify';
@@ -54,6 +55,7 @@ Vue.use(Vuetify, {
     VSubheader,
     VTabs,
     VToolbar,
+    VTooltip,
     VTextField,
     transitions
   }

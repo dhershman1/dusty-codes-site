@@ -16,18 +16,28 @@
       <v-jumbotron dark height="20%">
         <v-layout row wrap>
           <v-flex xs12 md6 text-xs-center>
-            <v-btn
-              class="pa-2"
-              :to="'/portfolio'"
-              flat
-              title="Go to the portfolio portal"><h1>Portfolio</h1></v-btn>
+            <v-tooltip bottom>
+              <v-btn
+                class="pa-2"
+                :to="'/portfolio'"
+                flat
+                slot="activator">
+                <h1>Portfolio</h1>
+              </v-btn>
+              <span>Go to the portfolio portal</span>
+            </v-tooltip>
           </v-flex>
           <v-flex xs12 md6 text-xs-center>
-            <v-btn
-              class="pa-2"
-              :to="'/documentation'"
-              flat
-              title="Go to the documentation portal"><h1>Documentation</h1></v-btn>
+            <v-tooltip bottom>
+              <v-btn
+                class="pa-2"
+                :to="'/documentation'"
+                flat
+                slot="activator">
+                <h1>Documentation</h1>
+              </v-btn>
+              <span>Go to the documentation portal</span>
+            </v-tooltip>
           </v-flex>
         </v-layout>
       </v-jumbotron>
