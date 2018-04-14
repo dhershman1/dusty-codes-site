@@ -21,75 +21,43 @@
       <v-list>
         <v-list-tile
           exact
-          v-for="item in navItems.main"
-          :key="item.title"
-          :to="item.to"
+          :to="'/'"
           @click="navDrawer = false">
           <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon>dashboard</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
       <v-divider></v-divider>
-      <v-toolbar
-        flat
-        light
-        class="transparent">
-        <v-list class="pa-0">
-          <v-list-tile avatar>
+      <v-list>
+        <v-list-group
+          v-for="nav in navItems"
+          :key="nav.title"
+          v-model="nav.active"
+          :prepend-icon="nav.icon"
+          no-action>
+          <v-list-tile slot="activator">
             <v-list-tile-content>
-              <v-list-tile-title>Portfolio</v-list-tile-title>
+              <v-list-tile-title>{{ nav.title }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
-        </v-list>
-      </v-toolbar>
-      <v-divider></v-divider>
-      <v-list>
-        <v-list-tile
-          exact
-          v-for="item in navItems.portfolio"
-          :key="item.title"
-          :to="item.to"
-          @click="navDrawer = false">
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-      <v-divider></v-divider>
-      <v-toolbar
-        flat
-        light
-        class="transparent">
-        <v-list class="pa-0">
-          <v-list-tile avatar>
+          <v-list-tile
+            exact
+            v-for="item in nav.items"
+            :key="item.title"
+            :to="item.to"
+            @click="navDrawer = false">
+            <v-list-tile-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>Documentation</v-list-tile-title>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
-        </v-list>
-      </v-toolbar>
-      <v-divider></v-divider>
-      <v-list>
-        <v-list-tile
-          exact
-          v-for="item in navItems.documentation"
-          :key="item.title"
-          :to="item.to"
-          @click="navDrawer = false">
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        </v-list-group>
       </v-list>
     </v-navigation-drawer>
     <v-content>
@@ -144,64 +112,65 @@ export default {
       fab: false,
       title: 'Dusty Codes',
       navDrawer: false,
-      navItems: {
-        main: [
-          {
-            title: 'Home',
-            to: '/',
-            icon: 'dashboard'
-          }
-        ],
-        portfolio: [
-          {
-            title: 'Portfolio Home',
-            to: '/portfolio',
-            icon: 'pages'
-          },
-          {
-            title: 'Experience',
-            to: '/portfolio/experience',
-            icon: 'done_all'
-          },
-          {
-            title: 'Projects',
-            to: '/portfolio/projects',
-            icon: 'donut_large'
-          },
-          {
-            title: 'Skills',
-            to: '/portfolio/skills',
-            icon: 'assessment'
-          }
-        ],
-        documentation: [
-          {
-            title: 'Documentation Home',
-            to: '/documentation',
-            icon: 'assignment'
-          },
-          {
-            title: 'Simply Valid',
-            to: '/documentation/simply_valid',
-            icon: 'question_answer'
-          },
-          {
-            title: 'Simple Card',
-            to: '/documentation/simple-card',
-            icon: 'credit_card'
-          },
-          {
-            title: 'Phone Fns',
-            to: '/documentation/phone-fns',
-            icon: 'contact_phone'
-          },
-          {
-            title: 'Dusty Fns',
-            to: '/documentation/dusty-fns',
-            icon: 'extension'
-          }
-        ]
-      }
+      navItems: [
+        {
+          icon: 'pages',
+          title: 'Portfolio',
+          items: [
+            {
+              to: '/portfolio',
+              icon: 'pages',
+              title: 'Portal'
+            },
+            {
+              title: 'Experience',
+              to: '/portfolio/experience',
+              icon: 'done_all'
+            },
+            {
+              title: 'Projects',
+              to: '/portfolio/projects',
+              icon: 'donut_large'
+            },
+            {
+              title: 'Skills',
+              to: '/portfolio/skills',
+              icon: 'assessment'
+            }
+          ]
+        },
+        {
+          icon: 'assignment',
+          title: 'Documentation',
+          items: [
+            {
+              title: 'Portal',
+              to: '/documentation',
+              icon: 'assignment'
+            },
+            {
+              title: 'Simply Valid',
+              to: '/documentation/simply_valid',
+              icon: 'question_answer'
+            },
+            {
+              title: 'Simple Card',
+              to: '/documentation/simple-card',
+              icon: 'credit_card'
+            },
+            {
+              title: 'Phone Fns',
+              to: '/documentation/phone-fns',
+              icon: 'contact_phone'
+            },
+            {
+              title: 'Dusty Fns',
+              to: '/documentation/dusty-fns',
+              icon: 'extension'
+            }
+          ]
+        }
+      ]
     };
   },
   methods: {
