@@ -8,10 +8,10 @@
               <h3 class="display-3">Phone-Fns v{{ version }}</h3>
               <badges :module="'phone-fns'"></badges>
               <h3>A tiny library of utility functions based that make working with phone numbers easier</h3>
-              <v-btn flat @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
+              <v-btn light @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
                 <v-icon v-html="'info'"></v-icon> <h3>View Info</h3>
               </v-btn>
-              <v-btn flat @click="currDisplay = 'methods'" v-else>
+              <v-btn light @click="currDisplay = 'methods'" v-else>
                 <v-icon v-html="'description'"></v-icon> <h3>View Methods</h3>
               </v-btn>
             </v-flex>

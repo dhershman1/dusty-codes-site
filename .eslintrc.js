@@ -39,7 +39,7 @@ module.exports = {
 
     /* Possible Errors */
     'getter-return': ['error'],
-    'no-extra-parens': ['error'],
+    'no-extra-parens': ['off'],
     'no-prototype-builtins': ['error'],
     'no-template-curly-in-string': ['error'],
 

@@ -68,7 +68,7 @@ module.exports = {
         ]
       ]
     },
-    vendor: ['~/plugins/vuetify.js'],
+    vendor: ['~/plugins/vuetify.js', 'dusty-fns'],
     extractCSS: true,
 
     /*

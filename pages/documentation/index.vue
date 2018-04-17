@@ -1,6 +1,6 @@
 <template>
   <v-layout column>
-    <v-jumbotron dark>
+    <v-jumbotron dark height="200px">
       <v-container fill-height>
         <v-layout align-center>
           <v-flex text-xs-center>

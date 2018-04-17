@@ -8,10 +8,10 @@
               <h3 class="display-3">Dusty-Fns v{{ version }}</h3>
               <badges :module="'dusty-fns'"></badges>
               <h3>A tiny library of functional operators and utility helper functionality</h3>
-              <v-btn flat @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
+              <v-btn light @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
                 <v-icon v-html="'info'"></v-icon> <h3>View Info</h3>
               </v-btn>
-              <v-btn flat @click="currDisplay = 'methods'" v-else>
+              <v-btn light @click="currDisplay = 'methods'" v-else>
                 <v-icon v-html="'description'"></v-icon> <h3>View Methods</h3>
               </v-btn>
             </v-flex>

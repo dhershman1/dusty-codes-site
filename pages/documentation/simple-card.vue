@@ -11,10 +11,10 @@
                 A credit card validation system that uses a luhn algorithm to strictly ensure the data
                 is accurate and valid
               </h3>
-              <v-btn flat @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
+              <v-btn light @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
                 <v-icon v-html="'info'"></v-icon> <h3>View Info</h3>
               </v-btn>
-              <v-btn flat @click="currDisplay = 'methods'" v-else>
+              <v-btn light @click="currDisplay = 'methods'" v-else>
                 <v-icon v-html="'description'"></v-icon> <h3>View Methods</h3>
               </v-btn>
             </v-flex>
