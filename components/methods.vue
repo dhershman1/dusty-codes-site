@@ -13,8 +13,9 @@
           class="px-2"
           prepend-icon="search"
           hide-details
-          v-model.trim="search"
+          v-model.trim.lazy="search"
           placeholder="Search"
+          label="Search"
           single-line></v-text-field>
       </v-toolbar>
       <v-list>
@@ -44,6 +45,7 @@
           hide-details
           v-model.trim="search"
           placeholder="Search"
+          color="accent"
           single-line></v-text-field>
       </v-toolbar>
       <v-list two-line>
@@ -101,7 +103,9 @@ export default {
       if (!val) {
         this.filteredDocs = this.methodList;
       } else {
-        this.filteredDocs = this.methodList.filter(({ title }) => fuzzysearch(title, val));
+        this.filteredDocs = this.methodList.filter(({ title, category }) =>
+          fuzzysearch(title.toLowerCase(), val.toLowerCase()) ||
+          fuzzysearch(category.toLowerCase(), val.toLowerCase()));
       }
     }
   },

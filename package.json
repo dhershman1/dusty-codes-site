@@ -1,6 +1,6 @@
 {
   "name": "dusty-demos",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Demo site for my front end libraries",
   "author": "dhershman <dhershman@dealertire.com>",
   "private": true,
@@ -12,25 +12,25 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "dusty-fns": "2.1.0",
+    "dusty-fns": "2.2.0",
     "highlight.js": "9.12.0",
     "nuxt": "1.4.0",
     "phone-fns": "file:phone-fns-1.0.0.tgz",
     "simple-card": "2.0.1",
     "simply_valid": "3.2.3",
-    "vuetify": "1.0.14"
+    "vuetify": "1.0.17"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "babel-plugin-transform-imports": "^1.4.1",
-    "eslint": "^4.14.0",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "eslint-plugin-vue": "^4.0.1",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1"
+    "babel-eslint": "7.2.3",
+    "babel-plugin-transform-imports": "1.4.1",
+    "eslint": "4.14.0",
+    "eslint-loader": "1.9.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "eslint-plugin-vue": "4.0.1",
+    "stylus": "0.54.5",
+    "stylus-loader": "3.0.1"
   }
 }

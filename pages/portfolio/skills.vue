@@ -44,6 +44,14 @@ export default {
           level: 'Professional'
         },
         {
+          name: 'Couchbase DB',
+          link: 'https://www.couchbase.com/',
+          img: 'couchbase.png',
+          summary: 'A NoSQL database that is very similar to RethinkDB but unique in it\'s own way',
+          versions: ['5.0.1'],
+          level: 'Intermediate'
+        },
+        {
           name: 'CSS',
           link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
           img: 'css.jpg',
@@ -72,7 +80,7 @@ export default {
           img: 'js.jpg',
           link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
           summary: 'I take pride in JavaScript being one of my strongest fields, I strive for clean and standardized JS practices.',
-          versions: ['ES2015', 'ES2016', 'ES2017'],
+          versions: ['ES5', 'ES2015', 'ES2016', 'ES2017'],
           level: 'Expert'
         },
         {
@@ -116,6 +124,14 @@ export default {
           level: 'Professional'
         },
         {
+          name: 'RethinkDB',
+          link: 'https://www.rethinkdb.com/',
+          img: 'rethinkdb.png',
+          summary: 'An open-source, scalable database that makes building realtime apps dramatically easier.',
+          versions: ['1.x', '2.x'],
+          level: 'Professional'
+        },
+        {
           name: 'Rollup',
           link: 'https://rollupjs.org/guide/en',
           img: 'rollup.jpg',
@@ -130,6 +146,14 @@ export default {
           summary: 'A pre compiled style of language for css that I became very fond of once I started using it. Sass is a lot like the Less pre compiled language of CSS so the knowledge traverses between the two fairly well.',
           versions: ['All'],
           level: 'Intermediate'
+        },
+        {
+          name: 'TAP (Test Anything Protocol)',
+          link: 'https://testanything.org/',
+          img: 'tap.png',
+          summary: 'A simple text-based interface between testing modules in a test harness.',
+          versions: ['All'],
+          level: 'Expert'
         },
         {
           name: 'Underscore',
