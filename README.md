@@ -1,18 +1,18 @@
 # Dusty Codes
 
-This  is the main site for demoing my node modules and libraries.
+My personal Site/App which is part my portfolio website, and part my documentation website for all of my node modules/libraries!
 
-## Features
+## Technology
 
-- Documentation layout to get in depth info on functionality
-- Examples and Usage
-- Portfolio
+- [Vuetify](https://github.com/vuetifyjs/vuetify)
+- [Nuxt.js](https://github.com/nuxt/nuxt.js)
+- [Dusty.js](https://github.com/dhershman1/dustyjs)
 
-## Coming Soon
+## Planned Functionality
 
-- Organized Home to make it more my personal site
-- Sandbox integration to allow users to demo and play with modules on the site
-- Better Automation (Bringing in the github repos of modules instead of relying on npm)
+- REPL/Sandbox style integration for playing with modules in the documentation
+- A better more acessible website (Check out the accessibility [milestone for more info](https://github.com/dhershman1/dusty-codes-site/milestone/1))
+- Direct Downloads for Distro Code and Source code from the documentation site
 
 ## Current Documented Modules
 
