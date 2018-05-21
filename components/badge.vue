@@ -52,7 +52,7 @@ export default {
             alt: 'npm version badge'
           }, {
             to: 'https://github.com/dhershman1/phone-fns',
-            badge: 'https://img.shields.io/github/size/dhershman1/phone-fns/phone-fns.min.js.svg?style=flat-square',
+            badge: 'https://img.shields.io/github/size/dhershman1/phone-fns/dist/phone-fns.min.js.svg?style=flat-square',
             alt: 'size badge'
           }, {
             to: 'https://github.com/dhershman1/phone-fns/issues',
@@ -75,7 +75,7 @@ export default {
             alt: 'npm version badge'
           }, {
             to: 'https://github.com/dhershman1/simply_valid',
-            badge: 'https://img.shields.io/github/size/dhershman1/simply_valid/simply-valid.min.js.svg?style=flat-square',
+            badge: 'https://img.shields.io/github/size/dhershman1/simply_valid/dist/simply-valid.min.js.svg?style=flat-square',
             alt: 'size badge'
           }, {
             to: 'https://github.com/dhershman1/simply_valid/issues',
@@ -98,7 +98,7 @@ export default {
             alt: 'npm version badge'
           }, {
             to: 'https://github.com/dhershman1/simple-card',
-            badge: 'https://img.shields.io/github/size/dhershman1/simple-card/simple-card.min.js.svg?style=flat-square',
+            badge: 'https://img.shields.io/github/size/dhershman1/simple-card/dist/simple-card.min.js.svg?style=flat-square',
             alt: 'size badge'
           }, {
             to: 'https://github.com/dhershman1/simple-card/issues',

@@ -55,8 +55,18 @@
 
                   const validate = simplyValid({
                     schema: {
-                      zip: 'isNumber',
+                      zip: 'isZip',
                       address: ['hasLetters', 'hasNumbers']
+                    }
+                  });
+                  // A nested object
+                  const validate = simplyValid({
+                    schema: {
+                      zip: 'isZip',
+                      address: ['hasLetters', 'hasNumbers'],
+                      info: {
+                        code: ['isNumber']
+                      }
                     }
                   });
                 </code>
@@ -75,7 +85,7 @@
             </v-card>
           </v-flex>
           <v-flex xs12 sm6>
-            <v-card height="100%">
+            <v-card>
               <v-card-title>
                 <h1>Return</h1>
               </v-card-title>
@@ -84,13 +94,9 @@
                   Depending on how it's being used, Simply Valid will return an object containing some
                   kind of the following
                 </p>
-                <h3>Passing Returns</h3>
+                <h3>Passing Return</h3>
                 <pre v-highlightjs>
                 <code class="javascript">
-                  // Default passing object
-                  { isValid: true }
-
-                  // For passing object validation
                   {
                     isValid: true,
                     story: []
@@ -100,22 +106,12 @@
                 <h3>Failing Returns</h3>
                 <pre v-highlightjs>
                 <code class="javascript">
-                  // This is the default failing object
                   {
                     isValid: false,
                     story: [{
                       test: 'isNumber',
                       value: 'cool'
                     }]
-                  }
-                  // For failing object validation
-                  {
-                    isValid: false,
-                    story: [ {
-                      test: 'isNumber',
-                      value: 'cool',
-                      propName: 'zip'
-                      } ]
                   }
                 </code>
                 </pre>
