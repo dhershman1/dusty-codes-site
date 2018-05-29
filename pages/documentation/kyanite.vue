@@ -5,8 +5,8 @@
         <v-container fill-height>
           <v-layout align-center>
             <v-flex text-xs-center>
-              <h3 class="display-3">Dusty-Fns v{{ version }}</h3>
-              <badges :module="'dusty-fns'"></badges>
+              <h3 class="display-3">Kyanite v{{ version }}</h3>
+              <badges :module="'kyanite'"></badges>
               <h3>A tiny library of functional operators and utility helper functionality</h3>
               <v-btn light @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
                 <v-icon v-html="'info'"></v-icon> <h3>View Info</h3>
@@ -39,7 +39,7 @@
                 <h3>Standard JS</h3>
                 <pre v-highlightjs>
                 <code class="javascript">
-import isEmpty from 'dusty-fns/isEmpty';
+import isEmpty from 'kyanite/isEmpty';
 
 isEmpty({});
                 </code>
@@ -47,7 +47,7 @@ isEmpty({});
                 <h3>CommonJS</h3>
                 <pre v-highlightjs>
                 <code class="javascript">
-const isEmpty = require('dusty-fns/isEmpty');
+const isEmpty = require('kyanite/isEmpty');
 
 isEmpty({});
                 </code>
@@ -55,7 +55,7 @@ isEmpty({});
                 <h3>CDN</h3>
                 <pre v-highlightjs>
                 <code class="html">
-&lt;script src="https://cdn.jsdelivr.net/npm/dusty-fns@{{ version }}/isEmpty/index.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/kyanite@{{ version }}/isEmpty.js"&gt;&lt;/script&gt;
 &lt;script&gt;
   isEmpty({});
 &lt;/script&gt;
@@ -71,32 +71,32 @@ isEmpty({});
               </v-card-title>
               <v-card-text>
                 <p>
-                  Standard Usage of the main dusty min file while being able to bring in the functionality individually
+                  Standard Usage of the main Kyanite min file while being able to bring in the functionality individually
                   you can also bring in the entire library itself and access the functions from the
-                  <code>dusty</code> Object. Example: <code>dusty.isEmpty()</code>
+                  <code>kyanite</code> Object. Example: <code>kyanite.isEmpty()</code>
                 </p>
                 <h3>Standard JS</h3>
                 <pre v-highlightjs>
                 <code class="javascript">
-import dusty from 'dusty-fns';
+import k from 'kyanite';
 
-dusty.isEmpty({});
+k.isEmpty({});
                 </code>
                 </pre>
                 <h3>CommonJS</h3>
                 <pre v-highlightjs>
                 <code class="javascript">
-const dusty = require('dusty-fns');
+const k = require('kyanite');
 
-dusty.isEmpty({});
+k.isEmpty({});
                 </code>
                 </pre>
                 <h3>CDN</h3>
                 <pre v-highlightjs>
                 <code class="html">
-&lt;script src="https://cdn.jsdelivr.net/npm/dusty-fns@{{ version }}/dusty.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/kyanite@{{ version }}/kyanite.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
-  dusty.isEmpty({});
+  kyanite.isEmpty({});
 &lt;/script&gt;
                 </code>
                 </pre>
@@ -124,7 +124,7 @@ export default {
     badges
   },
   head: {
-    title: 'Dusty Fns'
+    title: 'Kyanite'
   },
   data() {
     return {

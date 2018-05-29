@@ -57,11 +57,11 @@ export default {
     gradient: 'to top right, rgba(63,81,181, .7), rgba(34,46,84, .7)',
     cards: [
       {
-        title: 'Dusty-Fns',
+        title: 'Kyanite',
         description: 'A tiny library of single type pure functional operators and utility functions',
-        destination: '/documentation/dusty-fns',
-        github: 'https://github.com/dhershman1/dustyjs',
-        changelog: 'https://github.com/dhershman1/dustyjs/blob/master/CHANGELOG.md'
+        destination: '/documentation/kyanite',
+        github: 'https://github.com/silicate-tools/kyanite',
+        changelog: 'https://github.com/silicate-tools/kyanite/blob/master/CHANGELOG.md'
       }, {
         title: 'Phone-Fns',
         description: 'A tiny library of utility functions based that make working with phone numbers easier',

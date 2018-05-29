@@ -6,7 +6,7 @@ My personal Site/App which is part my portfolio website, and part my documentati
 
 - [Vuetify](https://github.com/vuetifyjs/vuetify)
 - [Nuxt.js](https://github.com/nuxt/nuxt.js)
-- [Dusty.js](https://github.com/dhershman1/dustyjs)
+- [Kyanite](https://github.com/silicate-tools/kyanite)
 
 ## Planned Functionality
 
@@ -16,7 +16,7 @@ My personal Site/App which is part my portfolio website, and part my documentati
 
 ## Current Documented Modules
 
-- [Dusty Fns](https://github.com/dhershman1/dustyjs)
+- [Kyanite](https://github.com/silicate-tools/kyanite)
 - [Phone Fns](https://github.com/dhershman1/phone-fns)
 - [Simple Card](https://github.com/dhershman1/simple-card)
 - [Simply Valid](https://github.com/dhershman1/simply_valid)

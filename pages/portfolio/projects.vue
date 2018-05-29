@@ -99,12 +99,12 @@ export default {
           ]
         },
         {
-          name: 'Dusty-Fns',
+          name: 'Kyanite',
           imageName: 'imgs/logo.png',
           stack: 'JavaScript Pure Functional Library',
           summary: 'A library of single type pure functions',
           description: 'Utility library containing pure functions that focus on working with single type values',
-          link: '/dusty-fns',
+          link: '/kyanite',
           technologies: [
             {
               name: 'JavaScript ES2015 & ES2016',

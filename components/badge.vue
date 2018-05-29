@@ -12,32 +12,32 @@ export default {
   props: {
     module: {
       type: String,
-      default: 'dusty-fns'
+      default: 'kyanite'
     }
   },
   data() {
     return {
       badgeList: {
-        'dusty-fns': [
+        'kyanite': [
           {
-            to: 'https://travis-ci.org/dhershman1/dustyjs',
-            badge: 'https://img.shields.io/travis/dhershman1/dustyjs.svg?style=flat-square',
+            to: 'https://travis-ci.org/silicate-tools/kyanite',
+            badge: 'https://img.shields.io/travis/silicate-tools/kyanite.svg?style=flat-square',
             alt: 'build badge'
           }, {
-            to: 'https://www.npmjs.com/package/dusty-fns',
-            badge: 'https://img.shields.io/npm/v/dusty-fns.svg?style=flat-square',
+            to: 'https://www.npmjs.com/package/kyanite',
+            badge: 'https://img.shields.io/npm/v/kyanite.svg?style=flat-square',
             alt: 'npm version badge'
           }, {
-            to: 'https://github.com/dhershman1/dustyjs',
-            badge: 'https://img.shields.io/github/size/dhershman1/dustyjs/dist/dusty.min.js.svg?style=flat-square',
+            to: 'https://github.com/silicate-tools/kyanite',
+            badge: 'https://img.shields.io/github/size/silicate-tools/kyanite/dist/kyanite.min.js.svg?style=flat-square',
             alt: 'size badge'
           }, {
-            to: 'https://github.com/dhershman1/dustyjs/issues',
-            badge: 'https://img.shields.io/github/issues/dhershman1/dustyjs.svg?style=flat-square',
+            to: 'https://github.com/silicate-tools/kyanite/issues',
+            badge: 'https://img.shields.io/github/issues/silicate-tools/kyanite.svg?style=flat-square',
             alt: 'github issues badge'
           }, {
-            to: 'https://github.com/dhershman1/dustyjs/blob/master/LICENSE',
-            badge: 'https://img.shields.io/github/license/dhershman1/dustyjs.svg?style=flat-square',
+            to: 'https://github.com/silicate-tools/kyanite/blob/master/LICENSE',
+            badge: 'https://img.shields.io/github/license/silicate-tools/kyanite.svg?style=flat-square',
             alt: 'license badge'
           }
         ],

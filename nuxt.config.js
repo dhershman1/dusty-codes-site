@@ -1,6 +1,4 @@
-const nodeExternals = require('webpack-node-externals');
-const path = require('path');
-const resolve = dir => path.join(__dirname, dir);
+const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
   mode: 'spa',
@@ -71,22 +69,7 @@ module.exports = {
     vendor: ['~/plugins/vuetify.js', 'dusty-fns'],
     extractCSS: true,
 
-    /*
-    ** Run ESLint on save
-    */
-    extend(config, ctx) {
-      // eslint-disable-line complexity
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-          options: {
-            configFile: resolve('.eslintrc.js')
-          }
-        });
-      }
+    extend (config, ctx) {
       if (ctx.isServer) {
         config.externals = [
           nodeExternals({
@@ -98,8 +81,8 @@ module.exports = {
               'simple-card'
             ]
           })
-        ];
+        ]
       }
     }
   }
-};
+}

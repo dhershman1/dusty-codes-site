@@ -164,8 +164,8 @@ export default {
               icon: 'contact_phone'
             },
             {
-              title: 'Dusty Fns',
-              to: '/documentation/dusty-fns',
+              title: 'Kyanite',
+              to: '/documentation/kyanite',
               icon: 'extension'
             }
           ]
