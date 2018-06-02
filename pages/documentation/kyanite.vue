@@ -8,6 +8,7 @@
               <h3 class="display-3">Kyanite v{{ version }}</h3>
               <badges :module="'kyanite'"></badges>
               <h3>A tiny library of functional operators and utility helper functionality</h3>
+              <p>It is important to note that if you used the dusty-fns package, this is the continuation of that package, and you should switch to it for the latest and greatest.</p>
               <v-btn light @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
                 <v-icon v-html="'info'"></v-icon> <h3>View Info</h3>
               </v-btn>
@@ -113,9 +114,9 @@ k.isEmpty({});
 </template>
 
 <script>
-import { name, version } from 'dusty-fns/package.json';
+import { name, version } from 'kyanite/package.json';
 import badges from '../../components/badge';
-import docs from 'dusty-fns/docs.js';
+import docs from 'kyanite/docs.js';
 import methodDocs from '../../components/method-docs';
 
 export default {

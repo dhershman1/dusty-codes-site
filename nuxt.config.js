@@ -66,7 +66,7 @@ module.exports = {
         ]
       ]
     },
-    vendor: ['~/plugins/vuetify.js', 'dusty-fns'],
+    vendor: ['~/plugins/vuetify.js', 'kyanite'],
     extractCSS: true,
 
     extend (config, ctx) {
@@ -76,7 +76,7 @@ module.exports = {
             whitelist: [
               /^vuetify/,
               'phone-fns',
-              'dusty-fns',
+              'kyanite',
               'simply_valid',
               'simple-card'
             ]

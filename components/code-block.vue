@@ -55,7 +55,7 @@
 
 <script>
 import argTable from './argument-table';
-import isEmpty from 'dusty-fns/isEmpty';
+import isEmpty from 'kyanite/isEmpty';
 
 export default {
   props: {

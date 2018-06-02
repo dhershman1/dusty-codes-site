@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import fuzzysearch from 'dusty-fns/fuzzySearch';
+import fuzzysearch from 'kyanite/fuzzySearch';
 
 export default {
   props: {
@@ -104,8 +104,8 @@ export default {
         this.filteredDocs = this.methodList;
       } else {
         this.filteredDocs = this.methodList.filter(({ title, category }) =>
-          fuzzysearch(title.toLowerCase(), val.toLowerCase()) ||
-          fuzzysearch(category.toLowerCase(), val.toLowerCase()));
+          fuzzysearch(val.toLowerCase(), title.toLowerCase()) ||
+          fuzzysearch(val.toLowerCase(), category.toLowerCase()));
       }
     }
   },

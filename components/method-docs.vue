@@ -29,7 +29,7 @@
 
 <script>
 import codeBlock from './code-block';
-import find from 'dusty-fns/find';
+import find from 'kyanite/find';
 import methods from './methods';
 
 export default {

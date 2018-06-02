@@ -20,24 +20,24 @@ export default {
       badgeList: {
         'kyanite': [
           {
-            to: 'https://travis-ci.org/silicate-tools/kyanite',
-            badge: 'https://img.shields.io/travis/silicate-tools/kyanite.svg?style=flat-square',
+            to: 'https://travis-ci.org/dhershman1/kyanite',
+            badge: 'https://img.shields.io/travis/dhershman1/kyanite.svg?style=flat-square',
             alt: 'build badge'
           }, {
             to: 'https://www.npmjs.com/package/kyanite',
             badge: 'https://img.shields.io/npm/v/kyanite.svg?style=flat-square',
             alt: 'npm version badge'
           }, {
-            to: 'https://github.com/silicate-tools/kyanite',
-            badge: 'https://img.shields.io/github/size/silicate-tools/kyanite/dist/kyanite.min.js.svg?style=flat-square',
+            to: 'https://github.com/dhershman1/kyanite',
+            badge: 'https://img.shields.io/github/size/dhershman1/kyanite/dist/kyanite.min.js.svg?style=flat-square',
             alt: 'size badge'
           }, {
-            to: 'https://github.com/silicate-tools/kyanite/issues',
-            badge: 'https://img.shields.io/github/issues/silicate-tools/kyanite.svg?style=flat-square',
+            to: 'https://github.com/dhershman1/kyanite/issues',
+            badge: 'https://img.shields.io/github/issues/dhershman1/kyanite.svg?style=flat-square',
             alt: 'github issues badge'
           }, {
-            to: 'https://github.com/silicate-tools/kyanite/blob/master/LICENSE',
-            badge: 'https://img.shields.io/github/license/silicate-tools/kyanite.svg?style=flat-square',
+            to: 'https://github.com/dhershman1/kyanite/blob/master/LICENSE',
+            badge: 'https://img.shields.io/github/license/dhershman1/kyanite.svg?style=flat-square',
             alt: 'license badge'
           }
         ],
