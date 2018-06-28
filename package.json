@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "highlight.js": "9.12.0",
-    "kyanite": "0.1.0",
+    "kyanite": "0.2.2",
     "nuxt": "1.4.0",
-    "phone-fns": "file:phone-fns-1.0.0.tgz",
+    "phone-fns": "1.0.1",
     "simple-card": "2.0.1",
     "simply_valid": "3.2.3",
     "vuetify": "1.0.17"
