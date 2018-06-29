@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "highlight.js": "9.12.0",
-    "kyanite": "0.2.2",
+    "kyanite": "0.3.0",
     "nuxt": "1.4.0",
     "phone-fns": "1.0.1",
     "simple-card": "2.0.1",
