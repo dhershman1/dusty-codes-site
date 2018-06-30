@@ -91,8 +91,7 @@
               </v-card-title>
               <v-card-text>
                 <p>
-                  Depending on how it's being used, Simply Valid will return an object containing some
-                  kind of the following
+                  I tried to keep it so you can always expect the same level of return no matter how you are using simply_valid
                 </p>
                 <h3>Passing Return</h3>
                 <pre v-highlightjs>
