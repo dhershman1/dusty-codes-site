@@ -12,12 +12,13 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "axios": "0.18.0",
     "highlight.js": "9.12.0",
     "kyanite": "0.3.0",
     "nuxt": "1.4.0",
     "phone-fns": "2.0.0",
     "simple-card": "2.0.1",
-    "simply_valid": "file:simply_valid-4.0.0.tgz",
+    "simply_valid": "4.0.0",
     "vuetify": "1.0.17"
   },
   "devDependencies": {

@@ -127,10 +127,11 @@
 </template>
 
 <script>
-import { name, version } from 'simply_valid/package.json';
-import badges from '../../components/badge';
-import docs from 'simply_valid/docs.js';
-import methodDocs from '../../components/method-docs';
+import { name, version } from 'simply_valid/package.json'
+import identity from 'kyanite/identity'
+import badges from '../../components/badge'
+import docs from 'simply_valid/docs.js'
+import methodDocs from '../../components/method-docs'
 
 export default {
   components: {
@@ -140,14 +141,18 @@ export default {
   head: {
     title: 'Simply Valid'
   },
-  data() {
-    return {
-      name,
+  asyncData({ store }) {
+    return store.dispatch('fetchModule', 'simply_valid').then(({ data }) => {
+      store.commit('setModule', data)
+
+      return Object.assign({}, identity(data), { currDisplay: 'info' })
+    }).catch(() => ({
       version,
+      description: '',
       docs,
       currDisplay: 'info'
-    };
+    }))
   }
-};
+}
 </script>
 
