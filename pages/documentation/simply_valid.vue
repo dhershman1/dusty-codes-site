@@ -8,8 +8,7 @@
               <h3 class="display-3">Simply_Valid v{{ version }}</h3>
               <badges :module="'simply_valid'"></badges>
               <h3>
-                A data driven validation library with built in
-                functionality for easy checks to make sure data is valid before going anywhere.
+                {{ description | capitalize }}.
               </h3>
               <v-btn light @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
                 <v-icon v-html="'info'"></v-icon> <h3>View Info</h3>
@@ -129,6 +128,7 @@
 <script>
 import { name, version } from 'simply_valid/package.json'
 import identity from 'kyanite/identity'
+import capitalize from 'kyanite/capitalize'
 import badges from '../../components/badge'
 import docs from 'simply_valid/docs.js'
 import methodDocs from '../../components/method-docs'
@@ -147,11 +147,14 @@ export default {
 
       return Object.assign({}, identity(data), { currDisplay: 'info' })
     }).catch(() => ({
-      version,
+      version: '',
       description: '',
-      docs,
+      docs: [],
       currDisplay: 'info'
     }))
+  },
+  filters: {
+    capitalize
   }
 }
 </script>

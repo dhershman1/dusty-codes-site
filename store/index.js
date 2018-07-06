@@ -14,6 +14,7 @@ export const mutations = {
 
 export const actions = {
   fetchModule({ commit }, name) {
-    return axios.get(`https://cdn.jsdelivr.net/gh/dhershman1/${name}/info.json`)
+    return axios
+      .get(`https://cdn.jsdelivr.net/npm/${name}/info.json`)
   }
 }
