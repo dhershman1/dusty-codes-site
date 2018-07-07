@@ -7,7 +7,7 @@
             <v-flex text-xs-center>
               <h3 class="display-3">Kyanite v{{ version }}</h3>
               <badges :module="'kyanite'"></badges>
-              <h3>A tiny library of functional operators and utility helper functionality</h3>
+              <h3>{{ description }}</h3>
               <p>It is important to note that if you used the dusty-fns package, this is the continuation of that package, and you should switch to it for the latest and greatest.</p>
               <v-btn light @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
                 <v-icon v-html="'info'"></v-icon> <h3>View Info</h3>
@@ -114,10 +114,9 @@ k.isEmpty({});
 </template>
 
 <script>
-import { name, version } from 'kyanite/package.json';
-import badges from '../../components/badge';
-import docs from 'kyanite/docs.js';
-import methodDocs from '../../components/method-docs';
+import axios from 'axios'
+import badges from '../../components/badge'
+import methodDocs from '../../components/method-docs'
 
 export default {
   components: {
@@ -127,14 +126,18 @@ export default {
   head: {
     title: 'Kyanite'
   },
-  data() {
-    return {
-      name,
-      version,
-      docs,
-      currDisplay: 'info'
-    };
+  asyncData () {
+    return axios.get('https://cdn.jsdelivr.net/npm/kyanite/info.json')
+      .then(({ data }) => {
+        return Object.assign({}, data, { currDisplay: 'info' })
+      })
+      .catch(() => ({
+        name: 'Kyanite',
+        version: '0.0.0',
+        docs: [],
+        currDisplay: 'info'
+      }))
   }
-};
+}
 </script>
 

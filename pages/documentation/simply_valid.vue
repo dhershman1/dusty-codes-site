@@ -126,11 +126,9 @@
 </template>
 
 <script>
-import { name, version } from 'simply_valid/package.json'
-import identity from 'kyanite/identity'
+import axios from 'axios'
 import capitalize from 'kyanite/capitalize'
 import badges from '../../components/badge'
-import docs from 'simply_valid/docs.js'
 import methodDocs from '../../components/method-docs'
 
 export default {
@@ -141,17 +139,17 @@ export default {
   head: {
     title: 'Simply Valid'
   },
-  asyncData({ store }) {
-    return store.dispatch('fetchModule', 'simply_valid').then(({ data }) => {
-      store.commit('setModule', data)
-
-      return Object.assign({}, identity(data), { currDisplay: 'info' })
-    }).catch(() => ({
-      version: '',
-      description: '',
-      docs: [],
-      currDisplay: 'info'
-    }))
+  asyncData ({ store }) {
+    return axios.get('https://cdn.jsdelivr.net/npm/simply_valid/info.json')
+      .then(({ data }) => {
+        return Object.assign({}, data, { currDisplay: 'info' })
+      })
+      .catch(() => ({
+        name: 'simply_valid',
+        version: '0.0.0',
+        docs: [],
+        currDisplay: 'info'
+      }))
   },
   filters: {
     capitalize
