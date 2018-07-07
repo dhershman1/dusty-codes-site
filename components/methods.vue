@@ -136,7 +136,7 @@ export default {
   color: #FFF;
 }
 
-.active .list__tile__sub-title {
+.active .v-list__tile__sub-title {
   color: #FFF;
 }
 </style>

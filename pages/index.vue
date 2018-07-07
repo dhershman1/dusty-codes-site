@@ -44,12 +44,3 @@
     </v-flex>
   </v-layout>
 </template>
-
-<style scoped>
-.card-nav:hover {
-  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  color: #FFF;
-  background-color: #3F51B5;
-}
-</style>
-

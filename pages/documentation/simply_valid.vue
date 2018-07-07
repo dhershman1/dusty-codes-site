@@ -86,10 +86,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.card__text.readme ul {
-  margin-left: 1rem;
-}
-</style>
-
