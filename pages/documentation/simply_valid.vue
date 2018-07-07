@@ -11,7 +11,7 @@
                 {{ description | capitalize }}.
               </h3>
               <v-btn light @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
-                <v-icon v-html="'info'"></v-icon> <h3>View Info</h3>
+                <v-icon v-html="'info'"></v-icon> <h3>View Readme</h3>
               </v-btn>
               <v-btn light @click="currDisplay = 'methods'" v-else>
                 <v-icon v-html="'description'"></v-icon> <h3>View Methods</h3>
@@ -26,93 +26,9 @@
           wrap
           v-if="currDisplay === 'info'"
           :key="'info'">
-          <v-flex xs12 sm6>
+          <v-flex xs12>
             <v-card height="100%">
-              <v-card-title>
-                <h1>Schema</h1>
-              </v-card-title>
-              <v-card-text>
-                <p>
-                  Schema is an option built into the Simply Valid module which
-                  defines how the validation process will run against the values passed to the function.
-                  Schema accepts either an <code>Object</code>, <code>Array</code>, or <code>String</code>
-                </p>
-                <h3>Using Arrays</h3>
-                <pre v-highlightjs>
-                <code class="javascript">
-                  import simplyValid from 'simply_valid';
-
-                  const validate = simplyValid({
-                    schema: ['hasValue', 'hasLetters']
-                  });
-                </code>
-                </pre>
-                <h3>Using An Object</h3>
-                <pre v-highlightjs>
-                <code class="javascript">
-                  import simplyValid from 'simply_valid';
-
-                  const validate = simplyValid({
-                    schema: {
-                      zip: 'isZip',
-                      address: ['hasLetters', 'hasNumbers']
-                    }
-                  });
-                  // A nested object
-                  const validate = simplyValid({
-                    schema: {
-                      zip: 'isZip',
-                      address: ['hasLetters', 'hasNumbers'],
-                      info: {
-                        code: ['isNumber']
-                      }
-                    }
-                  });
-                </code>
-                </pre>
-                <h3>Using A String</h3>
-                <pre v-highlightjs>
-                <code class="javascript">
-                  import simplyValid from 'simply_valid';
-
-                  const validate = simplyValid({
-                    schema: 'hasValue'
-                  });
-                </code>
-                </pre>
-              </v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 sm6>
-            <v-card>
-              <v-card-title>
-                <h1>Return</h1>
-              </v-card-title>
-              <v-card-text>
-                <p>
-                  I tried to keep it so you can always expect the same level of return no matter how you are using simply_valid
-                </p>
-                <h3>Passing Return</h3>
-                <pre v-highlightjs>
-                <code class="javascript">
-                  {
-                    isValid: true,
-                    story: []
-                  }
-                </code>
-                </pre>
-                <h3>Failing Returns</h3>
-                <pre v-highlightjs>
-                <code class="javascript">
-                  {
-                    isValid: false,
-                    story: [{
-                      test: 'isNumber',
-                      value: 'cool'
-                    }]
-                  }
-                </code>
-                </pre>
+              <v-card-text class="readme" v-html="readMe">
               </v-card-text>
             </v-card>
           </v-flex>
@@ -127,6 +43,8 @@
 
 <script>
 import axios from 'axios'
+import marked from 'marked'
+import hljs from 'highlight.js'
 import capitalize from 'kyanite/capitalize'
 import badges from '../../components/badge'
 import methodDocs from '../../components/method-docs'
@@ -142,7 +60,7 @@ export default {
   asyncData ({ store }) {
     return axios.get('https://cdn.jsdelivr.net/npm/simply_valid/info.json')
       .then(({ data }) => {
-        return Object.assign({}, data, { currDisplay: 'info' })
+        return Object.assign({}, data, { currDisplay: 'info', readMe: '' })
       })
       .catch(() => ({
         name: 'simply_valid',
@@ -153,7 +71,25 @@ export default {
   },
   filters: {
     capitalize
+  },
+  mounted () {
+    axios.get('https://cdn.jsdelivr.net/npm/simply_valid/README.md')
+      .then(({ data }) => {
+        this.readMe = marked(data, {
+          gfm: true,
+          langPrefix: 'hljs ',
+          highlight (code) {
+            return hljs.highlightAuto(code, ['javascript', 'html']).value
+          }
+        })
+      })
   }
 }
 </script>
+
+<style>
+.card__text.readme ul {
+  margin-left: 1rem;
+}
+</style>
 
