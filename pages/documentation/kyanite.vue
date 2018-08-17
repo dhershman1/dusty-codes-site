@@ -9,16 +9,21 @@
               <badges :module="'kyanite'"></badges>
               <h3>{{ description }}</h3>
               <p>It is important to note that if you used the dusty-fns package, this is the continuation of that package, and you should switch to it for the latest and greatest.</p>
-              <v-btn light @click="currDisplay = 'info'" v-if="currDisplay === 'methods'">
-                <v-icon v-html="'info'"></v-icon> <h3>View Readme</h3>
-              </v-btn>
-              <v-btn light @click="currDisplay = 'methods'" v-else>
-                <v-icon v-html="'description'"></v-icon> <h3>View Methods</h3>
-              </v-btn>
             </v-flex>
           </v-layout>
         </v-container>
       </v-jumbotron>
+      <v-tabs grow dark icons-and-text color="primary">
+        <v-tabs-slider color="yellow"></v-tabs-slider>
+        <v-tab @click="currDisplay = 'info'">
+          Readme
+          <v-icon>info</v-icon>
+        </v-tab>
+        <v-tab @click="currDisplay = 'methods'">
+          Functions
+          <v-icon>description</v-icon>
+        </v-tab>
+      </v-tabs>
       <transition name="slide-fade" mode="out-in">
         <v-layout
           row
@@ -32,9 +37,7 @@
             </v-card>
           </v-flex>
         </v-layout>
-        <v-layout row v-else :key="'docs'">
-          <method-docs :docs="docs"></method-docs>
-        </v-layout>
+        <method-docs :docs="docs" :key="'docs'"></method-docs>
       </transition>
     </v-flex>
   </v-layout>
