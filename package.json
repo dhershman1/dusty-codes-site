@@ -14,13 +14,13 @@
   "dependencies": {
     "axios": "0.18.0",
     "highlight.js": "9.12.0",
-    "kyanite": "0.4.0",
+    "kyanite": "0.6.0",
     "marked": "0.4.0",
-    "nuxt": "1.4.1",
+    "nuxt": "1.4.2",
     "phone-fns": "2.0.0",
     "simple-card": "2.1.0",
     "simply_valid": "4.0.1",
-    "vuetify": "1.1.1"
+    "vuetify": "1.1.13"
   },
   "devDependencies": {
     "babel-eslint": "7.2.3",
