@@ -56,7 +56,7 @@ export default {
     title: 'Kyanite'
   },
   asyncData () {
-    return axios.get('https://cdn.jsdelivr.net/npm/kyanite/info.json')
+    return axios.get('https://cdn.jsdelivr.net/npm/kyanite@latest/info.json')
       .then(({ data }) => {
         return Object.assign({}, data, { currDisplay: 'info', readMe: '' })
       })
@@ -68,7 +68,7 @@ export default {
       }))
   },
   mounted () {
-    axios.get('https://cdn.jsdelivr.net/npm/kyanite/README.md')
+    axios.get('https://cdn.jsdelivr.net/npm/kyanite@latest/README.md')
       .then(({ data }) => {
         this.readMe = marked(data, {
           gfm: true,

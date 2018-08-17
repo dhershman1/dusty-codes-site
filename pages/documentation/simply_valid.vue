@@ -58,7 +58,7 @@ export default {
     title: 'Simply Valid'
   },
   asyncData ({ store }) {
-    return axios.get('https://cdn.jsdelivr.net/npm/simply_valid/info.json')
+    return axios.get('https://cdn.jsdelivr.net/npm/simply_valid@latest/info.json')
       .then(({ data }) => {
         return Object.assign({}, data, { currDisplay: 'info', readMe: '' })
       })
@@ -73,7 +73,7 @@ export default {
     capitalize
   },
   mounted () {
-    axios.get('https://cdn.jsdelivr.net/npm/simply_valid/README.md')
+    axios.get('https://cdn.jsdelivr.net/npm/simply_valid@latest/README.md')
       .then(({ data }) => {
         this.readMe = marked(data, {
           gfm: true,
