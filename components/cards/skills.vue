@@ -2,7 +2,11 @@
   <v-card height="100%">
     <v-card-actions v-if="link">
       <v-spacer></v-spacer>
-      <a :href="link" target="_blank" class="project-link">
+      <a
+        :href="link"
+        target="_blank"
+        :aria-label="`Go to ${name} website`"
+        class="project-link">
         <v-icon color="primary">launch</v-icon>
       </a>
     </v-card-actions>

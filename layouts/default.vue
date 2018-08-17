@@ -71,6 +71,7 @@
             top
             color="primary"
             @click="openNav"
+            aria-label="Open Navigation Drawer"
             slot="activator">
             <v-icon>menu</v-icon>
           </v-btn>

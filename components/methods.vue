@@ -14,6 +14,7 @@
           prepend-icon="search"
           hide-details
           v-model.trim.lazy="search"
+          aria-label="Search for a Method"
           placeholder="Search"
           label="Search"
           single-line></v-text-field>

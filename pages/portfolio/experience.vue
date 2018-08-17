@@ -4,7 +4,7 @@
       <v-flex xs12>
         <page-header
           :title="'Experience'"
-          :summary="'All the experiences I have had'"></page-header>
+          :summary="'Some of my personal experiences as a developer'"></page-header>
       </v-flex>
       <v-flex
         xs12

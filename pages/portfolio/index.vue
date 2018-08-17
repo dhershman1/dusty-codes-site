@@ -4,8 +4,8 @@
       <v-container fill-height>
         <v-layout align-center>
           <v-flex text-xs-center>
-            <h3 class="display-3">Dustin Hershman</h3>
-            <h3>Full Stack Software Developer</h3>
+            <h1 class="display-3">Dustin Hershman</h1>
+            <h2>Full Stack Software Developer</h2>
             <v-btn href="mailto:dustinh17@gmail.com">Contact Me</v-btn>
           </v-flex>
         </v-layout>

@@ -4,9 +4,9 @@
       <v-container fill-height>
         <v-layout align-center>
           <v-flex text-xs-center>
-            <h3 class="hidden-sm-and-down display-3">Documentation</h3>
-            <h3 class="hidden-md-and-up display-2">Documentation</h3>
-            <h3>Click a button on a card to view that information of the module</h3>
+            <h1 class="hidden-sm-and-down display-3">Documentation</h1>
+            <h1 class="hidden-md-and-up display-2">Documentation</h1>
+            <h2>Click a button on a card to view that information of the module</h2>
           </v-flex>
         </v-layout>
       </v-container>
@@ -28,7 +28,7 @@
             <div>
               <badges :module="card.title.toLowerCase()" />
               <br />
-              <h4 class="mt-2">{{ card.description }}</h4>
+              <p class="mt-2 card-desc">{{ card.description }}</p>
             </div>
           </v-card-title>
           <v-card-actions>
@@ -87,6 +87,9 @@ export default {
 </script>
 
 <style scoped>
+.card-desc {
+  font-size: 16px;
+}
 .header-color {
   background-color: #2b5994 !important;
 }
