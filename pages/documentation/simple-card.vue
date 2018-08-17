@@ -46,7 +46,6 @@
 import axios from 'axios'
 import marked from 'marked'
 import hljs from 'highlight.js'
-import capitalize from 'kyanite/capitalize'
 import badges from '../../components/badge'
 import methodDocs from '../../components/method-docs'
 
@@ -69,9 +68,6 @@ export default {
         docs: [],
         currDisplay: 'info'
       }))
-  },
-  filters: {
-    capitalize
   },
   mounted () {
     axios.get('https://cdn.jsdelivr.net/npm/simple-card@latest/README.md')

@@ -24,79 +24,9 @@
           wrap
           v-if="currDisplay === 'info'"
           :key="'info'">
-          <v-flex xs12 md6>
-            <v-card>
-              <v-card-title>
-                <h1>Formatting</h1>
-              </v-card-title>
-              <v-card-text>
-                <p>
-                  Formatting allows for custom phone formats however you see fit, or whatever your use case is.
-                  These offer a nice more dynamic approach than being limited to a few formats from my previous module
-                </p>
-                <p>
-                  You can use the letter N to dictate where numbers should be inserted, this is case insensitive
-                  Below are a few examples of usage
-                </p>
-                <h3>Example</h3>
-                <pre v-highlightjs>
-                  <code class="javascript">
-                    import format from 'phone-fns/format';
-
-                    // Without a country code
-                    format('', '(NNN) NNN-NNNN', '4443332222'); // => '(444) 333-2222'
-
-                    // With a country code
-                    format('112', 'NNN + (NNN)-NNN.NNNN', '4443332222'); // => '112 + (444)-333.2222'
-
-                    // Extensions
-                    format('', '(NNN).NNN.NNNN x NNNN', '44433322228989'); // => '(444).333.2222 x 8989'
-                  </code>
-                </pre>
-              </v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 md6>
+          <v-flex xs12>
             <v-card height="100%">
-              <v-card-title>
-                <h1>Usage</h1>
-              </v-card-title>
-              <v-card-text>
-                <p>
-                  In v1.0.0 of Phone-Fns the main import is used to create separate
-                  instances in order to make usage easier as well as the library smaller.
-                </p>
-                <h3>Example</h3>
-                <pre v-highlightjs>
-                  <code class="javascript">
-                    import phoneFns from 'phone-fns';
-
-                    const phoneLib = phoneFns();
-
-                    phoneLib.breakdown('4443332222');
-                    // => { countryCode: '', areaCode: '444', localCode: '333', lineNumber: '2222', extension: '' }
-
-                    phoneLib.format('(NNN) NNN-NNNN', '4443332222');
-                    // => '(444) 333-2222'
-                  </code>
-                </pre>
-                <p>
-                  If you want to set a country code you can create an instance of the library around
-                  the country code like so.
-                </p>
-                <pre v-highlightjs>
-                  <code class="javascript">
-                    import phoneFns from 'phone-fns';
-
-                    const phoneLib = phoneFns('1');
-
-                    phoneLib.breakdown('4443332222');
-                    // => { countryCode: '1', areaCode: '444', localCode: '333', lineNumber: '2222', extension: '' }
-
-                    phoneLib.format('N + (NNN) NNN-NNNN', '4443332222');
-                    // => '1 + (444) 333-2222'
-                  </code>
-                </pre>
+              <v-card-text class="readme" v-html="readMe">
               </v-card-text>
             </v-card>
           </v-flex>
@@ -110,26 +40,43 @@
 </template>
 
 <script>
-import { name, version } from 'phone-fns/package.json';
-import badges from '../../components/badge';
-import docs from 'phone-fns/docs.js';
-import methodDocs from '../../components/method-docs';
+import axios from 'axios'
+import marked from 'marked'
+import hljs from 'highlight.js'
+import badges from '../../components/badge'
+import methodDocs from '../../components/method-docs'
 
 export default {
   components: {
-    'method-docs': methodDocs,
+    methodDocs,
     badges
   },
   head: {
     title: 'Phone Fns'
   },
-  data() {
-    return {
-      name,
-      version,
-      docs,
-      currDisplay: 'info'
-    };
+  asyncData ({ store }) {
+    return axios.get('https://cdn.jsdelivr.net/npm/phone-fns@latest/info.json')
+      .then(({ data }) => {
+        return Object.assign({}, data, { currDisplay: 'info', readMe: '' })
+      })
+      .catch(() => ({
+        name: 'phone-fns',
+        version: '0.0.0',
+        docs: [],
+        currDisplay: 'info'
+      }))
+  },
+  mounted () {
+    axios.get('https://cdn.jsdelivr.net/npm/phone-fns@latest/README.md')
+      .then(({ data }) => {
+        this.readMe = marked(data, {
+          gfm: true,
+          langPrefix: 'hljs ',
+          highlight (code) {
+            return hljs.highlightAuto(code, ['javascript', 'html']).value
+          }
+        })
+      })
   }
 };
 </script>
