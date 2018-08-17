@@ -8,6 +8,7 @@ module.exports = {
   */
   head: {
     title: 'Dusty Codes',
+    htmlAttrs: { lang: 'en' },
     meta: [
       { charset: 'utf-8' },
       {
