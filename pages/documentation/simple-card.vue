@@ -29,22 +29,7 @@
           :key="'info'">
           <v-flex xs12>
             <v-card height="100%">
-              <v-card-title>
-                <h1>Return</h1>
-              </v-card-title>
-              <v-card-text>
-                <h3>Full Validation Return</h3>
-                <pre v-highlightjs>
-                <code class="javascript">
-                  {
-                    isValid: true,
-                    cardType: 'visa',
-                    cvnType: 'norm',
-                    isExpired: false,
-                    match: 'cvn matches card type'
-                  }
-                </code>
-                </pre>
+              <v-card-text class="readme" v-html="readMe">
               </v-card-text>
             </v-card>
           </v-flex>
@@ -58,26 +43,47 @@
 </template>
 
 <script>
-import { name, version } from 'simple-card/package.json';
-import badges from '../../components/badge';
-import docs from 'simple-card/docs.js';
-import methodDocs from '../../components/method-docs';
+import axios from 'axios'
+import marked from 'marked'
+import hljs from 'highlight.js'
+import capitalize from 'kyanite/capitalize'
+import badges from '../../components/badge'
+import methodDocs from '../../components/method-docs'
 
 export default {
   components: {
-    'method-docs': methodDocs,
+    methodDocs,
     badges
   },
   head: {
     title: 'Simple Card'
   },
-  data() {
-    return {
-      name,
-      version,
-      docs,
-      currDisplay: 'info'
-    };
+  asyncData ({ store }) {
+    return axios.get('https://cdn.jsdelivr.net/npm/simple-card@latest/info.json')
+      .then(({ data }) => {
+        return Object.assign({}, data, { currDisplay: 'info', readMe: '' })
+      })
+      .catch(() => ({
+        name: 'simple-card',
+        version: '0.0.0',
+        docs: [],
+        currDisplay: 'info'
+      }))
+  },
+  filters: {
+    capitalize
+  },
+  mounted () {
+    axios.get('https://cdn.jsdelivr.net/npm/simple-card@latest/README.md')
+      .then(({ data }) => {
+        this.readMe = marked(data, {
+          gfm: true,
+          langPrefix: 'hljs ',
+          highlight (code) {
+            return hljs.highlightAuto(code, ['javascript', 'html']).value
+          }
+        })
+      })
   }
 };
 </script>

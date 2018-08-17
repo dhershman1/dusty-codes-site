@@ -51,7 +51,7 @@ import methodDocs from '../../components/method-docs'
 
 export default {
   components: {
-    'method-docs': methodDocs,
+    methodDocs,
     badges
   },
   head: {
