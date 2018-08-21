@@ -8,7 +8,7 @@
               <h3 class="display-3">{{ name | capitalize }} v{{ version }}</h3>
               <badges :module="$route.params.module"></badges>
               <h3>{{ description }}</h3>
-              <p v-if="notice">{{ notice }}</p>
+              <p class="notice" v-if="notice">{{ notice }}</p>
             </v-flex>
           </v-layout>
         </v-container>
@@ -103,3 +103,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.v-jumbotron__content .container.fill-height {
+  padding: 0;
+}
+.notice {
+  margin-bottom: 0;
+}
+</style>
+
