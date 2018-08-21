@@ -19,7 +19,7 @@
         v-for="(card, i) in cards"
         :key="i">
         <v-card height="100%">
-          <v-toolbar color="primary" dark dense>
+          <v-toolbar color="primary" dark dense card>
             <v-toolbar-title>
               {{ card.title }}
             </v-toolbar-title>
@@ -92,6 +92,10 @@ export default {
 }
 .header-color {
   background-color: #2b5994 !important;
+}
+
+.flex .v-card .v-toolbar {
+  transform: none !important;
 }
 </style>
 
