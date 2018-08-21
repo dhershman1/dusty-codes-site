@@ -1,109 +1,110 @@
 <template>
-  <v-app>
-    <link rel="stylesheet" href="/atom-one-dark.css">
-    <v-navigation-drawer
-      temporary
-      absolute
-      v-model="navDrawer">
-      <v-toolbar
-        flat
-        light
-        class="transparent">
-        <v-list class="pa-0">
-          <v-list-tile avatar>
+  <main class="wrapper">
+    <v-app>
+      <v-navigation-drawer
+        temporary
+        absolute
+        v-model="navDrawer">
+        <v-toolbar
+          flat
+          light
+          class="transparent">
+          <v-list class="pa-0">
+            <v-list-tile avatar>
+              <v-list-tile-content>
+                <v-list-tile-title>Main</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-toolbar>
+        <v-divider></v-divider>
+        <v-list>
+          <v-list-tile
+            exact
+            :to="'/'"
+            @click="navDrawer = false">
+            <v-list-tile-action>
+              <v-icon>dashboard</v-icon>
+            </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>Main</v-list-tile-title>
+              <v-list-tile-title>Home</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
-      </v-toolbar>
-      <v-divider></v-divider>
-      <v-list>
-        <v-list-tile
-          exact
-          :to="'/'"
-          @click="navDrawer = false">
-          <v-list-tile-action>
-            <v-icon>dashboard</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-      <v-divider></v-divider>
-      <v-list>
-        <v-list-group
-          v-for="nav in navItems"
-          :key="nav.title"
-          v-model="nav.active"
-          :prepend-icon="nav.icon"
-          no-action>
-          <v-list-tile slot="activator">
-            <v-list-tile-content>
-              <v-list-tile-title>{{ nav.title }}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile
-            exact
-            v-for="item in nav.items"
-            :key="item.title"
-            :to="item.to"
-            @click="navDrawer = false">
-            <v-list-tile-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list-group>
-      </v-list>
-    </v-navigation-drawer>
-    <v-content>
-      <v-container grid-list-md fluid>
-        <v-tooltip bottom>
-          <v-btn
-            fab
-            dark
-            fixed
-            left
-            top
-            color="primary"
-            @click="openNav"
-            aria-label="Open Navigation Drawer"
-            slot="activator">
-            <v-icon>menu</v-icon>
-          </v-btn>
-          <span>Open Nav Drawer</span>
-        </v-tooltip>
-        <nuxt />
-        <v-fab-transition>
-          <v-tooltip top>
+        <v-divider></v-divider>
+        <v-list>
+          <v-list-group
+            v-for="nav in navItems"
+            :key="nav.title"
+            v-model="nav.active"
+            :prepend-icon="nav.icon"
+            no-action>
+            <v-list-tile slot="activator">
+              <v-list-tile-content>
+                <v-list-tile-title>{{ nav.title }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-list-tile
+              exact
+              v-for="item in nav.items"
+              :key="item.title"
+              :to="item.to"
+              @click="navDrawer = false">
+              <v-list-tile-action>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list-group>
+        </v-list>
+      </v-navigation-drawer>
+      <v-content>
+        <v-container grid-list-md fluid>
+          <v-tooltip bottom>
             <v-btn
               fab
               dark
               fixed
-              right
-              bottom
+              left
+              top
               color="primary"
-              v-scroll="onScroll"
-              v-show="fab"
-              @click="toTop">
-              <v-icon>keyboard_arrow_up</v-icon>
+              @click="openNav"
+              aria-label="Open Navigation Drawer"
+              slot="activator">
+              <v-icon>menu</v-icon>
             </v-btn>
-            <span>Back to top</span>
+            <span>Open Nav Drawer</span>
           </v-tooltip>
-        </v-fab-transition>
-      </v-container>
-    </v-content>
-    <v-footer app>
-      <span>Dustin Hershman &copy; 2018 Built using
-        <a href="https://nuxtjs.org/" target="_blank">Nuxt</a> and
-        <a href="https://vuetifyjs.com" target="_blank">Vuetify</a>
-      </span>
-    </v-footer>
-  </v-app>
+          <nuxt />
+          <v-fab-transition>
+            <v-tooltip top>
+              <v-btn
+                fab
+                dark
+                fixed
+                right
+                bottom
+                color="primary"
+                v-scroll="onScroll"
+                v-show="fab"
+                @click="toTop">
+                <v-icon>keyboard_arrow_up</v-icon>
+              </v-btn>
+              <span>Back to top</span>
+            </v-tooltip>
+          </v-fab-transition>
+        </v-container>
+      </v-content>
+      <v-footer app>
+        <span>Dustin Hershman &copy; 2018 Built using
+          <a href="https://nuxtjs.org/" target="_blank">Nuxt</a> and
+          <a href="https://vuetifyjs.com" target="_blank">Vuetify</a>
+        </span>
+      </v-footer>
+    </v-app>
+  </main>
 </template>
 
 <script>
@@ -200,13 +201,17 @@ export default {
 
 <style>
 
-#app {
-  background: linear-gradient(143deg, #364156, #114b5f, #2b5994);
-  background-size: 600% 600%;
+.container {
+  height: 100%
+}
 
-  -webkit-animation: bganimate 31s ease infinite;
-  -moz-animation: bganimate 31s ease infinite;
-  animation: bganimate 31s ease infinite;
+.wrapper {
+  background: url(/background.png)
+}
+
+#app {
+  background: rgba(43, 89, 148, 0.5) linear-gradient(143deg,
+  rgba(54, 65, 86, 0.5), rgba(17, 75, 95, 0.5), rgba(43, 89, 148, 0.5));
 }
 
 .nav-fixed {
@@ -229,21 +234,5 @@ export default {
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
-}
-
- @-webkit-keyframes bganimate {
-    0%{background-position:20% 0%}
-    50%{background-position:81% 100%}
-    100%{background-position:20% 0%}
-}
-@-moz-keyframes bganimate {
-    0%{background-position:20% 0%}
-    50%{background-position:81% 100%}
-    100%{background-position:20% 0%}
-}
-@keyframes bganimate {
-    0%{background-position:20% 0%}
-    50%{background-position:81% 100%}
-    100%{background-position:20% 0%}
 }
 </style>
