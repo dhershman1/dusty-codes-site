@@ -1,46 +1,42 @@
 <template>
-  <v-layout row>
-    <v-flex xs12 md12>
-      <v-jumbotron dark>
-        <v-container fill-height>
-          <v-layout align-center>
-            <v-flex text-xs-center>
-              <h3 class="display-3">Dusty Codes</h3>
-              <h3>Welcome to my Portfolio &amp; Documentation website</h3>
-              <h3>The top left button opens the nav drawer</h3>
-              <h3>or simply click a button below</h3>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-jumbotron>
-      <v-jumbotron dark height="20%">
-        <v-layout row wrap>
-          <v-flex xs12 md6 text-xs-center>
-            <v-tooltip bottom>
-              <v-btn
-                class="pa-2"
-                :to="'/portfolio'"
-                flat
-                slot="activator">
-                <h1>Portfolio</h1>
-              </v-btn>
-              <span>Go to the portfolio portal</span>
-            </v-tooltip>
-          </v-flex>
-          <v-flex xs12 md6 text-xs-center>
-            <v-tooltip bottom>
-              <v-btn
-                class="pa-2"
-                :to="'/documentation'"
-                flat
-                slot="activator">
-                <h1>Documentation</h1>
-              </v-btn>
-              <span>Go to the documentation portal</span>
-            </v-tooltip>
-          </v-flex>
-        </v-layout>
-      </v-jumbotron>
-    </v-flex>
+  <v-layout class="single" align-center justify-center column>
+    <v-layout align-center justify-end column>
+      <h1 class="display-2">Dusty Codes</h1>
+      <h2 class="headline">Portfolio &amp; Documentation website</h2>
+    </v-layout>
+    <v-layout align-start justify-center row>
+      <v-tooltip bottom>
+        <v-btn
+          class="pa-2"
+          color="secondary"
+          large
+          :to="'/portfolio'"
+          slot="activator">
+          <span class="headline">Portfolio</span>
+        </v-btn>
+        <span>Go to the documentation portal</span>
+      </v-tooltip>
+      <v-tooltip bottom>
+        <v-btn
+          class="pa-2"
+          color="secondary"
+          large
+          :to="'/documentation'"
+          slot="activator">
+          <span class="headline">Documentation</span>
+        </v-btn>
+        <span>Go to the documentation portal</span>
+      </v-tooltip>
+    </v-layout>
   </v-layout>
 </template>
+
+<style scoped>
+  .single {
+    height: 100%;
+  }
+  h1, h2 {
+    color: #FFF;
+  }
+</style>
+
