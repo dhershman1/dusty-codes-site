@@ -1,18 +1,13 @@
 <template>
   <v-layout column>
     <v-flex xs12>
-      <v-jumbotron dark height="275px">
-        <v-container fill-height>
-          <v-layout align-center>
-            <v-flex text-xs-center>
-              <h3 class="display-3">{{ name | capitalize }} v{{ version }}</h3>
-              <badges :module="$route.params.module"></badges>
-              <h3>{{ description }}</h3>
-              <p class="notice" v-if="notice">{{ notice }}</p>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-jumbotron>
+      <v-layout align-center>
+        <v-flex text-xs-center class="header-label">
+          <h3 class="display-3">{{ name | capitalize }} v{{ version }}</h3>
+          <badges :module="$route.params.module"></badges>
+          <h3>{{ description }}</h3>
+        </v-flex>
+      </v-layout>
       <v-tabs grow dark icons-and-text color="primary">
         <v-tabs-slider color="yellow"></v-tabs-slider>
         <v-tab @click="currDisplay = 'info'">
@@ -80,15 +75,6 @@ export default {
         currDisplay: 'info'
       }))
   },
-  computed: {
-    notice () {
-      const modules = {
-        kyanite: 'It is important to note that if you used the dusty-fns package, this is the continuation of that package, and you should switch to it for the latest and greatest.'
-      }
-
-      return modules[this.$route.params.module]
-    }
-  },
   mounted () {
     axios.get(`https://cdn.jsdelivr.net/npm/${this.$route.params.module}@latest/README.md`)
       .then(({ data }) => {
@@ -105,11 +91,8 @@ export default {
 </script>
 
 <style scoped>
-.v-jumbotron__content .container.fill-height {
-  padding: 0;
-}
-.notice {
-  margin-bottom: 0;
+.header-label {
+  color: #fff;
 }
 </style>
 

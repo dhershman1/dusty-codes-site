@@ -1,26 +1,20 @@
 <template>
   <v-layout column>
-    <v-jumbotron dark height="200px">
-      <v-container fill-height>
-        <v-layout align-center>
-          <v-flex text-xs-center>
-            <h1 class="display-3">Dustin Hershman</h1>
-            <h2>Full Stack Software Developer</h2>
-            <v-tooltip bottom>
-              <v-btn
-                class="pa-2"
-                color="secondary"
-                large
-                slot="activator"
-                href="mailto:dustinh17@gmail.com">
-                <span class="font-weight-bold headline">Contact Me</span>
-              </v-btn>
-              <span>Open email client to send an email</span>
-            </v-tooltip>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-jumbotron>
+    <v-flex class="page-header" text-xs-center>
+      <h1 class="display-3">Dustin Hershman</h1>
+      <h2>Full Stack Software Developer</h2>
+      <v-tooltip bottom>
+        <v-btn
+          class="pa-2"
+          color="secondary"
+          large
+          slot="activator"
+          href="mailto:dustinh17@gmail.com">
+          <span class="font-weight-bold headline">Contact Me</span>
+        </v-btn>
+        <span>Open email client to send an email</span>
+      </v-tooltip>
+    </v-flex>
     <v-layout wrap row>
       <v-flex
         xs12
@@ -76,3 +70,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.page-header {
+  color: #fff;
+}
+</style>
+

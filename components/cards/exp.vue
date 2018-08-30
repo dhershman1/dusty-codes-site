@@ -32,29 +32,29 @@
 <script>
 export default {
   props: {
-    job: {
+    info: {
       type: Object,
       default: () => ({})
     }
   },
   computed: {
     imageName () {
-      return this.job.imageName
+      return this.info.imageName
     },
     company () {
-      return this.job.company
+      return this.info.company
     },
     title () {
-      return this.job.title
+      return this.info.title
     },
     location () {
-      return this.job.location
+      return this.info.location
     },
     duration () {
-      return this.job.duration
+      return this.info.duration
     },
     tasks () {
-      return this.job.tasks
+      return this.info.tasks
     }
   }
 }
