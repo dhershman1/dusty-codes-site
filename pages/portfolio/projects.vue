@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import pageHeader from '../../components/page-header';
-import projCard from '../../components/cards/project';
+import pageHeader from '../../components/page-header'
+import projCard from '../../components/cards/project'
 
 export default {
   components: {
@@ -28,7 +28,7 @@ export default {
   head: {
     title: 'Projects'
   },
-  data() {
+  data () {
     return {
       projects: [
         {
@@ -127,8 +127,8 @@ export default {
           ]
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 

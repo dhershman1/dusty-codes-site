@@ -43,9 +43,8 @@
 </template>
 
 <script>
-import badges from '../../components/badge';
+import badges from '../../components/badge'
 
-/* eslint-disable max-len */
 export default {
   components: {
     badges
@@ -83,7 +82,7 @@ export default {
       }
     ]
   })
-};
+}
 </script>
 
 <style scoped>

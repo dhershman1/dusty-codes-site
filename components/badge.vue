@@ -15,7 +15,7 @@ export default {
       default: 'kyanite'
     }
   },
-  data() {
+  data () {
     return {
       badgeList: {
         'kyanite': [
@@ -111,8 +111,8 @@ export default {
           }
         ]
       }
-    };
+    }
   }
-};
+}
 </script>
 

@@ -54,8 +54,7 @@
 </template>
 
 <script>
-import argTable from './argument-table';
-import isEmpty from 'kyanite/isEmpty';
+import argTable from './argument-table'
 
 export default {
   props: {
@@ -67,17 +66,17 @@ export default {
   components: {
     'arg-table': argTable
   },
-  data() {
+  data () {
     return {
       currTab: 'standard'
-    };
+    }
   },
   computed: {
-    tabInfo() {
-      return this.selectedMethod.usage[this.currTab.toLowerCase()];
+    tabInfo () {
+      return this.selectedMethod.usage[this.currTab.toLowerCase()]
     }
   }
-};
+}
 </script>
 
 <style scoped>

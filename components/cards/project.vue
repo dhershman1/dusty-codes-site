@@ -54,29 +54,29 @@ export default {
     }
   },
   computed: {
-    link() {
-      return this.info.link;
+    link () {
+      return this.info.link
     },
-    imageName() {
-      return this.info.imageName;
+    imageName () {
+      return this.info.imageName
     },
-    name() {
-      return this.info.name;
+    name () {
+      return this.info.name
     },
-    stack() {
-      return this.info.stack;
+    stack () {
+      return this.info.stack
     },
-    summary() {
-      return this.info.summary;
+    summary () {
+      return this.info.summary
     },
-    description() {
-      return this.info.description;
+    description () {
+      return this.info.description
     },
-    technologies() {
-      return this.info.technologies;
+    technologies () {
+      return this.info.technologies
     }
   }
-};
+}
 </script>
 
 <style scoped>

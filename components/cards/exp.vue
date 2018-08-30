@@ -38,26 +38,26 @@ export default {
     }
   },
   computed: {
-    imageName() {
-      return this.job.imageName;
+    imageName () {
+      return this.job.imageName
     },
-    company() {
-      return this.job.company;
+    company () {
+      return this.job.company
     },
-    title() {
-      return this.job.title;
+    title () {
+      return this.job.title
     },
-    location() {
-      return this.job.location;
+    location () {
+      return this.job.location
     },
-    duration() {
-      return this.job.duration;
+    duration () {
+      return this.job.duration
     },
-    tasks() {
-      return this.job.tasks;
+    tasks () {
+      return this.job.tasks
     }
   }
-};
+}
 </script>
 
 <style scoped>

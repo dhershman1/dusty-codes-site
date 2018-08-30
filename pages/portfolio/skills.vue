@@ -21,8 +21,8 @@
 
 /* eslint-disable max-len */
 
-import pageHeader from '../../components/page-header';
-import skillCard from '../../components/cards/skills';
+import pageHeader from '../../components/page-header'
+import skillCard from '../../components/cards/skills'
 
 export default {
   components: {
@@ -32,7 +32,7 @@ export default {
   head: {
     title: 'Skills'
   },
-  data() {
+  data () {
     return {
       skills: [
         {
@@ -189,8 +189,8 @@ export default {
           level: 'Intermediate'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 

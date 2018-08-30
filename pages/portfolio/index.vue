@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import infoCard from '../../components/info-card';
+import infoCard from '../../components/info-card'
 
 export default {
   components: {
@@ -49,8 +49,7 @@ export default {
   head: {
     title: 'Portfolio'
   },
-  data() {
-
+  data () {
     return {
       gradient: 'to top right, rgba(63,81,181, .7), rgba(34,46,84, .7)',
       cards: [
@@ -73,7 +72,7 @@ export default {
           imgSrc: '/imgs/skills.jpg'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>

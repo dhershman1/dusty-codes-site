@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import fuzzysearch from 'kyanite/fuzzySearch';
+import fuzzysearch from 'kyanite/fuzzySearch'
 
 export default {
   props: {
@@ -83,43 +83,43 @@ export default {
       default: () => []
     }
   },
-  data() {
+  data () {
     return {
       clipped: false,
       search: '',
       activeItem: this.docs[0].title,
       filteredDocs: this.docs
-    };
+    }
   },
   methods: {
-    toTop(item) {
-      this.$router.push({hash: ''});
-      window.scrollTo(0, 0);
-      this.$emit('switchMethod', item);
-      this.activeItem = item.title;
+    toTop (item) {
+      this.$router.push({ hash: '' })
+      window.scrollTo(0, 0)
+      this.$emit('switchMethod', item)
+      this.activeItem = item.title
     }
   },
   watch: {
-    search(val) {
+    search (val) {
       if (!val) {
-        this.filteredDocs = this.methodList;
+        this.filteredDocs = this.methodList
       } else {
         this.filteredDocs = this.methodList.filter(({ title, category }) =>
           fuzzysearch(val.toLowerCase(), title.toLowerCase()) ||
-          fuzzysearch(val.toLowerCase(), category.toLowerCase()));
+          fuzzysearch(val.toLowerCase(), category.toLowerCase()))
       }
     }
   },
   computed: {
-    methodList() {
+    methodList () {
       return this.docs.map(({ title, desc, category }) => ({
         title,
         category,
         desc
-      }));
+      }))
     }
   }
-};
+}
 </script>
 
 <style scoped>

@@ -55,12 +55,12 @@ export default {
     methodDocs,
     badges
   },
-  head() {
+  head () {
     return {
       title: `Documentation - ${capitalize(this.$route.params.module)}`
     }
   },
-  validate({ params }) {
+  validate ({ params }) {
     const valid = ['kyanite', 'simply_valid', 'simple-card', 'phone-fns']
 
     return valid.includes(params.module)
@@ -81,7 +81,7 @@ export default {
       }))
   },
   computed: {
-    notice() {
+    notice () {
       const modules = {
         kyanite: 'It is important to note that if you used the dusty-fns package, this is the continuation of that package, and you should switch to it for the latest and greatest.'
       }

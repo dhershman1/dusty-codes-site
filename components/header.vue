@@ -24,23 +24,23 @@ export default {
       default: '0.0.0'
     }
   },
-  data() {
+  data () {
     return {
       current: 'info'
-    };
+    }
   },
   methods: {
-    switchTo(to) {
-      this.current = to;
+    switchTo (to) {
+      this.current = to
 
       if (to === 'docs') {
-        this.$emit('goDocs');
+        this.$emit('goDocs')
       } else {
-        this.$emit('goInfo');
+        this.$emit('goInfo')
       }
     }
   }
-};
+}
 </script>
 
 <style scoped>

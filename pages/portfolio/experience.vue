@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import expCard from '../../components/cards/exp';
-import pageHeader from '../../components/page-header';
+import expCard from '../../components/cards/exp'
+import pageHeader from '../../components/page-header'
 
 export default {
   components: {
@@ -28,7 +28,7 @@ export default {
   head: {
     title: 'Experience'
   },
-  data() {
+  data () {
     return {
       jobs: [
         {
@@ -57,8 +57,8 @@ export default {
           ]
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 

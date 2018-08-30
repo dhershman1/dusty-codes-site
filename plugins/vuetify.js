@@ -18,12 +18,11 @@ import {
   VTooltip,
   Vuetify,
   transitions
-} from 'vuetify';
+} from 'vuetify'
 import {
-  scroll,
-  touch
-} from 'vuetify-directives';
-import Vue from 'vue';
+  scroll
+} from 'vuetify-directives'
+import Vue from 'vue'
 
 Vue.use(Vuetify, {
   theme: {
@@ -59,4 +58,4 @@ Vue.use(Vuetify, {
     VTextField,
     transitions
   }
-});
+})

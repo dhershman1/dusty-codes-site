@@ -54,50 +54,50 @@ export default {
     }
   },
   methods: {
-    getColor(lvl) {
+    getColor (lvl) {
       const colors = {
         beginner: 'red',
         novice: 'orange',
         intermediate: 'amber',
         professional: 'green',
         expert: 'primary'
-      };
+      }
 
-      return colors[lvl.toLowerCase()];
+      return colors[lvl.toLowerCase()]
     },
-    convertLvl(lvl) {
+    convertLvl (lvl) {
       const percents = {
         beginner: 20,
         novice: 40,
         intermediate: 60,
         professional: 80,
         expert: 100
-      };
+      }
 
-      return percents[lvl.toLowerCase()];
+      return percents[lvl.toLowerCase()]
     }
   },
   computed: {
-    img() {
-      return this.info.img;
+    img () {
+      return this.info.img
     },
-    name() {
-      return this.info.name;
+    name () {
+      return this.info.name
     },
-    summary() {
-      return this.info.summary;
+    summary () {
+      return this.info.summary
     },
-    versions() {
-      return this.info.versions.join(', ');
+    versions () {
+      return this.info.versions.join(', ')
     },
-    level() {
-      return this.info.level;
+    level () {
+      return this.info.level
     },
-    link() {
-      return this.info.link;
+    link () {
+      return this.info.link
     }
   }
-};
+}
 </script>
 
 <style scoped>

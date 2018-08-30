@@ -109,7 +109,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       fab: false,
       title: 'Dusty Codes',
@@ -173,30 +173,30 @@ export default {
           ]
         }
       ]
-    };
+    }
   },
   methods: {
-    onScroll() { // eslint-disable-line complexity
+    onScroll () { // eslint-disable-line complexity
       if (typeof window === 'undefined') {
-        return false;
+        return false
       }
 
-      const top = window.pageYOffset || document.documentElement.offsetTop || 0;
+      const top = window.pageYOffset || document.documentElement.offsetTop || 0
 
-      this.fab = top > 300;
+      this.fab = top > 300
 
-      return false;
+      return false
     },
-    toTop() {
-      this.$router.push({hash: ''});
-      window.scrollTo(0, 0);
+    toTop () {
+      this.$router.push({ hash: '' })
+      window.scrollTo(0, 0)
     },
-    openNav() {
-      this.navDrawer = !this.navDrawer;
-      this.toTop();
+    openNav () {
+      this.navDrawer = !this.navDrawer
+      this.toTop()
     }
   }
-};
+}
 </script>
 
 <style>

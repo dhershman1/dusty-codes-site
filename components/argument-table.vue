@@ -26,22 +26,22 @@ export default {
     }
   },
   computed: {
-    headers() {
+    headers () {
       if (this.short) {
-        return ['Type', 'Description'];
+        return ['Type', 'Description']
       }
 
-      return ['Name', 'Type', 'Description'];
+      return ['Name', 'Type', 'Description']
     },
-    items() {
+    items () {
       return this.params.map(({ type, description, name }) => ({
         paramName: name,
         paramType: type.names[0] === '*' ? 'Any' : type.names[0].toLowerCase(),
         paramDesc: description
-      }));
+      }))
     }
   }
-};
+}
 </script>
 
 <style scoped>

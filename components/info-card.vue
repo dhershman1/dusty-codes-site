@@ -36,6 +36,6 @@ export default {
       default: 'Short Description'
     }
   }
-};
+}
 </script>
 

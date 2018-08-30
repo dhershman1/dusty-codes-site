@@ -28,9 +28,9 @@
 </template>
 
 <script>
-import codeBlock from './code-block';
-import find from 'kyanite/find';
-import methods from './methods';
+import codeBlock from './code-block'
+import find from 'kyanite/find'
+import methods from './methods'
 
 export default {
   props: {
@@ -43,17 +43,17 @@ export default {
     'code-block': codeBlock,
     methods
   },
-  data() {
+  data () {
     return {
       drawer: false,
       selectedMethod: this.docs[0]
-    };
+    }
   },
   methods: {
-    switchMethod(item) {
-      this.drawer = false;
-      this.selectedMethod = find(({ title }) => title === item.title, this.docs);
+    switchMethod (item) {
+      this.drawer = false
+      this.selectedMethod = find(({ title }) => title === item.title, this.docs)
     }
   }
-};
+}
 </script>
