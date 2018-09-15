@@ -4,7 +4,7 @@
       <h1 class="display-2">Dusty Codes</h1>
       <h2 class="headline">Portfolio &amp; Documentation website</h2>
     </v-layout>
-    <v-layout align-start justify-center row>
+    <v-layout justify-center row>
       <v-tooltip bottom>
         <v-btn
           class="pa-2"
@@ -28,6 +28,24 @@
         <span>Go to the documentation portal</span>
       </v-tooltip>
     </v-layout>
+    <v-layout row wrap>
+      <v-flex xs12>
+        <v-card>
+          <v-card-title class="pb-0 pt-2" primary-title>
+            <h3>Whats New?</h3>
+          </v-card-title>
+          <v-card-text>
+            <ul>
+              <li>This whats new box</li>
+              <li>New deprecation flags added to show deprecated functions</li>
+              <li>Documentation auto scrolling when selecting a method smoothed</li>
+              <li>Added Changelog to documentation tabs</li>
+              <li>Heavy Code and component cleanup for main pages</li>
+            </ul>
+          </v-card-text>
+        </v-card>
+      </v-flex>
+    </v-layout>
   </v-layout>
 </template>
 
@@ -35,6 +53,7 @@
   .single {
     height: 100%;
   }
+
   h1, h2 {
     color: #FFF;
   }
