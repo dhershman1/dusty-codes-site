@@ -18,6 +18,11 @@
           placeholder="Search"
           label="Search"
           single-line></v-text-field>
+        <v-toolbar-items>
+          <v-btn @click="switchMethodStyle" flat>
+            Display: {{ methodStyle | capitalize }}
+          </v-btn>
+        </v-toolbar-items>
       </v-toolbar>
       <v-list two-line>
         <v-list-tile
@@ -48,10 +53,13 @@
           class="px-2"
           prepend-icon="search"
           hide-details
-          v-model.trim="search"
+          v-model.trim.lazy="search"
           placeholder="Search"
           color="accent"
           single-line></v-text-field>
+        <v-btn @click="switchMethodStyle" flat>
+          Display: {{ methodStyle | capitalize }}
+        </v-btn>
       </v-toolbar>
       <v-list two-line>
         <v-list-tile
@@ -78,59 +86,54 @@
 </template>
 
 <script>
-import fuzzysearch from 'kyanite/fuzzySearch'
+import { mapState, mapGetters, mapMutations } from 'vuex'
+import capitalize from 'kyanite/capitalize'
 
 export default {
-  props: {
-    drawer: {
-      type: Boolean,
-      default: false
-    },
-    docs: {
-      type: Array,
-      default: () => []
-    }
+  filters: {
+    capitalize
   },
   data () {
     return {
       clipped: false,
       search: '',
-      activeItem: this.docs[0].title,
-      filteredDocs: this.docs
+      activeItem: '',
+      filteredDocs: []
     }
   },
   methods: {
+    ...mapMutations(['switchMethodStyle', 'toggleDrawer', 'closeDrawer']),
+    ...mapMutations('docs', ['selectMethod']),
     toTop (item) {
       this.$router.push({ hash: '' })
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       })
-      this.$emit('switchMethod', item)
+
+      this.closeDrawer()
+      this.selectMethod(item)
       this.activeItem = item.title
     }
   },
   watch: {
     search (val) {
       if (!val) {
-        this.filteredDocs = this.methodList
+        this.filteredDocs = this.sortedDocs
       } else {
-        this.filteredDocs = this.methodList.filter(({ title, category }) =>
-          fuzzysearch(val.toLowerCase(), title.toLowerCase()) ||
-          fuzzysearch(val.toLowerCase(), category.toLowerCase()))
+        this.filteredDocs = this.filterDocs(val)
       }
     }
   },
   computed: {
-    methodList () {
-      return this.docs.map(({ title, desc, category, deprecated = false }) => {
-        if (deprecated) {
-          return { title, desc, category, deprecated }
-        }
+    ...mapState(['methodStyle', 'drawer']),
+    ...mapGetters('docs', ['filterDocs', 'sortedDocs'])
+  },
 
-        return { title, desc, category }
-      })
-    }
+  mounted () {
+    this.activeItem = this.sortedDocs[0].title
+    this.selectMethod(this.sortedDocs[0])
+    this.filteredDocs = this.sortedDocs
   }
 }
 </script>

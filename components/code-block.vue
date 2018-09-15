@@ -57,15 +57,10 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import argTable from './argument-table'
 
 export default {
-  props: {
-    'selected-method': {
-      type: Object,
-      default: () => ({})
-    }
-  },
   components: {
     'arg-table': argTable
   },
@@ -75,6 +70,7 @@ export default {
     }
   },
   computed: {
+    ...mapState('docs', ['selectedMethod']),
     tabInfo () {
       return this.selectedMethod.usage[this.currTab.toLowerCase()]
     }

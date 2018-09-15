@@ -10,50 +10,38 @@
       left
       color="primary"
       class="hidden-md-and-up"
-      @click="drawer = !drawer">
+      @click="toggleDrawer">
       <v-icon v-html="!drawer ? 'chevron_right' : 'chevron_left'"></v-icon>
     </v-btn>
-    <v-flex sm1 md3>
-      <methods
-        :drawer="drawer"
-        :docs="docs"
-        @switchMethod="switchMethod" />
+    <v-flex sm2 md4>
+      <methods />
     </v-flex>
-    <v-flex sm12 md9 dark>
+    <v-flex sm12 md8 dark>
       <transition name="slide-fade" mode="out-in">
-        <code-block :selected-method="selectedMethod" :key="selectedMethod.title" />
+        <code-block v-if="methodStyle === 'one'" :key="selectedMethod.title" />
       </transition>
+      <!-- <code-block v-else v-for="fn in sortedDocs" :key="fn.title" :selectedMethod="fn" /> -->
     </v-flex>
   </v-layout>
 </template>
 
 <script>
+import { mapState, mapGetters, mapMutations } from 'vuex'
 import codeBlock from './code-block'
-import find from 'kyanite/find'
 import methods from './methods'
 
 export default {
-  props: {
-    docs: {
-      type: Array,
-      default: () => []
-    }
-  },
   components: {
     'code-block': codeBlock,
     methods
   },
-  data () {
-    return {
-      drawer: false,
-      selectedMethod: this.docs[0]
-    }
+  computed: {
+    ...mapState(['methodStyle', 'drawer']),
+    ...mapState('docs', ['selectedMethod']),
+    ...mapGetters('docs', ['sortedDocs'])
   },
   methods: {
-    switchMethod (item) {
-      this.drawer = false
-      this.selectedMethod = find(({ title }) => title === item.title, this.docs)
-    }
+    ...mapMutations(['toggleDrawer'])
   }
 }
 </script>
