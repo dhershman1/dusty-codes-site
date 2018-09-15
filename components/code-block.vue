@@ -7,6 +7,9 @@
       <h4 v-if="selectedMethod.since">
         Since {{ selectedMethod.since }} |
         <span class="category" v-if="selectedMethod.category"> {{ selectedMethod.category }}</span>
+        <span class="deprecated" v-if="selectedMethod.deprecated" justify-space-around>
+          <v-icon small color="black">warning</v-icon> Deprecated: {{ selectedMethod.deprecated }}
+        </span>
       </h4>
       <p>{{ selectedMethod.desc }}</p>
       <h2>Usage</h2>
@@ -85,6 +88,14 @@ code:before {
 }
 .category {
   background-color: #a4b1fc;
+  color: #000;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+}
+
+.deprecated {
+  background-color: #aa2e2e;
+  margin-left: 0.3rem;
   color: #000;
   padding: 0.3rem;
   border-radius: 0.5rem;

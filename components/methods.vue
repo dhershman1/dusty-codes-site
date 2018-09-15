@@ -19,7 +19,7 @@
           label="Search"
           single-line></v-text-field>
       </v-toolbar>
-      <v-list>
+      <v-list two-line>
         <v-list-tile
           :key="i"
           v-for="(item, i) in filteredDocs"
@@ -30,6 +30,10 @@
             <v-list-tile-title>
               {{ item.title }}
               <span class="category ml-1" v-if="item.category">{{ item.category }}</span>
+              <span class="deprecated ml-1" v-if="item.deprecated">
+                <v-icon small color="black">warning</v-icon>
+                Deprecated
+              </span>
             </v-list-tile-title>
             <v-list-tile-title v-text="item.desc"></v-list-tile-title>
           </v-list-tile-content>
@@ -60,6 +64,10 @@
             <v-list-tile-title>
               {{ item.title }}
               <span class="category ml-1" v-if="item.category">{{ item.category }}</span>
+              <span class="deprecated ml-1" v-if="item.deprecated">
+                <v-icon small color="black">warning</v-icon>
+                Deprecated
+              </span>
             </v-list-tile-title>
             <v-list-tile-sub-title v-text="item.desc" />
           </v-list-tile-content>
@@ -94,7 +102,10 @@ export default {
   methods: {
     toTop (item) {
       this.$router.push({ hash: '' })
-      window.scrollTo(0, 0)
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
       this.$emit('switchMethod', item)
       this.activeItem = item.title
     }
@@ -112,11 +123,13 @@ export default {
   },
   computed: {
     methodList () {
-      return this.docs.map(({ title, desc, category }) => ({
-        title,
-        category,
-        desc
-      }))
+      return this.docs.map(({ title, desc, category, deprecated = false }) => {
+        if (deprecated) {
+          return { title, desc, category, deprecated }
+        }
+
+        return { title, desc, category }
+      })
     }
   }
 }
@@ -129,6 +142,15 @@ export default {
   font-weight: bold;
   padding: 0.3rem;
   text-align: right;
+  border-radius: 0.5rem;
+}
+
+.deprecated {
+  background-color: #aa2e2e;
+  margin-left: 0.3rem;
+  color: #000;
+  font-weight: bold;
+  padding: 0.3rem;
   border-radius: 0.5rem;
 }
 
