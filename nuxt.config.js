@@ -80,10 +80,7 @@ module.exports = {
           nodeExternals({
             whitelist: [
               /^vuetify/,
-              'phone-fns',
-              'kyanite',
-              'simply_valid',
-              'simple-card'
+              'kyanite'
             ]
           })
         ]
