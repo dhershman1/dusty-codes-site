@@ -10,9 +10,13 @@
       </v-layout>
       <v-tabs grow dark icons-and-text color="primary">
         <v-tabs-slider color="yellow"></v-tabs-slider>
-        <v-tab @click="currDisplay = 'info'">
+        <v-tab @click="currDisplay = 'readme'">
           Readme
           <v-icon>info</v-icon>
+        </v-tab>
+        <v-tab v-if="changelog" @click="currDisplay = 'changelog'">
+          Changelog
+          <v-icon>assignment</v-icon>
         </v-tab>
         <v-tab @click="currDisplay = 'methods'">
           Functions
@@ -23,15 +27,15 @@
         <v-layout
           row
           wrap
-          v-if="currDisplay === 'info'"
-          :key="'info'">
+          v-if="currDisplay === 'readme' || currDisplay === 'changelog'"
+          :key="'readme'">
           <v-flex xs12>
             <v-card height="100%">
-              <v-card-text class="readme" v-html="readMe" />
+              <v-card-text class="readme" v-html="currDisplay === 'readme' ? readMe : changelog" />
             </v-card>
           </v-flex>
         </v-layout>
-        <method-docs v-else :docs="docs" :key="'docs'"></method-docs>
+        <method-docs v-else :docs="docs" :key="'docs'" />
       </transition>
     </v-flex>
   </v-layout>
@@ -64,28 +68,33 @@ export default {
     capitalize
   },
   asyncData ({ params }) {
-    return axios.get(`https://cdn.jsdelivr.net/npm/${params.module}@latest/info.json`)
-      .then(({ data }) => {
-        return Object.assign({ name: params.module }, data, { currDisplay: 'info', readMe: '' })
+    const cl = params.module === 'kyanite' ? 'CHANGELOG' : 'changelog'
+
+    return Promise.all([
+      axios.get(`https://cdn.jsdelivr.net/npm/${params.module}@latest/README.md`),
+      axios.get(`https://cdn.jsdelivr.net/npm/${params.module}@latest/${cl}.md`),
+      axios.get(`https://cdn.jsdelivr.net/npm/${params.module}@latest/info.json`)
+    ]).then(([readme, changelog, info]) => {
+      const rmHtml = marked(readme.data, {
+        gfm: true,
+        langPrefix: 'hljs ',
+        highlight (code) {
+          return hljs.highlightAuto(code, ['javascript', 'html']).value
+        }
       })
-      .catch(() => ({
-        name: params.module,
-        version: '0.0.0',
-        docs: [],
-        currDisplay: 'info'
-      }))
-  },
-  mounted () {
-    axios.get(`https://cdn.jsdelivr.net/npm/${this.$route.params.module}@latest/README.md`)
-      .then(({ data }) => {
-        this.readMe = marked(data, {
-          gfm: true,
-          langPrefix: 'hljs ',
-          highlight (code) {
-            return hljs.highlightAuto(code, ['javascript', 'html']).value
-          }
-        })
+      const clHtml = marked(changelog.data)
+
+      return Object.assign({ name: params.module }, info.data, {
+        currDisplay: 'readme',
+        readMe: rmHtml,
+        changelog: clHtml
       })
+    }).catch(() => ({
+      name: params.module,
+      version: '0.0.0',
+      docs: [],
+      currDisplay: 'readme'
+    }))
   }
 }
 </script>
