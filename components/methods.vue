@@ -107,7 +107,7 @@ export default {
     toTop (item) {
       this.$router.push({ hash: '' })
       window.scrollTo({
-        top: 0,
+        top: 150,
         behavior: 'smooth'
       })
 

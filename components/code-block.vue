@@ -11,7 +11,7 @@
           <v-icon small color="black">warning</v-icon> Deprecated: {{ selectedMethod.deprecated }}
         </span>
       </h4>
-      <p>{{ selectedMethod.desc }}</p>
+      <p class="desc">{{ selectedMethod.desc }}</p>
       <h2>Usage</h2>
       <v-divider class="mb-1"></v-divider>
       <v-btn ripple @click="currTab = 'standard'">
@@ -35,7 +35,7 @@
       </pre>
       <h2>Syntax</h2>
       <v-divider></v-divider>
-      <pre v-highlightjs="`${selectedMethod.syntax};`">
+      <pre v-highlightjs="`${selectedMethod.syntax}`">
         <code class="javascript"></code>
       </pre>
       <h2>Arguments</h2>
@@ -82,6 +82,11 @@ export default {
 code:before {
   content: '';
 }
+
+.desc {
+  margin-top: 0.3rem;
+}
+
 .category {
   background-color: #a4b1fc;
   color: #000;
