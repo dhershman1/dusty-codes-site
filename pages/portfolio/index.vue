@@ -22,24 +22,28 @@
         md4
         v-for="(card, i) in cards"
         :key="i">
-        <info-card
-          :headline="card.title"
-          :description="card.description"
-          :dest="card.destination"
-          :imgSrc="card.imgSrc">
-        </info-card>
+        <v-card :to="card.destination">
+          <v-card-media
+            class="white--text"
+            height="200px"
+            :src="card.imgSrc"
+          >
+          </v-card-media>
+          <v-card-title>
+            <div>
+              <h3>{{ card.title }}</h3>
+              <br>
+              <span>{{ card.description }}</span>
+            </div>
+          </v-card-title>
+        </v-card>
       </v-flex>
     </v-layout>
   </v-layout>
 </template>
 
 <script>
-import infoCard from '../../components/info-card'
-
 export default {
-  components: {
-    'info-card': infoCard
-  },
   head: {
     title: 'Portfolio'
   },
