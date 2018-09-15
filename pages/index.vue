@@ -32,9 +32,16 @@
       <v-flex xs12>
         <v-card>
           <v-card-title class="pb-0 pt-2" primary-title>
-            <h3>Whats New?</h3>
+            <h3>Whats New? (In the last 3 updates)</h3>
           </v-card-title>
           <v-card-text>
+            <span class="log-date">September 15th, 2018</span>
+            <ul>
+              <li>Arranged functions to return alphabetically</li>
+              <li>Lazy load method searches</li>
+              <li>Adjust layout for methods display</li>
+            </ul>
+            <span class="log-date">September 14th, 2018</span>
             <ul>
               <li>This whats new box</li>
               <li>New deprecation flags added to show deprecated functions</li>
@@ -52,6 +59,11 @@
 <style scoped>
   .single {
     height: 100%;
+  }
+
+  .log-date {
+    list-style: none;
+    font-weight: bold;
   }
 
   h1, h2 {
