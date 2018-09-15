@@ -132,7 +132,6 @@ export default {
 
   mounted () {
     this.activeItem = this.sortedDocs[0].title
-    this.selectMethod(this.sortedDocs[0])
     this.filteredDocs = this.sortedDocs
   }
 }

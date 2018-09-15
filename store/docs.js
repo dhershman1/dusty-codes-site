@@ -75,7 +75,7 @@ export const actions = {
       commit('setReadme', readme.data)
       commit('setChangelog', changelog.data)
       commit('setDocs', info.data.docs)
-      commit('selectMethod', info.data.docs[0])
+      commit('selectMethod', sortBy(x => x.title, info.data.docs)[0])
     }).catch(err => {
       commit('setModule', {})
       commit('setReadme', '')
