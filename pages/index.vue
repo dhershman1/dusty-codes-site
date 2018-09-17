@@ -42,6 +42,7 @@
               <li>You can now click a card on the documentation portal to go to it</li>
               <li>Added a "Go to Github" tab on module documentation page</li>
               <li>Adjust layout for methods display</li>
+              <li>Updated Work Experience to be more Recent</li>
             </ul>
             <span class="log-date">September 14th, 2018</span>
             <ul>
