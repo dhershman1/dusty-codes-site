@@ -8,7 +8,7 @@
       <v-flex
         xs12
         s6
-        md4
+        md3
         v-for="(card, i) in cards"
         :key="i">
         <v-card hover :to="card.destination" ripple height="100%">
