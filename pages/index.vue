@@ -35,10 +35,12 @@
             <h3>Whats New? (In the last 3 updates)</h3>
           </v-card-title>
           <v-card-text>
-            <span class="log-date">September 15th, 2018</span>
+            <span class="log-date">-Coming Soon-</span>
             <ul>
               <li>Arranged functions to return alphabetically</li>
-              <li>Lazy load method searches</li>
+              <li>Removed buttons on documentation cards</li>
+              <li>You can now click a card on the documentation portal to go to it</li>
+              <li>Added a "Go to Github" tab on module documentation page</li>
               <li>Adjust layout for methods display</li>
             </ul>
             <span class="log-date">September 14th, 2018</span>
@@ -47,7 +49,6 @@
               <li>New deprecation flags added to show deprecated functions</li>
               <li>Documentation auto scrolling when selecting a method smoothed</li>
               <li>Added Changelog to documentation tabs</li>
-              <li>Heavy Code and component cleanup for main pages</li>
             </ul>
           </v-card-text>
         </v-card>
