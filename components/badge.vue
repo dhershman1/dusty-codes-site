@@ -40,6 +40,9 @@ export default {
   },
   methods: {
       convertModule (val) {
+        // Since my idiot self named the distro version of simply valid to simply-valid.min.js
+        // We need to convert it for this one and only module...
+        // Why am I like this
         if (val === 'simply_valid') {
           return 'simply-valid'
         }
