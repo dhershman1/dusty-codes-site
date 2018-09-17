@@ -3,7 +3,7 @@
     "name": "Dusty Codes",
     "imageName": "imgs/code.jpg",
     "stack": "Web Portfolio & Documentation App",
-    "summary": "This current web page",
+    "summary": "This very web application",
     "description": "This is an app that both shares my portfolio info as well as Documentation for my modules",
     "technologies": [
       {
@@ -67,30 +67,46 @@
     ]
   },
   {
-    "name": "Kyanite",
+    "name": "Libraries & Modules",
     "imageName": "imgs/logo.png",
-    "stack": "JavaScript Pure Functional Library",
-    "summary": "A library of single type pure functions",
-    "description": "Utility library containing pure functions that focus on working with single type values",
-    "link": "/kyanite",
+    "stack": "Functional JavaScript",
+    "summary": "All of my personal and public facing JavaScript/Node Libraries",
+    "description": "I work hard for all of my libraries and modules I've released via npm to keep giving the best quality code I can to the community",
+    "link": "/documentation",
     "technologies": [
       {
-        "name": "JavaScript ES2015 & ES2016",
+        "name": "JavaScript",
         "link": "http://www.ecma-international.org/ecma-262/6.0/"
       }
     ]
   },
   {
-    "name": "Phone-Fns",
-    "imageName": "imgs/logo.png",
-    "stack": "JavaScript Library",
-    "summary": "A functional JavaScript Library",
-    "description": "A library of functional helpers for handling and manipulating phone numbers",
-    "link": "/phone-fns",
+    "name": "Silicate CMS",
+    "imageName": "imgs/silicate.png",
+    "stack": "Functional Headless CMS System still under heavy development",
+    "summary": "Silicate CMS is a personal hobby project to build a headless cms",
+    "description": "This CMS is built around the idea for future use in both personal and professional projects to help clients and myself keep a safe, secure, and above all fast application. The application however is still under heavy development and in a very WIP state",
+    "link": "https://github.com/dhershman1/silicate-cms",
     "technologies": [
       {
-        "name": "JavaScript ES2015 & ES2016",
+        "name": "JavaScript",
         "link": "http://www.ecma-international.org/ecma-262/6.0/"
+      },
+      {
+        "name": "Vue.js",
+        "link": "https://vuejs.org/"
+      },
+      {
+        "name": "Nuxt.js",
+        "link": "https://nuxtjs.org/"
+      },
+      {
+        "name": "Node.js",
+        "link": "https://nodejs.org/"
+      },
+      {
+        "name": "CSS Grid",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout"
       }
     ]
   }

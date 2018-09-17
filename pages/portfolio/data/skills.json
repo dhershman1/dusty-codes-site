@@ -1,10 +1,18 @@
 [
   {
+    "name": "Babel",
+    "link": "https://babeljs.io/",
+    "img": "babel.jpg",
+    "summary": "A JavaScript Transpiler tool used to transpile ES6+ JS code down to ES5 JS code",
+    "versions": ["4.x.x", "5.x.x", "6.x.x", "7.x.x+"],
+    "level": "Professional"
+  },
+  {
     "name": "Bootstrap",
-    "link": "http://getbootstrap.com/",
+    "link": "https://getbootstrap.com/",
     "img": "bootstrap.png",
     "summary": "One of the Most used frameworks in the css realm",
-    "versions": ["v3", "v4"],
+    "versions": ["v3", "v4+"],
     "level": "Professional"
   },
   {
@@ -12,7 +20,7 @@
     "link": "https://www.couchbase.com/",
     "img": "couchbase.png",
     "summary": "A NoSQL database that is very similar to RethinkDB but unique in it's own way",
-    "versions": ["5.0.1"],
+    "versions": ["5.0.1+"],
     "level": "Intermediate"
   },
   {
@@ -28,7 +36,7 @@
     "link": "http://elm-lang.org/",
     "img": "elm.png",
     "summary": "Elm is a language that compiles down to JS but has a strictly typed system built in and I fell in love with it after a friend showed it to me and I played around with it for a while. Though still a newbie to it I hope to practice it as much as I have practiced JavaScript itself.",
-    "versions": ["Latest"],
+    "versions": ["0.18.0+"],
     "level": "Novice"
   },
   {
@@ -52,7 +60,7 @@
     "link": "https://jquery.com/",
     "img": "jquery.png",
     "summary": "A library for manipulating and expressing content to the DOM as well as using ajax",
-    "versions": ["1.x", "3.x"],
+    "versions": ["1.x", "3.x+"],
     "level": "Professional"
   },
   {
@@ -68,7 +76,7 @@
     "link": "https://nodejs.org/",
     "img": "node.png",
     "summary": "I became facinated with Node once I learned about it and I like to think my abilities have grown largely and at a very fast pace.",
-    "versions": ["0.10.x", "0.12.x", "4.x", "6.x", "8.x"],
+    "versions": ["0.10.x", "0.12.x", "4.x", "6.x", "8.x+"],
     "level": "Professional"
   },
   {
@@ -76,7 +84,7 @@
     "link": "https://nuxtjs.org/",
     "img": "nuxt.jpg",
     "summary": "This is almost a clone of the Vue framework but it has a lot of the modules baked right in, and it's extremely good with SSR content.",
-    "versions": ["1.x"],
+    "versions": ["1.x+"],
     "level": "Professional"
   },
   {
@@ -84,7 +92,7 @@
     "link": "http://ramdajs.com/",
     "img": "ramda.png",
     "summary": "Another library of pure functional operators for JavaScript that I am very fond of",
-    "versions": ["0.23.x", "0.24.x", "0.25.x"],
+    "versions": ["0.23.x", "0.24.x", "0.25.x+"],
     "level": "Professional"
   },
   {
@@ -100,7 +108,7 @@
     "link": "https://rollupjs.org/guide/en",
     "img": "rollup.jpg",
     "summary": "Rollup is a newer modern build tool that can easily work with current standard and modern JavaScripts for efficient and optimized builds, it's usually my go to tool for libraries.",
-    "versions": ["0.4X.x", "0.5X.x"],
+    "versions": ["0.4X.x+"],
     "level": "Professional"
   },
   {
@@ -130,10 +138,9 @@
   {
     "name": "Vue",
     "link": "https://vuejs.org/",
-    "type": "Normal",
     "img": "vue.png",
     "summary": "Vue is my JS framework of choice for most if not all my projects, it's easy to use setup and data flow system make using it a pleasure.",
-    "versions": ["2.x"],
+    "versions": ["2.x+"],
     "level": "Professional"
   },
   {
@@ -141,7 +148,7 @@
     "link": "https://vuetifyjs.com",
     "img": "v.png",
     "summary": "Vuetify is a style framework for Vue it is similar to googles material design with a lot of built in tools and components to use.",
-    "versions": ["0.x", "1.x"],
+    "versions": ["0.x", "1.x+"],
     "level": "Professional"
   },
   {
@@ -149,7 +156,7 @@
     "link": "https://webpack.js.org",
     "img": "webpack.png",
     "summary": "Webpack is a reliable and fairly large build tool for handling web application build processes.",
-    "versions": ["2.x", "3.x", "4.x"],
+    "versions": ["2.x", "3.x", "4.x+"],
     "level": "Intermediate"
   }
 ]
