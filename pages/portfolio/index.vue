@@ -22,7 +22,7 @@
         md4
         v-for="(card, i) in cards"
         :key="i">
-        <v-card :to="card.destination">
+        <v-card hover :to="card.destination">
           <v-card-media
             class="white--text"
             height="200px"
