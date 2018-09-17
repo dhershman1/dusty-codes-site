@@ -3,8 +3,8 @@
     <v-card-title primary-title>
       <img
         class="pr-2"
-        :src="'/' + imageName"
-        :alt="imageName">
+        :src="imageName"
+        :alt="`Image for ${company}`">
       <div>
         <h3>{{ company }}</h3>
         <div>
