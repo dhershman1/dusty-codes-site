@@ -10,17 +10,21 @@
       </v-layout>
       <v-tabs grow dark icons-and-text color="primary">
         <v-tabs-slider color="yellow"></v-tabs-slider>
-        <v-tab @click="switchDisplay('readme')">
+        <v-tab ripple @click="switchDisplay('readme')">
           Readme
           <v-icon>info</v-icon>
         </v-tab>
-        <v-tab v-if="changelogHtml" @click="switchDisplay('changelog')">
+        <v-tab ripple v-if="changelogHtml" @click="switchDisplay('changelog')">
           Changelog
           <v-icon>assignment</v-icon>
         </v-tab>
-        <v-tab @click="switchDisplay('methods')">
+        <v-tab ripple @click="switchDisplay('methods')">
           Functions
           <v-icon>description</v-icon>
+        </v-tab>
+        <v-tab ripple target="_blank" :href="github">
+          Go to Github
+          <v-icon>open_in_new</v-icon>
         </v-tab>
       </v-tabs>
       <transition name="slide-fade" mode="out-in">
@@ -75,7 +79,17 @@ export default {
   computed: {
     ...mapState(['currDisplay']),
     ...mapState('docs', ['module']),
-    ...mapGetters('docs', ['readmeHtml', 'changelogHtml'])
+    ...mapGetters('docs', ['readmeHtml', 'changelogHtml']),
+    github() {
+      const links = {
+        kyanite: 'https://github.com/dhershman1/kyanite',
+        simplyvalid: 'https://github.com/dhershman1/simply_valid',
+        phonefns: 'https://github.com/dhershman1/phone-fns',
+        simplecard: 'https://github.com/dhershman1/simple-card'
+      }
+
+      return links[this.$route.params.module.replace(/[-_]/g, '')]
+    }
   },
   methods: mapMutations(['switchDisplay'])
 }
