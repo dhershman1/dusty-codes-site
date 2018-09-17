@@ -8,17 +8,17 @@
           <h3>{{ module.description }}</h3>
         </v-flex>
       </v-layout>
-      <v-tabs grow dark icons-and-text color="primary">
-        <v-tabs-slider color="yellow"></v-tabs-slider>
-        <v-tab ripple @click="switchDisplay('readme')">
+      <v-tabs slider-color="orange" grow dark icons-and-text color="primary" v-model="handleTabs">
+        <!-- <v-tabs-slider color="orange"></v-tabs-slider> -->
+        <v-tab ripple :key="'readme'">
           Readme
           <v-icon>info</v-icon>
         </v-tab>
-        <v-tab ripple v-if="changelogHtml" @click="switchDisplay('changelog')">
+        <v-tab ripple v-if="changelogHtml" :key="'changelog'">
           Changelog
           <v-icon>assignment</v-icon>
         </v-tab>
-        <v-tab ripple @click="switchDisplay('methods')">
+        <v-tab ripple :key="'docs'">
           Functions
           <v-icon>description</v-icon>
         </v-tab>
@@ -27,20 +27,29 @@
           <v-icon>open_in_new</v-icon>
         </v-tab>
       </v-tabs>
-      <transition name="slide-fade" mode="out-in">
-        <v-layout
-          row
-          wrap
-          v-if="currDisplay === 'readme' || currDisplay === 'changelog'"
-          :key="'readme'">
-          <v-flex xs12>
-            <v-card height="100%">
-              <v-card-text class="readme" v-html="currDisplay === 'readme' ? readmeHtml : changelogHtml" />
-            </v-card>
-          </v-flex>
-        </v-layout>
-        <method-docs v-else :key="'docs'" />
-      </transition>
+      <v-tabs-items v-model="handleTabs">
+        <v-tab-item :key="'readme'">
+          <v-layout row wrap>
+            <v-flex xs12>
+              <v-card height="100%">
+                <v-card-text class="readme" v-html="readmeHtml" />
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-tab-item>
+        <v-tab-item :key="'changelog'">
+          <v-layout row wrap>
+            <v-flex xs12>
+              <v-card height="100%">
+                <v-card-text class="readme" v-html="changelogHtml" />
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-tab-item>
+        <v-tab-item :key="'docs'">
+          <method-docs class="mt-1" />
+        </v-tab-item>
+      </v-tabs-items>
     </v-flex>
   </v-layout>
 </template>
@@ -80,7 +89,16 @@ export default {
     ...mapState(['currDisplay']),
     ...mapState('docs', ['module']),
     ...mapGetters('docs', ['readmeHtml', 'changelogHtml']),
-    github() {
+    handleTabs: {
+      get () {
+        return this.currDisplay
+      },
+
+      set (val) {
+        this.switchDisplay(val)
+      }
+    },
+    github () {
       const links = {
         kyanite: 'https://github.com/dhershman1/kyanite',
         simplyvalid: 'https://github.com/dhershman1/simply_valid',
