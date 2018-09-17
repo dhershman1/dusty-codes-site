@@ -65,8 +65,12 @@ export const mutations = {
 }
 
 export const actions = {
-  fetchInfo ({ commit }, { module, cl }) {
-    Promise.all([
+  fetchInfo ({ commit, state }, { module, cl }) {
+    if (module === state.module.name) {
+      return false
+    }
+
+    return Promise.all([
       get(`https://cdn.jsdelivr.net/npm/${module}@latest/README.md`),
       get(`https://cdn.jsdelivr.net/npm/${module}@latest/${cl}.md`),
       get(`https://cdn.jsdelivr.net/npm/${module}@latest/info.json`)
