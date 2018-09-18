@@ -35,7 +35,7 @@
             <h3>Whats New? (In the last 3 updates)</h3>
           </v-card-title>
           <v-card-text>
-            <span class="log-date">-Coming Soon-</span>
+            <span class="log-date">September 18th, 2018</span>
             <ul>
               <li>Arranged functions to return alphabetically</li>
               <li>Removed buttons on documentation cards</li>
