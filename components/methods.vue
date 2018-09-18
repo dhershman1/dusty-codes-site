@@ -57,9 +57,9 @@
           placeholder="Search"
           color="accent"
           single-line></v-text-field>
-        <v-btn @click="switchMethodStyle" flat>
+        <!-- <v-btn @click="switchMethodStyle" flat>
           Display: {{ methodStyle | capitalize }}
-        </v-btn>
+        </v-btn> -->
       </v-toolbar>
       <v-list two-line>
         <v-list-tile
