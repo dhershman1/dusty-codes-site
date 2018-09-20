@@ -38,7 +38,7 @@ export const getters = {
     return val =>
       filter(({ title, category }) =>
         fuzzysearch(toLower(val), toLower(title)) ||
-        fuzzysearch(toLower(val), toLower(category)), state)
+        fuzzysearch(toLower(val), toLower(category)), state.docs)
   }
 }
 

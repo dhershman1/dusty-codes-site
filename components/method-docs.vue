@@ -32,7 +32,7 @@ import methods from './methods'
 
 export default {
   components: {
-    'code-block': codeBlock,
+    codeBlock,
     methods
   },
   computed: {

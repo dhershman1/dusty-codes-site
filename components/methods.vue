@@ -4,7 +4,7 @@
       class="hidden-md-and-up"
       app
       :clipped="clipped"
-      v-model="drawer"
+      :value="drawer"
       floating
       temporary>
       <v-toolbar color="primary" dark>
@@ -18,11 +18,11 @@
           placeholder="Search"
           label="Search"
           single-line></v-text-field>
-        <v-toolbar-items>
+        <!-- <v-toolbar-items>
           <v-btn @click="switchMethodStyle" flat>
             Display: {{ methodStyle | capitalize }}
           </v-btn>
-        </v-toolbar-items>
+        </v-toolbar-items> -->
       </v-toolbar>
       <v-list two-line>
         <v-list-tile

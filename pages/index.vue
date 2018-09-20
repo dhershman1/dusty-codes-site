@@ -35,6 +35,13 @@
             <h3>Whats New? (In the last 3 updates)</h3>
           </v-card-title>
           <v-card-text>
+            <span class="log-date">September 19th, 2018</span>
+            <ul>
+              <li>Added ability to swipe through tabs on mobile</li>
+              <li>Added ability to swipe open nav drawer on mobile</li>
+              <li>Fixed Method search breaking</li>
+              <li>Removed non working buttons on mobile</li>
+            </ul>
             <span class="log-date">September 18th, 2018</span>
             <ul>
               <li>Arranged functions to return alphabetically</li>
