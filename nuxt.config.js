@@ -71,7 +71,6 @@ module.exports = {
         ]
       ]
     },
-    vendor: ['~/plugins/vuetify.js', 'kyanite'],
     extractCSS: true,
 
     extend (config, ctx) {

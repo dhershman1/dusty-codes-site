@@ -87,7 +87,7 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
-import capitalize from 'kyanite/capitalize'
+import { capitalize } from 'kyanite'
 
 export default {
   filters: {

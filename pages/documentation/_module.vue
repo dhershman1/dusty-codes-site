@@ -56,7 +56,7 @@
 
 <script>
 import { mapGetters, mapState, mapMutations } from 'vuex'
-import capitalize from 'kyanite/capitalize'
+import { capitalize } from 'kyanite'
 import badges from '../../components/badge'
 import methodDocs from '../../components/method-docs'
 

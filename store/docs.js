@@ -1,11 +1,7 @@
+import { filter, fuzzysearch, sortBy, toLower, omit } from 'kyanite'
 import { get } from 'axios'
-import filter from 'kyanite/filter'
-import fuzzysearch from 'kyanite/fuzzySearch'
 import hljs from 'highlight.js'
 import marked from 'marked'
-import sortBy from 'kyanite/sortBy'
-import toLower from 'kyanite/toLower'
-import omit from 'kyanite/omit'
 
 export const state = () => ({
   module: {},

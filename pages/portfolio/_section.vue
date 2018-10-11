@@ -21,9 +21,8 @@
 </template>
 
 <script>
-import capitalize from 'kyanite/capitalize'
+import { capitalize } from 'kyanite'
 import expCard from '../../components/cards/exp'
-import projCard from '../../components/cards/project'
 import skillCard from '../../components/cards/skills'
 import * as experience from './data/experience'
 import * as projects from './data/projects'
@@ -32,7 +31,6 @@ import * as skills from './data/skills'
 export default {
   components: {
     experience: expCard,
-    projects: projCard,
     skills: skillCard
   },
 
@@ -43,7 +41,7 @@ export default {
   },
 
   validate ({ params }) {
-    const valid = ['projects', 'skills', 'experience']
+    const valid = ['skills', 'experience']
 
     return valid.includes(params.section)
   },
