@@ -1,4 +1,4 @@
-import { filter, fuzzysearch, sortBy, toLower, omit } from 'kyanite'
+import { filter, fuzzySearch, sortBy, toLower, omit } from 'kyanite'
 import { get } from 'axios'
 import hljs from 'highlight.js'
 import marked from 'marked'
@@ -33,8 +33,8 @@ export const getters = {
   filterDocs (state) {
     return val =>
       filter(({ title, category }) =>
-        fuzzysearch(toLower(val), toLower(title)) ||
-        fuzzysearch(toLower(val), toLower(category)), state.docs)
+        fuzzySearch(toLower(val), toLower(title)) ||
+        fuzzySearch(toLower(val), toLower(category)), state.docs)
   }
 }
 
