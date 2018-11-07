@@ -79,21 +79,18 @@
           </v-tooltip>
           <nuxt />
           <v-fab-transition>
-            <v-tooltip top>
-              <v-btn
-                fab
-                dark
-                fixed
-                right
-                bottom
-                color="primary"
-                v-scroll="onScroll"
-                v-show="fab"
-                @click="toTop">
+            <v-btn
+              fab
+              dark
+              fixed
+              right
+              bottom
+              color="primary"
+              v-scroll="onScroll"
+              v-show="fab"
+              @click="toTop">
                 <v-icon>keyboard_arrow_up</v-icon>
               </v-btn>
-              <span>Back to top</span>
-            </v-tooltip>
           </v-fab-transition>
         </v-container>
       </v-content>
