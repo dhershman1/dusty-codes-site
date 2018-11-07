@@ -4,7 +4,7 @@
       <v-layout align-center>
         <v-flex text-xs-center class="header-label">
           <h3 class="display-3">{{ $route.params.module | capitalize }}</h3>
-          <h4>v{{ module.version }}</h4>
+          <h4 class="display-1">v{{ module.version }}</h4>
           <badges :module="$route.params.module" />
           <h3>{{ module.description }}</h3>
         </v-flex>
@@ -28,7 +28,7 @@
         </v-tab>
       </v-tabs>
       <v-tabs-items v-model="handleTabs">
-        <v-tab-item :key="'readme'" id="readme">
+        <v-tab-item :key="'readme'" value="readme">
           <v-layout row wrap>
             <v-flex xs12>
               <v-card height="100%">
@@ -37,7 +37,7 @@
             </v-flex>
           </v-layout>
         </v-tab-item>
-        <v-tab-item :key="'changelog'" id="changelog">
+        <v-tab-item :key="'changelog'" value="changelog">
           <v-layout row wrap>
             <v-flex xs12>
               <v-card height="100%">
@@ -46,7 +46,7 @@
             </v-flex>
           </v-layout>
         </v-tab-item>
-        <v-tab-item :key="'docs'" id="docs">
+        <v-tab-item :key="'docs'" value="docs">
           <method-docs class="mt-1" />
         </v-tab-item>
       </v-tabs-items>

@@ -1,17 +1,17 @@
 <template>
-  <v-card>
-    <v-card-title>
-      <h2>{{ selectedMethod.title }}</h2>
+  <v-card class="mb-2">
+    <v-card-title class="pb-0">
+      <h2>{{ currMethod.title }}</h2>
     </v-card-title>
-    <v-card-text>
-      <h4 v-if="selectedMethod.since">
-        Since {{ selectedMethod.since }} |
-        <span class="category" v-if="selectedMethod.category"> {{ selectedMethod.category }}</span>
-        <span class="deprecated" v-if="selectedMethod.deprecated" justify-space-around>
-          <v-icon small color="black">warning</v-icon> Deprecated: {{ selectedMethod.deprecated }}
+    <v-card-text class="pt-2">
+      <h4 v-if="currMethod.since">
+        Since {{ currMethod.since }} |
+        <span class="category" v-if="currMethod.category"> {{ currMethod.category }}</span>
+        <span class="deprecated" v-if="currMethod.deprecated" justify-space-around>
+          <v-icon small color="black">warning</v-icon> Deprecated: {{ currMethod.deprecated }}
         </span>
       </h4>
-      <p class="desc">{{ selectedMethod.desc }}</p>
+      <p class="desc">{{ currMethod.desc }}</p>
       <h2>Usage</h2>
       <v-divider class="mb-1"></v-divider>
       <v-btn ripple @click="currTab = 'standard'">
@@ -20,10 +20,10 @@
       <v-btn ripple @click="currTab = 'commonjs'">
         CommonJS
       </v-btn>
-      <v-btn v-if="selectedMethod.usage.cdn" ripple @click="currTab = 'cdn'">
+      <v-btn v-if="currMethod.usage.cdn" ripple @click="currTab = 'cdn'">
         CDN
       </v-btn>
-      <v-btn v-if="selectedMethod.usage.browser" ripple @click="currTab = 'browser'">
+      <v-btn v-if="currMethod.usage.browser" ripple @click="currTab = 'browser'">
         Browser
       </v-btn>
       <pre v-highlightjs="tabInfo.code">
@@ -35,21 +35,21 @@
       </pre>
       <h2>Syntax</h2>
       <v-divider></v-divider>
-      <pre v-highlightjs="`${selectedMethod.syntax}`">
+      <pre v-highlightjs="`${currMethod.syntax}`">
         <code class="javascript"></code>
       </pre>
       <h2>Arguments</h2>
       <v-divider class="mb-1"></v-divider>
-      <data-table :params="selectedMethod.params" />
-      <h2 v-if="selectedMethod.properties">Options</h2>
-      <v-divider v-if="selectedMethod.properties" class="mb-1"></v-divider>
-      <data-table v-if="selectedMethod.properties" :params="selectedMethod.properties" />
+      <data-table :params="currMethod.params" />
+      <h2 v-if="currMethod.properties">Options</h2>
+      <v-divider v-if="currMethod.properties" class="mb-1"></v-divider>
+      <data-table v-if="currMethod.properties" :params="currMethod.properties" />
       <h2 class="mt-1">Returns</h2>
       <v-divider class="mb-1"></v-divider>
-      <data-table :params="selectedMethod.returns" :short="true" />
+      <data-table :params="currMethod.returns" :short="true" />
       <h2 class="mt-1">Examples</h2>
       <v-divider></v-divider>
-      <pre v-for="(ex, i) in selectedMethod.examples" :key="i" v-highlightjs="ex">
+      <pre v-for="(ex, i) in currMethod.examples" :key="i" v-highlightjs="ex">
         <code class="javascript"></code>
       </pre>
     </v-card-text>
@@ -61,6 +61,12 @@ import { mapState } from 'vuex'
 import dataTable from './data-table'
 
 export default {
+  props: {
+    fn: {
+      type: Object,
+      required: false
+    }
+  },
   components: {
     dataTable
   },
@@ -71,6 +77,9 @@ export default {
   },
   computed: {
     ...mapState('docs', ['selectedMethod']),
+    currMethod () {
+      return this.fn ? this.fn : this.selectedMethod
+    },
     tabInfo () {
       return this.selectedMethod.usage[this.currTab.toLowerCase()]
     }

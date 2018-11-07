@@ -18,11 +18,11 @@
           placeholder="Search"
           label="Search"
           single-line></v-text-field>
-        <!-- <v-toolbar-items>
+        <v-toolbar-items>
           <v-btn @click="switchMethodStyle" flat>
             Display: {{ methodStyle | capitalize }}
           </v-btn>
-        </v-toolbar-items> -->
+        </v-toolbar-items>
       </v-toolbar>
       <v-list two-line>
         <v-list-tile
@@ -57,14 +57,15 @@
           placeholder="Search"
           color="accent"
           single-line></v-text-field>
-        <!-- <v-btn @click="switchMethodStyle" flat>
+        <v-btn @click="switchMethodStyle" flat>
           Display: {{ methodStyle | capitalize }}
-        </v-btn> -->
+        </v-btn>
       </v-toolbar>
       <v-list two-line>
         <v-list-tile
-          :key="i"
           v-for="(item, i) in filteredDocs"
+          :href="`#${item.title}`"
+          :key="i"
           @click="toTop(item)"
           :class="{ 'active': item.title === activeItem }"
         >

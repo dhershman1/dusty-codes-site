@@ -35,6 +35,13 @@
             <h3>Whats New? (In the last 3 updates)</h3>
           </v-card-title>
           <v-card-text>
+            <span class="log-date">November 7th, 2018</span>
+            <ul>
+              <li>Fixed FAB button not appearing</li>
+              <li>Added ability to display all of the functions rather than 1</li>
+              <li>Upgraded all dependencies</li>
+              <li>Tweaked Displays for function cards</li>
+            </ul>
             <span class="log-date">September 19th, 2018</span>
             <ul>
               <li>Added ability to swipe through tabs on mobile</li>
@@ -50,13 +57,6 @@
               <li>Added a "Go to Github" tab on module documentation page</li>
               <li>Adjust layout for methods display</li>
               <li>Updated Work Experience to be more Recent</li>
-            </ul>
-            <span class="log-date">September 14th, 2018</span>
-            <ul>
-              <li>This whats new box</li>
-              <li>New deprecation flags added to show deprecated functions</li>
-              <li>Documentation auto scrolling when selecting a method smoothed</li>
-              <li>Added Changelog to documentation tabs</li>
             </ul>
           </v-card-text>
         </v-card>

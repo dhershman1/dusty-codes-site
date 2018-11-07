@@ -17,10 +17,10 @@
       <methods />
     </v-flex>
     <v-flex sm12 md8 dark>
-      <transition name="slide-fade" mode="out-in">
-        <code-block v-if="methodStyle === 'one'" :key="selectedMethod.title" />
+      <transition v-if="methodStyle === 'one'" name="slide-fade" mode="out-in">
+        <code-block :key="selectedMethod.title" />
       </transition>
-      <!-- <code-block v-else v-for="fn in sortedDocs" :key="fn.title" :selectedMethod="fn" /> -->
+      <code-block v-else v-for="fn in sortedDocs" :key="fn.title" :id="fn.title" :fn="fn" />
     </v-flex>
   </v-layout>
 </template>
