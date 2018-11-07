@@ -3,22 +3,22 @@
     <v-flex xs12>
       <v-layout align-center>
         <v-flex text-xs-center class="header-label">
-          <h3 class="display-3">{{ $route.params.module | capitalize }} v{{ module.version }}</h3>
+          <h3 class="display-3">{{ $route.params.module | capitalize }}</h3>
+          <h4>v{{ module.version }}</h4>
           <badges :module="$route.params.module" />
           <h3>{{ module.description }}</h3>
         </v-flex>
       </v-layout>
       <v-tabs slider-color="orange" grow dark icons-and-text color="primary" v-model="handleTabs">
-        <!-- <v-tabs-slider color="orange"></v-tabs-slider> -->
-        <v-tab ripple :key="'readme'">
+        <v-tab ripple href="#readme" :key="'readme'">
           Readme
           <v-icon>info</v-icon>
         </v-tab>
-        <v-tab ripple v-if="changelogHtml" :key="'changelog'">
+        <v-tab ripple v-if="changelogHtml" href="#changelog" :key="'changelog'">
           Changelog
           <v-icon>assignment</v-icon>
         </v-tab>
-        <v-tab ripple :key="'docs'">
+        <v-tab ripple href="#docs" :key="'docs'">
           Functions
           <v-icon>description</v-icon>
         </v-tab>
@@ -28,7 +28,7 @@
         </v-tab>
       </v-tabs>
       <v-tabs-items v-model="handleTabs">
-        <v-tab-item :key="'readme'">
+        <v-tab-item :key="'readme'" id="readme">
           <v-layout row wrap>
             <v-flex xs12>
               <v-card height="100%">
@@ -37,7 +37,7 @@
             </v-flex>
           </v-layout>
         </v-tab-item>
-        <v-tab-item :key="'changelog'">
+        <v-tab-item :key="'changelog'" id="changelog">
           <v-layout row wrap>
             <v-flex xs12>
               <v-card height="100%">
@@ -46,7 +46,7 @@
             </v-flex>
           </v-layout>
         </v-tab-item>
-        <v-tab-item :key="'docs'">
+        <v-tab-item :key="'docs'" id="docs">
           <method-docs class="mt-1" />
         </v-tab-item>
       </v-tabs-items>
