@@ -49,7 +49,6 @@ export default {
   },
   data () {
     return {
-      gradient: 'to top right, rgba(63,81,181, .7), rgba(34,46,84, .7)',
       cards: [
         {
           title: 'Experience',

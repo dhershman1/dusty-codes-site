@@ -24,13 +24,15 @@
 import { capitalize } from 'kyanite'
 import expCard from '../../components/cards/exp'
 import skillCard from '../../components/cards/skills'
-import * as experience from './data/experience'
-import * as projects from './data/projects'
-import * as skills from './data/skills'
+import projCard from '../../components/cards/project'
+import experience from './data/experience'
+import projects from './data/projects'
+import skills from './data/skills'
 
 export default {
   components: {
     experience: expCard,
+    projects: projCard,
     skills: skillCard
   },
 
@@ -41,7 +43,7 @@ export default {
   },
 
   validate ({ params }) {
-    const valid = ['skills', 'experience']
+    const valid = ['skills', 'experience', 'projects']
 
     return valid.includes(params.section)
   },
@@ -70,6 +72,7 @@ export default {
       return summaries[this.$route.params.section]
     },
     list () {
+      console.log(this.info[this.$route.params.section])
       return this.info[this.$route.params.section]
     }
   }
