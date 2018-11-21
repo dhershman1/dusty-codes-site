@@ -11,7 +11,7 @@
         md3
         v-for="(card, i) in cards"
         :key="i">
-        <v-card hover :to="card.destination" ripple height="100%">
+        <v-card hover :target="card.href ? '_blank' : '_self'" :href="card.href" :to="card.to" ripple height="100%">
           <v-toolbar color="primary" dark dense card>
             <v-toolbar-title>
               {{ card.title }}
@@ -45,19 +45,19 @@ export default {
       {
         title: 'Kyanite',
         description: 'A tiny library of single type pure functional operators and utility functions',
-        destination: '/documentation/kyanite',
+        href: 'https://kyanite.dusty.codes'
       }, {
         title: 'Phone-Fns',
         description: 'A tiny library of utility functions based that make working with phone numbers easier',
-        destination: '/documentation/phone-fns',
+        href: 'https://phone-fns.dusty.codes'
       }, {
         title: 'Simply_Valid',
         description: 'A data driven validation library with built in functionality for easy checks to make sure data is valid before going anywhere',
-        destination: '/documentation/simply_valid',
+        to: '/documentation/simply_valid'
       }, {
         title: 'Simple-Card',
         description: 'A credit card validation system that uses a luhn algorithm to strictly ensure the data passed in are valid card numbers, while also giving you extra bits of information to help make life a bit easier',
-        destination: '/documentation/simple-card',
+        to: '/documentation/simple-card'
       }
     ]
   })
