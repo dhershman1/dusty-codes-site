@@ -18,11 +18,7 @@ export default {
   data () {
     return {
       list: [
-        {
-          to: `https://travis-ci.org/dhershman1/${this.module}`,
-          badge: `https://img.shields.io/travis/dhershman1/${this.module}.svg?style=flat-square`,
-          alt: `build badge for ${this.module}`
-        }, {
+        Object.assign({ alt: `build badge for ${this.module}` }, this.findBadgeLoc(this.module)), {
           to: `https://github.com/dhershman1/${this.module}`,
           badge: `https://img.shields.io/github/size/dhershman1/${this.module}/dist/${this.convertModule(this.module)}.min.js.svg?style=flat-square`,
           alt: `size badge for ${this.module}`
@@ -39,6 +35,19 @@ export default {
     }
   },
   methods: {
+    findBadgeLoc (mod) {
+      if (mod === 'kyanite' || mod === 'phone-fns') {
+        return {
+          to: `https://circleci.com/gh/dhershman1/${mod}/tree/master`,
+          badge: `https://circleci.com/gh/dhershman1/${mod}.svg?style=svg`
+        }
+      }
+
+      return {
+        to: `https://travis-ci.org/dhershman1/${mod}`,
+        badge: `https://img.shields.io/travis/dhershman1/${mod}.svg?style=flat-square`
+      }
+    },
     convertModule (val) {
       // Since my idiot self named the distro version of simply valid to simply-valid.min.js
       // We need to convert it for this one and only module...
@@ -52,4 +61,3 @@ export default {
   }
 }
 </script>
-

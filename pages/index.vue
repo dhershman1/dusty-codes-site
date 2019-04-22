@@ -2,23 +2,23 @@
   <v-layout class="single" align-center justify-center column>
     <v-layout align-center justify-end column>
       <h1 class="display-2">Dusty Codes</h1>
-      <h2 class="headline">Portfolio &amp; Documentation website</h2>
+      <h2 class="headline">Portfolio &amp; Documentation Site</h2>
     </v-layout>
     <v-layout justify-center row>
-      <v-tooltip bottom>
+      <v-tooltip left>
         <v-btn
-          class="pa-2"
+          class="pa-4"
           color="secondary"
           large
           :to="'/portfolio'"
           slot="activator">
           <span class="headline">Portfolio</span>
         </v-btn>
-        <span>Go to the documentation portal</span>
+        <span>Go to the portfolio portal</span>
       </v-tooltip>
-      <v-tooltip bottom>
+      <v-tooltip right>
         <v-btn
-          class="pa-2"
+          class="pa-4"
           color="secondary"
           large
           :to="'/documentation'"
@@ -35,6 +35,13 @@
             <h3>Whats New? (In the last 3 updates)</h3>
           </v-card-title>
           <v-card-text>
+            <span class="log-date">April 22nd, 2019</span>
+            <ul>
+              <li>Cleaned up and upgraded Documentation portal</li>
+              <li>Fixed a few typos</li>
+              <li>Simply_Valid's documentation link now goes to correct place</li>
+              <li>Fixed some slight spacing issues</li>
+            </ul>
             <span class="log-date">November 7th, 2018</span>
             <ul>
               <li>Fixed FAB button not appearing</li>
@@ -48,15 +55,6 @@
               <li>Added ability to swipe open nav drawer on mobile</li>
               <li>Fixed Method search breaking</li>
               <li>Removed non working buttons on mobile</li>
-            </ul>
-            <span class="log-date">September 18th, 2018</span>
-            <ul>
-              <li>Arranged functions to return alphabetically</li>
-              <li>Removed buttons on documentation cards</li>
-              <li>You can now click a card on the documentation portal to go to it</li>
-              <li>Added a "Go to Github" tab on module documentation page</li>
-              <li>Adjust layout for methods display</li>
-              <li>Updated Work Experience to be more Recent</li>
             </ul>
           </v-card-text>
         </v-card>
@@ -79,4 +77,3 @@
     color: #FFF;
   }
 </style>
-

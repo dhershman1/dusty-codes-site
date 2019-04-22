@@ -1,5 +1,6 @@
 import {
   VApp,
+  VAlert,
   VBtn,
   VCard,
   VDivider,
@@ -37,6 +38,7 @@ Vue.use(Vuetify, {
   },
   components: {
     VApp,
+    VAlert,
     VCard,
     VDivider,
     VNavigationDrawer,
