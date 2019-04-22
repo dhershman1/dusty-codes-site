@@ -49,6 +49,8 @@
               v-for="item in nav.items"
               :key="item.title"
               :to="item.to"
+              :target="item.href ? '_blank' : '_self'"
+              :href="item.href"
               @click="navDrawer = false">
               <v-list-tile-action>
                 <v-icon>{{ item.icon }}</v-icon>
@@ -149,23 +151,23 @@ export default {
             },
             {
               title: 'Simply Valid',
-              to: '/documentation/simply_valid',
+              href: 'http://simply_valid.dusty.codes',
               icon: 'question_answer'
+            },
+            {
+              title: 'Phone Fns',
+              href: 'https://phone-fns.dusty.codes',
+              icon: 'contact_phone'
+            },
+            {
+              title: 'Kyanite',
+              href: 'https://kyanite.dusty.codes',
+              icon: 'extension'
             },
             {
               title: 'Simple Card',
               to: '/documentation/simple-card',
               icon: 'credit_card'
-            },
-            {
-              title: 'Phone Fns',
-              to: '/documentation/phone-fns',
-              icon: 'contact_phone'
-            },
-            {
-              title: 'Kyanite',
-              to: '/documentation/kyanite',
-              icon: 'extension'
             }
           ]
         }

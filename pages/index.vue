@@ -39,6 +39,7 @@
             <ul>
               <li>Cleaned up and upgraded Documentation portal</li>
               <li>Fixed a few typos</li>
+              <li>Fixed nav drawer navigation for documentation</li>
               <li>Simply_Valid's documentation link now goes to correct place</li>
               <li>Fixed some slight spacing issues</li>
             </ul>
