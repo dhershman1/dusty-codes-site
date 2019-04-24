@@ -83,8 +83,16 @@
     "name": "Nuxt",
     "link": "https://nuxtjs.org/",
     "img": "nuxt.jpg",
-    "summary": "This is almost a clone of the Vue framework but it has a lot of the modules baked right in, and it's extremely good with SSR content.",
+    "summary": "Nuxt.js is a framework for creating Vue.js applications, you can choose between Universal, Static Generated or Single Page application.",
     "versions": ["1.x+"],
+    "level": "Professional"
+  },
+  {
+    "name": "PostgreSQL",
+    "link": "https://www.postgresql.org/",
+    "img": "postgres.png",
+    "summary": "A SQL database language for building powerful, object relational database systems. It's reliable, feature rich, and performant.",
+    "versions": ["10.7, 11.2+"],
     "level": "Professional"
   },
   {
@@ -157,6 +165,6 @@
     "img": "webpack.png",
     "summary": "Webpack is a reliable and fairly large build tool for handling web application build processes.",
     "versions": ["2.x", "3.x", "4.x+"],
-    "level": "Intermediate"
+    "level": "Professional"
   }
 ]
