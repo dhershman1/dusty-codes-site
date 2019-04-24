@@ -37,7 +37,7 @@
     "img": "elm.png",
     "summary": "Elm is a language that compiles down to JS but has a strictly typed system built in and I fell in love with it after a friend showed it to me and I played around with it for a while. Though still a newbie to it I hope to practice it as much as I have practiced JavaScript itself.",
     "versions": ["0.18.0+"],
-    "level": "Novice"
+    "level": "Intermediate"
   },
   {
     "name": "HTML",
