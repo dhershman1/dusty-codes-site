@@ -1,0 +1,79 @@
+:root {
+  --font: #FFF;
+}
+
+.grid {
+  display: grid;
+  font-size: 18px;
+  grid-template-columns: 10% 90%;
+  grid-template-areas: 'header header'
+                       'aside main'
+                       'aside foot';
+}
+
+body {
+  color: var(--font);
+  height: 100%;
+}
+
+#__nuxt {
+  background: url(/background.png);
+  height: 100%;
+}
+
+#__layout {
+  height: 100%;
+  background-color: rgba(210, 219, 226, 0.575);
+  /* background: rgba(43, 89, 148, 0.5) linear-gradient(143deg,
+  rgba(54, 65, 86, 0.5), rgba(17, 75, 95, 0.5), rgba(43, 89, 148, 0.5)); */
+  /* background: rgba(121, 188, 255, 0.5) linear-gradient(143deg,
+  rgba(136, 160, 255, 0.5), rgba(154, 255, 255, 0.5), rgba(141, 250, 250, 0.5)); */
+}
+
+header {
+  grid-area: header;
+  border-bottom: 1px solid #FFF;
+  width: 100%;
+}
+
+main {
+  grid-area: main;
+  padding: 0 2rem 2rem;
+}
+
+.ant-card {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+aside {
+  grid-area: aside;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  text-align: center;
+}
+
+.nav__menu {
+  height: 100%;
+}
+
+.nav .nav__item.ant-menu-item {
+  font-size: 18px;
+}
+
+footer {
+  grid-area: foot;
+  text-align: center;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+}
+
+/* .wrapper {
+  background: url(/background.png)
+} */
+
+/* #app {
+  background: rgba(43, 89, 148, 0.5) linear-gradient(143deg,
+  rgba(54, 65, 86, 0.5), rgba(17, 75, 95, 0.5), rgba(43, 89, 148, 0.5));
+} */

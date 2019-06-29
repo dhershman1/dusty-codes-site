@@ -38,8 +38,11 @@ module.exports = {
       }
     ]
   },
-  plugins: ['~/plugins/vuetify.js', '~/plugins/directive.js'],
-  css: ['~/assets/style/app.styl'],
+  plugins: ['~/plugins/ant.js', '~/plugins/vuetify.js', '~/plugins/directive.js'],
+  css: [{
+    src: 'ant-design-vue/dist/antd.less',
+    lang: 'less'
+  }, '~/static/main.css'],
 
   router: {
     middleware: ['redirect']
@@ -79,10 +82,21 @@ module.exports = {
           nodeExternals({
             whitelist: [
               /^vuetify/,
+              'ant-design-vue',
               'kyanite'
             ]
           })
         ]
+      }
+    },
+    loaders: {
+      less: {
+        javascriptEnabled: true,
+        modifyVars: {
+          'link-color': '#dc7c7c'
+          // 'component-background': 'transparent',
+          // 'menu-item-color': '#FFF'
+        }
       }
     }
   }

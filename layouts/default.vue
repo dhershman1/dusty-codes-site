@@ -1,112 +1,31 @@
 <template>
-  <main class="wrapper">
-    <v-app>
-      <v-navigation-drawer
-        temporary
-        absolute
-        v-model="navDrawer">
-        <v-toolbar
-          flat
-          light
-          class="transparent">
-          <v-list class="pa-0">
-            <v-list-tile avatar>
-              <v-list-tile-content>
-                <v-list-tile-title>Main</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
-        </v-toolbar>
-        <v-divider></v-divider>
-        <v-list>
-          <v-list-tile
-            exact
-            :to="'/'"
-            @click="navDrawer = false">
-            <v-list-tile-action>
-              <v-icon>dashboard</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>Home</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-        <v-divider></v-divider>
-        <v-list>
-          <v-list-group
-            v-for="nav in navItems"
-            :key="nav.title"
-            v-model="nav.active"
-            :prepend-icon="nav.icon"
-            no-action>
-            <v-list-tile slot="activator">
-              <v-list-tile-content>
-                <v-list-tile-title>{{ nav.title }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile
-              exact
-              v-for="item in nav.items"
-              :key="item.title"
-              :to="item.to"
-              :target="item.href ? '_blank' : '_self'"
-              :href="item.href"
-              @click="navDrawer = false">
-              <v-list-tile-action>
-                <v-icon>{{ item.icon }}</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list-group>
-        </v-list>
-      </v-navigation-drawer>
-      <v-content>
-        <v-container grid-list-md fluid>
-          <v-tooltip bottom>
-            <v-btn
-              fab
-              dark
-              fixed
-              left
-              top
-              color="primary"
-              @click="openNav"
-              aria-label="Open Navigation Drawer"
-              slot="activator">
-              <v-icon>menu</v-icon>
-            </v-btn>
-            <span>Open Nav Drawer</span>
-          </v-tooltip>
-          <nuxt />
-          <v-fab-transition>
-            <v-btn
-              fab
-              dark
-              fixed
-              right
-              bottom
-              color="primary"
-              v-scroll="onScroll"
-              v-show="fab"
-              @click="toTop">
-                <v-icon>keyboard_arrow_up</v-icon>
-              </v-btn>
-          </v-fab-transition>
-        </v-container>
-      </v-content>
-      <v-footer app>
-        <span class="pl-3">Dustin Hershman &copy; 2018 Built using
-          <a href="https://nuxtjs.org/" target="_blank">Nuxt</a> and
-          <a href="https://vuetifyjs.com" target="_blank">Vuetify</a>
-        </span>
-      </v-footer>
-    </v-app>
-  </main>
+  <div class="grid">
+    <header>
+      <h2>Dusty Codes</h2>
+    </header>
+    <aside class="nav">
+      <a-menu
+      @click="navigate"
+      mode="inline"
+      class="nav__menu">
+        <a-menu-item class="nav__item" key="home">Home</a-menu-item>
+        <a-menu-item class="nav__item" key="exp">Experience</a-menu-item>
+      </a-menu>
+    </aside>
+    <main class="wrapper">
+      <nuxt />
+    </main>
+    <footer>
+      <span class="pl-3">Dustin Hershman &copy; 2019 Built using
+        <a href="https://nuxtjs.org/" target="_blank">Nuxt</a> and
+        <a href="https://vue.ant.design/docs/vue/introduce/" target="_blank">Ant Design</a>
+      </span>
+    </footer>
+  </div>
 </template>
 
 <script>
+
 export default {
   data () {
     return {
@@ -193,6 +112,9 @@ export default {
     openNav () {
       this.navDrawer = !this.navDrawer
       this.toTop()
+    },
+    navigate (e) {
+      console.log(e)
     }
   }
 }
@@ -202,15 +124,6 @@ export default {
 
 .container {
   height: 100%
-}
-
-.wrapper {
-  background: url(/background.png)
-}
-
-#app {
-  background: rgba(43, 89, 148, 0.5) linear-gradient(143deg,
-  rgba(54, 65, 86, 0.5), rgba(17, 75, 95, 0.5), rgba(43, 89, 148, 0.5));
 }
 
 .nav-fixed {
