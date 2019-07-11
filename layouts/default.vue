@@ -10,6 +10,8 @@
       class="nav__menu">
         <a-menu-item class="nav__item" key="home">Home</a-menu-item>
         <a-menu-item class="nav__item" key="exp">Experience</a-menu-item>
+        <a-menu-item class="nav__item" key="libs">Libraries</a-menu-item>
+        <a-menu-item class="nav__item" key="articles">Articles</a-menu-item>
       </a-menu>
     </aside>
     <main class="wrapper">
