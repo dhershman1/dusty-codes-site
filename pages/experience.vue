@@ -9,7 +9,7 @@
 <script>
 import { chunk } from 'kyanite'
 import skills from '../assets/data/skills'
-import skillCard from '../components/cards/skills'
+import skillCard from '../components/skills'
 
 export default {
   components: {

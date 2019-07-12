@@ -18,7 +18,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'My Portfolio and documentation site for all my projects'
+        content: 'Portfolio for Dustin Hershman'
       }
     ],
     link: [
@@ -29,24 +29,15 @@ module.exports = {
       },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      },
-      {
-        rel: 'stylesheet',
         href: '/atom-one-dark.css'
       }
     ]
   },
-  plugins: ['~/plugins/ant.js', '~/plugins/vuetify.js', '~/plugins/directive.js'],
+  plugins: ['~/plugins/ant.js'],
   css: [{
     src: 'ant-design-vue/dist/antd.less',
     lang: 'less'
   }, '~/static/main.css'],
-
-  router: {
-    middleware: ['redirect']
-  },
 
   /*
   ** Customize the progress bar color
@@ -60,17 +51,7 @@ module.exports = {
     babel: {
       plugins: [
         [
-          'transform-imports',
-          {
-            'vuetify': {
-              transform: 'vuetify/es5/components/${member}', // eslint-disable-line
-              preventFullImport: true
-            },
-            'vuetify-directives': {
-              transform: 'vuetify/es5/directives/${member}', // eslint-disable-line
-              preventFullImport: true
-            }
-          }
+          'transform-imports'
         ]
       ]
     },
@@ -81,7 +62,6 @@ module.exports = {
         config.externals = [
           nodeExternals({
             whitelist: [
-              /^vuetify/,
               'ant-design-vue',
               'kyanite'
             ]
