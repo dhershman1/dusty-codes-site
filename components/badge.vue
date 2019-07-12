@@ -61,3 +61,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.mr-1 {
+  margin-right: 0.2rem;
+}
+</style>

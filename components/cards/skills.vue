@@ -1,43 +1,17 @@
 <template>
-  <v-card height="100%">
-    <v-card-actions v-if="link">
-      <v-spacer></v-spacer>
-      <a
-        :href="link"
-        target="_blank"
-        :aria-label="`Go to ${name} website`"
-        class="project-link">
-        <v-icon color="primary">launch</v-icon>
-      </a>
-    </v-card-actions>
-    <v-card-title class="card__main" primary-title>
-      <v-flex xs5 md5 lg7>
-        <img
-          :src="'/imgs/' + img"
-          :alt="img">
-        <div>
-          <h3>{{ name }}</h3>
-        </div>
-      </v-flex>
-      <v-flex xs7 md7 lg5>
-        <div>
-          <v-progress-circular
-            :size="150"
-            :width="15"
-            :value="convertLvl(level)"
-            :color="getColor(level)">
-            {{ level }}
-          </v-progress-circular>
-        </div>
-      </v-flex>
-    </v-card-title>
-    <v-card-text>
-      <div>
-        <p><strong>Versions: {{ versions }}</strong></p>
-        {{ summary }}
-      </div>
-    </v-card-text>
-  </v-card>
+  <a-col :span="8">
+    <a-card class="full" :title="info.name">
+      <a-row class="content">
+        <a-col :span="7">
+          <img class="brand" alt="product brand image" :src="`/imgs/${info.img}`" />
+        </a-col>
+        <a-col :span="8" :offset="9">
+          <a-progress type="circle" :percent="convertLvl(info.level)" :format="() => info.level"></a-progress>
+        </a-col>
+      </a-row>
+      <p class="card__summary">{{ info.summary }}</p>
+    </a-card>
+  </a-col>
 </template>
 
 <script>
@@ -76,41 +50,22 @@ export default {
 
       return percents[lvl.toLowerCase()]
     }
-  },
-  computed: {
-    img () {
-      return this.info.img
-    },
-    name () {
-      return this.info.name
-    },
-    summary () {
-      return this.info.summary
-    },
-    versions () {
-      return this.info.versions.join(', ')
-    },
-    level () {
-      return this.info.level
-    },
-    link () {
-      return this.info.link
-    }
   }
 }
 </script>
 
 <style scoped>
-.card__main {
-  padding-top: 0;
+.brand {
+  height: 100%;
+  width: 100%;
 }
-img {
-  max-width: 100px;
+
+.full {
+  height: 100%;
 }
-.project-link {
-  text-decoration: none;
-}
-ul {
-  list-style-type: none;
+
+.card__summary {
+  padding: 0.75rem;
+  margin-bottom: 0;
 }
 </style>

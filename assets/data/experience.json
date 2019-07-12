@@ -1,0 +1,41 @@
+[
+  {
+    "company": "Budget Dumpster",
+    "title": "Full Stack Software Developer",
+    "imageName": "/imgs/bd.jpg",
+    "location": "Westlake, OH",
+    "duration": "June 2018 - Present",
+    "tasks": [
+      "Working on the Strategic Tech team to build helpful internal applications",
+      "Helping teach and introduce advanced concepts of the Vue JS framework",
+      "Helping to introduce standards, and guidelines for JavaScript and Vue",
+      "Improving the JavaScript design and arcthitecture within the team",
+      "Building out new Node based services to handle large geo json and other data"
+    ]
+  },
+  {
+    "company": "DealerTire LLC.",
+    "title": "Software Developer",
+    "imageName": "/imgs/dt.png",
+    "location": "Cleveland, OH",
+    "duration": "May 2014 - June 2018",
+    "tasks": [
+      "Worked in both Coldfusion and JavaScript applications",
+      "Working heavily in projects using Node.js and newer technologies",
+      "Working in a B2C style of web application",
+      "Also have worked on B2B style applications in the past",
+      "Created the ground work for a lot of the IT standards and guidelines"
+    ]
+  },
+  {
+    "company": "Case Western Reserve University",
+    "title": "Instructor",
+    "imageName": "/imgs/case-western.png",
+    "location": "Cleveland, OH",
+    "duration": "July 2017 - Present",
+    "tasks": [
+      "Teaching Full Stack Development to students",
+      "Topics: HTML, CSS, JavaScript, Node.js, React, MySQL, MongoDB, and light Java"
+    ]
+  }
+]

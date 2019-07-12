@@ -1,17 +1,17 @@
 <template>
   <div class="grid">
     <header>
-      <h2>Dusty Codes</h2>
+      <h1>Dusty Codes</h1>
     </header>
     <aside class="nav">
       <a-menu
-      @click="navigate"
       mode="inline"
+      :defaultSelectedKeys="[$route.name]"
       class="nav__menu">
-        <a-menu-item class="nav__item" key="home">Home</a-menu-item>
-        <a-menu-item class="nav__item" key="exp">Experience</a-menu-item>
-        <a-menu-item class="nav__item" key="libs">Libraries</a-menu-item>
-        <a-menu-item class="nav__item" key="articles">Articles</a-menu-item>
+        <a-menu-item class="nav__item" key="index" @click="nav('/')">Home</a-menu-item>
+        <a-menu-item class="nav__item" key="experience" @click="nav('experience')">Experience</a-menu-item>
+        <a-menu-item class="nav__item" key="libraries" @click="nav('libraries')">Libraries</a-menu-item>
+        <!-- <a-menu-item class="nav__item" key="articles">Articles</a-menu-item> -->
       </a-menu>
     </aside>
     <main class="wrapper">
@@ -106,6 +106,9 @@ export default {
       this.fab = top > 300
 
       return false
+    },
+    nav (to) {
+      this.$router.push(to)
     },
     toTop () {
       this.$router.push({ hash: '' })
