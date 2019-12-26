@@ -16,7 +16,7 @@
       <nuxt />
     </main>
     <footer>
-      <span class="pl-3">Dustin Hershman &copy; 2019 Built using
+      <span class="pl-3">Dustin Hershman &copy; 2020 Built using
         <a href="https://nuxtjs.org/" target="_blank">Nuxt</a> and
         <a href="https://vue.ant.design/docs/vue/introduce/" target="_blank">Ant Design</a>
       </span>
