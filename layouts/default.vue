@@ -1,19 +1,17 @@
 <template>
   <div class="grid">
     <header>
-      <h1>Dusty Codes</h1>
-    </header>
-    <aside class="nav">
+      <router-link exact to="/"><img class="logo" src="/imgs/logo.png" /> Dusty Codes</router-link>
       <a-menu
-      mode="inline"
+      mode="horizontal"
       :defaultSelectedKeys="[$route.name]"
       class="nav__menu">
-        <a-menu-item class="nav__item" key="index" @click="nav('/')">Home</a-menu-item>
+        <a-menu-item class="nav__item" key="about" @click="nav('about')">About</a-menu-item>
         <a-menu-item class="nav__item" key="experience" @click="nav('experience')">Experience</a-menu-item>
-        <a-menu-item class="nav__item" key="libraries" @click="nav('libraries')">Libraries</a-menu-item>
+        <a-menu-item class="nav__item" key="libraries" @click="nav('libraries')">Libraries/Plugins</a-menu-item>
         <!-- <a-menu-item class="nav__item" key="articles">Articles</a-menu-item> -->
       </a-menu>
-    </aside>
+    </header>
     <main class="wrapper">
       <nuxt />
     </main>

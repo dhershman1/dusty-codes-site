@@ -71,12 +71,7 @@ module.exports = {
     },
     loaders: {
       less: {
-        javascriptEnabled: true,
-        modifyVars: {
-          'link-color': '#dc7c7c'
-          // 'component-background': 'transparent',
-          // 'menu-item-color': '#FFF'
-        }
+        javascriptEnabled: true
       }
     }
   }

@@ -1,20 +1,13 @@
 :root {
   --font: rgba(0, 0, 0, 0.65);
-  --secondary-font: rgb(220, 124, 124);
-}
-
-.grid {
-  display: grid;
-  font-size: 18px;
-  grid-template-columns: 10% 90%;
-  grid-template-areas: 'header header'
-                       'aside main'
-                       'aside foot';
+  --secondary-font: rgb(72, 193, 249);
+  --backup: rgb(220, 124, 124);
 }
 
 body {
   color: var(--font);
   min-height: 100%;
+  font-size: 18px;
   background-image: url(/background.png);
 }
 
@@ -28,17 +21,29 @@ body {
 }
 
 header {
-  grid-area: header;
+  display: grid;
+  background-color: #FFF;
   width: 100%;
-  text-align: center;
+  grid-template-columns: 12% 88%;
+  margin-bottom: 1rem;
 }
 
-header h1 {
-  color: var(--secondary-font);
+header a {
+  color: var(--font);
+  place-self: center;
+  margin: 0;
+}
+
+header .logo {
+  height: 15%;
+  width: 15%;
+}
+
+header .nav__menu {
+  justify-self: right;
 }
 
 main {
-  grid-area: main;
   padding: 0 2rem 2rem;
 }
 
@@ -48,7 +53,6 @@ main {
 }
 
 aside {
-  grid-area: aside;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -69,17 +73,7 @@ aside {
   color: var(--secondary-font);
 }
 
-.nav__menu .nav__item.ant-menu-item-selected {
-  color: var(--secondary-font);
-  background-color: rgb(255, 230, 230);
-}
-
-.nav__menu .nav__item.ant-menu-item:after {
-  border-right-color: rgb(219, 95, 95);
-}
-
 footer {
-  grid-area: foot;
   text-align: center;
   font-weight: 700;
   padding: 0.5rem 1rem;
