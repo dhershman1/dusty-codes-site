@@ -1,10 +1,10 @@
 <template>
-  <div class="grid">
+  <div class="primary">
     <header>
       <router-link exact to="/"><img class="logo" src="/imgs/logo.png" /> Dusty Codes</router-link>
       <a-menu
       mode="horizontal"
-      :defaultSelectedKeys="[$route.name]"
+      v-model="selectedNav"
       class="nav__menu">
         <a-menu-item class="nav__item" key="about" @click="nav('about')">About</a-menu-item>
         <a-menu-item class="nav__item" key="experience" @click="nav('experience')">Experience</a-menu-item>
@@ -29,9 +29,8 @@
 export default {
   data () {
     return {
-      fab: false,
       title: 'Dusty Codes',
-      navDrawer: false,
+      selectedNav: [this.$route.name],
       navItems: [
         {
           icon: 'pages',
@@ -94,30 +93,8 @@ export default {
     }
   },
   methods: {
-    onScroll () { // eslint-disable-line complexity
-      if (typeof window === 'undefined') {
-        return false
-      }
-
-      const top = window.pageYOffset || document.documentElement.offsetTop || 0
-
-      this.fab = top > 300
-
-      return false
-    },
     nav (to) {
       this.$router.push(to)
-    },
-    toTop () {
-      this.$router.push({ hash: '' })
-      window.scrollTo(0, 0)
-    },
-    openNav () {
-      this.navDrawer = !this.navDrawer
-      this.toTop()
-    },
-    navigate (e) {
-      console.log(e)
     }
   }
 }
