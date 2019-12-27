@@ -6,13 +6,13 @@
         <badges class="mb" :module="m.title.toLowerCase()" />
         <p>{{ m.description }}</p>
         <template class="ant-card-actions" slot="actions">
-          <a title="Github" target="_blank" :href="m.github">
+          <a class="action" title="Github" target="_blank" :href="m.github">
             <a-icon type="github" />
           </a>
-          <a title="Documentation" target="_blank" :href="m.href">
+          <a class="action" title="Documentation" target="_blank" :href="m.href">
             <a-icon type="book" />
           </a>
-          <a title="NPM" target="_blank" :href="m.npm">
+          <a class="action" title="NPM" target="_blank" :href="m.npm">
             <a-icon type="database" />
           </a>
         </template>
@@ -63,5 +63,9 @@ export default {
 <style>
 .mb {
   margin-bottom: 0.7rem;
+}
+
+.ant-card-actions li span {
+  width: 100%;
 }
 </style>
