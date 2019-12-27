@@ -1,5 +1,5 @@
 <template>
-  <a-row type="flex" justify="center" :gutter="10">
+  <a-row type="flex" justify="center" :gutter="16">
     <a-col v-for="(m, i) in libs" :key="i" :span="8">
       <a-card :title="m.title">
         <img :src="m.npmBadge" slot="extra" />
@@ -34,7 +34,7 @@ export default {
       libs: [
         {
           title: 'Kyanite',
-          description: 'A tiny library of single type pure functional operators and utility functions',
+          description: 'A tiny library of single type pure functional operators and utility functions, making data easy',
           href: 'https://kyanite.dusty.codes',
           github: 'https://github.com/dhershman1/kyanite',
           npm: 'https://www.npmjs.com/package/kyanite',
