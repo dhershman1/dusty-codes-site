@@ -97,7 +97,7 @@
         </v-container>
       </v-content>
       <v-footer app>
-        <span class="pl-3">Dustin Hershman &copy; 2018 Built using
+        <span class="pl-3">Dustin Hershman &copy; 2020 Built using
           <a href="https://nuxtjs.org/" target="_blank">Nuxt</a> and
           <a href="https://vuetifyjs.com" target="_blank">Vuetify</a>
         </span>
