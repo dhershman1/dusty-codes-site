@@ -24,7 +24,8 @@
             :to="'/'"
             @click="navDrawer = false">
             <v-list-tile-action>
-              <v-icon>dashboard</v-icon>
+              <!-- dashboard -->
+              <v-icon>mdi-view-dashboard</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>Home</v-list-tile-title>
@@ -96,7 +97,7 @@
           </v-fab-transition>
         </v-container>
       </v-content>
-      <v-footer app>
+      <v-footer class="center" app>
         <span class="pl-3">Dustin Hershman &copy; 2020 Built using
           <a href="https://nuxtjs.org/" target="_blank">Nuxt</a> and
           <a href="https://vuetifyjs.com" target="_blank">Vuetify</a>
@@ -211,6 +212,10 @@ export default {
 #app {
   background: rgba(43, 89, 148, 0.5) linear-gradient(143deg,
   rgba(54, 65, 86, 0.5), rgba(17, 75, 95, 0.5), rgba(43, 89, 148, 0.5));
+}
+
+footer.center {
+  justify-content: center;
 }
 
 .nav-fixed {

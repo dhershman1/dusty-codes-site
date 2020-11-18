@@ -30,33 +30,14 @@
     </v-layout>
     <v-layout row wrap>
       <v-flex xs12>
-        <v-card>
+        <v-card class="social-links">
           <v-card-title class="pb-0 pt-2" primary-title>
-            <h3>Whats New? (In the last 3 updates)</h3>
+            <h3>Get In Contact</h3>
           </v-card-title>
           <v-card-text>
-            <span class="log-date">April 22nd, 2019</span>
-            <ul>
-              <li>Cleaned up and upgraded Documentation portal</li>
-              <li>Fixed a few typos</li>
-              <li>Fixed nav drawer navigation for documentation</li>
-              <li>Simply_Valid's documentation link now goes to correct place</li>
-              <li>Fixed some slight spacing issues</li>
-            </ul>
-            <span class="log-date">November 7th, 2018</span>
-            <ul>
-              <li>Fixed FAB button not appearing</li>
-              <li>Added ability to display all of the functions rather than 1</li>
-              <li>Upgraded all dependencies</li>
-              <li>Tweaked Displays for function cards</li>
-            </ul>
-            <span class="log-date">September 19th, 2018</span>
-            <ul>
-              <li>Added ability to swipe through tabs on mobile</li>
-              <li>Added ability to swipe open nav drawer on mobile</li>
-              <li>Fixed Method search breaking</li>
-              <li>Removed non working buttons on mobile</li>
-            </ul>
+            <a href="https://twitter.com/SirDugs" target="_blank"><v-icon>mdi-twitter</v-icon> Twitter</a>
+            <a class="pl-3" href="https://github.com/dhershman1" target="_blank"><v-icon>mdi-github</v-icon> Github</a>
+            <a class="pl-3" href="https://www.linkedin.com/in/dustin-hershman-938953101/" target="_blank"><v-icon>mdi-linkedin</v-icon> LinkedIn</a>
           </v-card-text>
         </v-card>
       </v-flex>
@@ -65,6 +46,23 @@
 </template>
 
 <style scoped>
+  .social-links a {
+    font-size: 20px;
+    color: #757575;
+    text-decoration: none;
+  }
+
+  .social-links .v-icon:hover,
+  .social-links a:hover .v-icon {
+    transition: all 0.3s;
+    color: #b3d4fc;
+  }
+
+  .social-links a:hover {
+    transition: all 0.3s;
+    color: #b3d4fc;
+  }
+
   .single {
     height: 100%;
   }
