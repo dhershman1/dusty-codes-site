@@ -1,3 +1,4 @@
+import '@mdi/font/css/materialdesignicons.css'
 import {
   VApp,
   VAlert,
@@ -23,6 +24,7 @@ import {
 import Vue from 'vue'
 
 Vue.use(Vuetify, {
+  iconfont: 'mdi',
   theme: {
     primary: '#2b5994',
     darkpurp: '#9c27b0',

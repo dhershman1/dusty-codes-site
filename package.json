@@ -13,6 +13,7 @@
     "lint:fix": "standard --fix ./**/*.vue"
   },
   "dependencies": {
+    "@mdi/font": "5.8.55",
     "axios": "0.21.0",
     "highlight.js": "9.18.4",
     "kyanite": "1.4.2",
